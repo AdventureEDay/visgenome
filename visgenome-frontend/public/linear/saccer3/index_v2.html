@@ -1,0 +1,106 @@
+<html>
+
+<head>
+  <script src="../jbrowse-linear-view.js"></script>
+</head>
+
+<body>
+  <div id="jbrowse_linear_view"></div>
+  <script type="module">
+    import assembly from './assembly.js'
+    import tracks from './tracks.js'
+
+    // 添加一个默认展开的track和参考序列
+    let defaultSession = {
+      name: 'aNameHere', // what the name is doesn't really matter
+      view: {
+        "id": "linearGenomeView",
+        "type": "LinearGenomeView",
+        "bpPerPx": 0.080,
+        "displayedRegions": [
+          {
+            "refName": "chrI",
+            "start": 0,
+            "end": 100000,
+            "reversed": false,
+            "assemblyName": "SacCer_Apr2011"
+          }
+        ],
+        "tracks": [{
+          "id": "ReferenceSequence",
+          "type": "ReferenceSequenceTrack",
+          "height": 50,
+          "configuration": "SacCer_Apr2011-ReferenceSequenceTrack" 
+        },
+        {
+          "id": "chrI_MD0001_EIIP",
+          "type": "WiggleTrack",
+          "height": 150,
+          "configuration": "chrI_MD0001_EIIP" // tracks.js文件中的trackID
+        }]
+      },
+    }
+    // 创建一个线性视图
+    let chromName = ""  // 染色体名称
+    let k=1;
+    let genomeView = new JBrowseLinearView({
+      container: document.getElementById('jbrowse_linear_view'),
+      assembly,
+      tracks,
+      // location: 'chrI:100,000..100,100',
+      defaultSession,
+      onChange: patch => {
+        // genomeView.view.navToLocString("1:100..600"); // 在这里不能对genomeView进行处理，因为这个时候还没有new完成
+        // console.log(k++, JSON.stringify(patch)) 
+        // 如果更换染色体 操作是"add" 并且 path 是"/session/view/displayedRegions/0"
+        if(patch["op"] == "add" && patch["path"] == "/session/view/displayedRegions/0"){
+          console.log(k++, JSON.stringify(patch));
+          chromName = patch["value"].refName;
+          changeTrack("original", chromName);
+        }
+      },
+    });
+
+    // 为了动态选择tracks，创建新视图的函数
+    function newView(tracks, location) {
+      let genomeView = new JBrowseLinearView({
+        container: document.getElementById('jbrowse_linear_view'),
+        assembly,
+        tracks,
+        location
+      })
+    }
+
+    // 根据值的类型改变tracks
+    let valueType = "original"
+    // let kValue = "1"
+    window.addEventListener("message", function (messageEvent) {
+      let params = messageEvent.data.data;
+      valueType = params["valueType"] == undefined ? valueType : params["valueType"];
+      // kValue = params["kValue"] == undefined ? kValue : params["kValue"];
+      // console.log(valueType);
+      // console.log(kValue);
+      // changeTrack(valueType);
+      console.log(genomeView.view)
+    }, false);
+
+    
+    function changeTrack(valueType, chromName) {
+      // console.log(genomeView.view)
+      if (valueType == "original") {
+          import("./tracks/tracks_ori_mono.js").then(track => {
+            // genomeView.tracks = track.default;
+            let location = chromName + ":100,000..100,100"
+            newView(track.default, location)
+          });
+      } else {
+          import("./tracks/tracks_ori_tri.js").then(track => {
+            // genomeView.tracks = track.default;
+            newView(track.default)
+          });
+        }
+    }
+  </script>
+</body>
+
+</html>

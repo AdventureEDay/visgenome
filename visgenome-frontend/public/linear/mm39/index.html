@@ -1,0 +1,94 @@
+<html>
+
+<head>
+  <script src="../jbrowse-linear-view.js"></script>
+</head>
+
+<body>
+  <div id="jbrowse_linear_view"></div>
+  <script type="module">
+    import assembly from './assemblies/chr1.js'
+    import tracks from './tracks/ori/tracks_ori_chr1.js'
+
+    let defaultSession = {
+      name: 'aNameHere', // what the name is doesn't really matter
+      view: {
+        "id": "linearGenomeView",
+        "type": "LinearGenomeView",
+        "bpPerPx": 0.080,
+        // "displayedRegions": [
+        //   {
+        //     "refName": "chr1",
+        //     "start": 10000000,
+        //     "end": 20000000,
+        //     "reversed": false,
+        //     "assemblyName": "GRCm39_chr1"
+        //   }
+        // ],
+        "tracks": [{
+          "id": "ReferenceSequence",
+          "type": "ReferenceSequenceTrack",
+          "height": 50,
+          "configuration": "GRCm39_chr1-ReferenceSequenceTrack" 
+        },
+        {
+          "id": "chr1_MD0001_EIIP_ori",
+          "type": "WiggleTrack",
+          "height": 150,
+          "configuration": "chr1_MD0001_EIIP_ori" // tracks.js文件中的trackID
+        }]
+      },
+    }
+    // 使用defaultSession创建一个线性视图
+    let genomeView = new JBrowseLinearView({
+      container: document.getElementById('jbrowse_linear_view'),
+      assembly,
+      tracks,
+      defaultSession,
+      location: 'chr1:10,000,000..10,000,100',
+    });
+
+    function newView(assembly, tracks, location) {
+      let genomeView = new JBrowseLinearView({
+        container: document.getElementById('jbrowse_linear_view'),
+        assembly,
+        tracks,
+        location
+      });
+    }
+    // 根据值的类型改变tracks
+    let valueType = "original"
+    let chromName = "chr1"  // 染色体名称 chrI
+    window.addEventListener("message", function (messageEvent) {
+      let params = messageEvent.data.data;
+      valueType = params["valueType"] == undefined ? valueType : params["valueType"];
+      chromName = params["chromName"] == undefined ? chromName : params["chromName"];
+      console.log(valueType, chromName);
+      let location = chromName + ":10,000..10,100"
+      changeTrack(valueType, chromName, location)
+    }, false);
+
+    function changeTrack(valueType, chromName, location) {
+      let assemblies = "./assemblies/" + chromName + ".js";
+      if (valueType == "original") {
+        let tracks = "./tracks/ori/tracks_ori_"+ chromName +".js";
+        import(assemblies).then(assembly => {
+          import(tracks).then(track => {
+            // genomeView.tracks = track.default;
+            newView(assembly.default, track.default, location)
+          });
+        })
+      } else {
+        let tracks = "./tracks/sta/tracks_sta_" + chromName + ".js";
+        import(assemblies).then(assembly => {
+          import(tracks).then(track => {
+            // genomeView.tracks = track.default;
+            newView(assembly.default, track.default, location)
+          });
+        })
+      }
+    }
+  </script>
+</body>
+
+</html>

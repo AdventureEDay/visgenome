@@ -1,0 +1,94 @@
+<html>
+
+<head>
+  <script src="../jbrowse-linear-view.js"></script>
+</head>
+
+<body>
+  <!-- <h1>We're using JBrowse Linear View!</h1> -->
+  <div id="jbrowse_linear_view"></div>
+  <button data-type="gene_button" data-location="chrII:100..200">
+    CYP2C19
+  </button>
+  <button data-type="gene_button" data-location="chrIII:120..220">
+    BRCA2
+  </button>
+  <script type="module">
+    import assembly from './assembly.js'
+    import tracks from './tracks.js'
+
+    let genomeView = newView(tracks);
+
+    function newView(tracks) {
+      let genomeView = new JBrowseLinearView({
+        container: document.getElementById('jbrowse_linear_view'),
+        assembly,
+        tracks,
+        location: 'chrI:100,000..100,100'
+      })
+      return genomeView;
+    }
+
+    // 根据值的类型改变tracks
+    let valueType = "original"
+    let kValue = "1"
+    window.addEventListener("message", function (messageEvent) {
+      let params = messageEvent.data.data;
+      valueType = params["valueType"] == undefined ? valueType : params["valueType"];
+      kValue = params["kValue"] == undefined ? kValue : params["kValue"];
+      // console.log(valueType);
+      // console.log(kValue);
+      changeTrack(valueType, kValue);
+    }, false);
+
+    function changeTrack(valueType, kValue) {
+      if (valueType == "original") {
+        if (kValue == "1") {
+          import("./tracks/tracks_ori_mono.js").then(track => {
+            // genomeView.tracks = track.default;
+            newView(track.default)
+          });
+        } else if (kValue == "2") {
+          import("./tracks/tracks_ori_di.js").then(track => {
+            // genomeView.tracks = track.default;
+            newView(track.default)
+          });
+        } else {
+          import("./tracks/tracks_ori_tri.js").then(track => {
+            // genomeView.tracks = track.default;
+            newView(track.default)
+          });
+        }
+      } else if (valueType == "standard") {
+        if (kValue == "1") {
+          import("./tracks/tracks_sta_mono.js").then(track => {
+            // genomeView.tracks = track.default;
+            newView(track.default)
+          });
+        } else if (kValue == "2") {
+          import("./tracks/tracks_sta_di.js").then(track => {
+            // genomeView.tracks = track.default;
+            newView(track.default)
+          });
+        } else {
+          import("./tracks/tracks_sta_tri.js").then(track => {
+            // genomeView.tracks = track.default;
+            newView(track.default)
+          });
+        }
+      }
+    }
+
+    function navTo(event) {
+      genomeView.view.navToLocString(event.target.dataset.location)
+    }
+    const buttons = document.getElementsByTagName('button')
+    for (const button of buttons) {
+      if (button.dataset.type === 'gene_button') {
+        button.addEventListener('click', navTo)
+      }
+    }
+  </script>
+</body>
+
+</html>
