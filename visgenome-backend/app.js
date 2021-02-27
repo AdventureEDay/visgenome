@@ -9,6 +9,7 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 // res.sendFile不知道有什么用？ 当访问路径不是文件的存储路径时，有用
 const filesRouter = require('./routes/files');
+const cirRouter = require('./routes/circos');
 
 const app = express();
 
@@ -39,8 +40,9 @@ app.all("*", function(req, res, next) {
 });
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+// app.use('/users', usersRouter);
 app.use('/file', filesRouter);
+app.use('/circos', cirRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

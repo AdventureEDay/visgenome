@@ -58,6 +58,13 @@ module.exports = {
         pathRewrite: {
           "^/file": "/file"
         }
+      },
+      "/circos":{
+        target: "http://127.0.0.1:3000",
+        changeOrigin: true,
+        pathRewrite: {
+          "^/circos": "/circos"
+        }
       }
     }, // 设置代理
     // eslint-disable-next-line no-unused-vars

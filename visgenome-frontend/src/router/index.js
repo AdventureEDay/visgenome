@@ -22,6 +22,12 @@ const routes = [
     path: "/help/:type",
     name: "Help",
     component: () => import("../views/Help.vue")
+  },
+  {
+    // 刷新404?,这是因为和后端的url撞了,加载后端circos图片使用了/circos路径, 所以修改了这里的path
+    path: "/vis_circos/:type",
+    name: "Circos",
+    component: () => import("../views/Circos.vue")
   }
   // {
   //   path: "/about",

@@ -2,6 +2,7 @@
 **/node_modules
 visgenome-backend/public/files/assembly/*
 visgenome-backend/public/files/tracks/*
+visgenome-backend/public/circos/*
 visgenome-frontend/dist
 
 # local env files

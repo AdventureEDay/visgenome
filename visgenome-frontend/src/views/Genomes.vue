@@ -5,14 +5,15 @@
     <!-- <el-button @click="tiao()">linear</el-button> -->
     <el-container>
       <el-aside>
-        <div style="height: 50px; margin:10px 0 10px">
+        <div style="height: 50px; margin: 10px 0 10px;">
           <img style="height: 50px; width: auto" src="../assets/para.png" />
         </div>
         <el-row class="options">
           <el-col class="label">
-            Type of property values:
+            Type of property values
           </el-col>
           <el-col class="content">
+            <!-- passV 用于给iframe传递参数：值的类型 -->
             <el-radio-group v-model="valueType" @change="passV">
               <el-radio-button label="original">Original</el-radio-button>
               <el-radio-button label="standard">Standard</el-radio-button>
@@ -20,11 +21,12 @@
           </el-col>
         </el-row>
         <el-row class="options">
-          <el-col class="label">Values by chromosome:</el-col>
+          <el-col class="label">Choose chromosome</el-col>
           <el-col class="content">
+            <!-- passChrom 用于给iframe传递参数：选中的染色体 -->
             <el-select
               v-if="$route.params.type === 'human'"
-              v-model="chromHum"
+              v-model="chromName"
               placeholder="please select"
               @change="passChrom"
             >
@@ -38,7 +40,7 @@
             </el-select>
             <el-select
               v-if="$route.params.type === 'mouse'"
-              v-model="chromMou"
+              v-model="chromName"
               placeholder="please select"
               @change="passChrom"
             >
@@ -52,7 +54,7 @@
             </el-select>
             <el-select
               v-if="$route.params.type === 'yeast'"
-              v-model="chromYea"
+              v-model="chromName"
               placeholder="please select"
               @change="passChrom"
             >
@@ -66,8 +68,21 @@
             </el-select>
           </el-col>
         </el-row>
+        <el-row class="options">
+          <el-col class="label">
+            Visualize by Circos
+          </el-col>
+          <el-col class="content">
+            <el-button type="warning" circle @click="visCircos">
+              <img
+                src="../assets/circle.png"
+                style="width: 20px; height: auto"
+              />
+            </el-button>
+          </el-col>
+        </el-row>
       </el-aside>
-      <el-main>
+      <el-container>
         <div class="insert">
           <!-- <h1>{{ valueType }}</h1> -->
           <iframe
@@ -89,7 +104,7 @@
             v-else-if="$route.params.type === 'yeast'"
           ></iframe>
         </div>
-      </el-main>
+      </el-container>
     </el-container>
   </div>
 </template>
@@ -102,7 +117,8 @@ export default {
       // 减160是减去页眉和页脚的高度
       fullHeight: window.innerHeight - 120,
       valueType: "original",
-      chromHum: "chr1",
+      chromName: "",
+      // chromHum: "chr1",
       optionsHum: [
         "chr1",
         "chr2",
@@ -130,7 +146,7 @@ export default {
         "chrY",
         "chrM"
       ],
-      chromMou: "chr1",
+      // chromMou: "chr1",
       optionsMou: [
         "chr1",
         "chr2",
@@ -155,7 +171,7 @@ export default {
         "chrY",
         "chrM"
       ],
-      chromYea: "chrI",
+      // chromYea: "chrI",
       optionsYea: [
         "chrI",
         "chrII",
@@ -184,6 +200,14 @@ export default {
     };
     // this.iframe = this.$refs["params"].contentWindow;
     // window.addEventListener("message", this.sendParams);
+    // 是否可以在刷新的时候保持原来的参数不变。。。。。。。。。。。。。。。。
+    if (this.$route.params.type === "human") {
+      this.chromName = "chr1";
+    } else if (this.$route.params.type === "mouse") {
+      this.chromName = "chr1";
+    } else if (this.$route.params.type === "yeast") {
+      this.chromName = "chrI";
+    }
   },
   watch: {
     // fullHeight(val) {
@@ -203,11 +227,11 @@ export default {
       handler: function(val, oldVal) {
         this.valueType = "original";
         if (val.params.type === "human") {
-          this.chromHum = "chr1";
+          this.chromName = "chr1";
         } else if (val.params.type === "mouse") {
-          this.chromMou = "chr1";
+          this.chromName = "chr1";
         } else if (val.params.type === "yeast") {
-          this.chromYea = "chrI";
+          this.chromName = "chrI";
         }
       },
       // 深度观察监听
@@ -234,13 +258,34 @@ export default {
     },
 
     passV(val) {
-      // let val = this.valueType;
-      // console.log(val);
       this.sendParams({ valueType: val });
     },
 
     passChrom(val) {
       this.sendParams({ chromName: val });
+    },
+    // 点击按钮进行circos图的可视化页面
+    visCircos() {
+      let type = this.$route.params.type;
+      let valueType = this.valueType;
+      let chromName = this.chromName;
+      // 向Circos页面重新传递参数时, 先把原来存储的内容删除
+      if (sessionStorage.getItem("circosState")) {
+        sessionStorage.removeItem("circosState");
+      }
+      // if (type === "human") chromName = this.chromHum;
+      // else if (type === "mouse") chromName = this.chromMou;
+      // else if (type === "yeast") chromName = this.chromYea;
+      // 刷新404?, 这是因为和后端的url撞了, 加载后端circos图片使用了/circos路径
+      // 以下方式传值给circos页面, 在circos页面刷新, 参数就消失了
+      this.$router.push({
+        name: "Circos",
+        params: {
+          type: type,
+          valueType: valueType,
+          chromName: chromName
+        }
+      });
     }
   },
   //注销window.onresize事件
@@ -276,10 +321,12 @@ export default {
 }
 
 .el-aside {
-  width: 20% !important;
-  background-color: #e6e6d3;
-  color: #333;
-  line-height: 50px;
+  width: 30% !important;
+  // background-color: #fafaf5;
+  // color: #333;
+  color: #a5c2a0;
+  line-height: 40px;
+  border-right: solid 2px #a5c2a0;
   // text-align: left;
   // padding-left: 15px;
   // padding-top: 20px;
@@ -287,15 +334,20 @@ export default {
 
 .el-main {
   height: 100%;
-  background-color: #e9eef3;
+  // background-color: #e9eef3;
   /* line-height: 160px; */
 }
 
 .label {
   text-align: left;
   padding-left: 15px;
-  background-color: #a5c2a0;
-  border-radius: 10px;
+  // background-color: #a5c2a0;
+  // border-top: solid 3px #a5c2a0;
+  // border-radius: 10px;
+}
+
+.options {
+  border-bottom: #a5c2a0 double 3px;
 }
 
 .content {
@@ -306,6 +358,15 @@ export default {
   width: 188px;
 }
 
+/deep/ .el-input__inner {
+  border: 1px solid #a5c2a0;
+  background: #f5f5f5;
+}
+
+/deep/ .el-radio-button__inner {
+  border: 1px solid #a5c2a0;
+  background: #f5f5f5;
+}
 // /deep/ .el-radio-button__orig-radio:checked + .el-radio-button__inner {
 //   color: #fff;
 //   background-color: #f3c649;

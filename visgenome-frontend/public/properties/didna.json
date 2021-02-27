@@ -1,0 +1,590 @@
+[
+    {
+        "ID": "DD0001",
+        "property": "Base stacking"
+    },
+    {
+        "ID": "DD0002",
+        "property": "Protein induced deformability"
+    },
+    {
+        "ID": "DD0003",
+        "property": "B-DNA twist"
+    },
+    {
+        "ID": "DD0004",
+        "property": "A-philicity"
+    },
+    {
+        "ID": "DD0005",
+        "property": "Propeller twist"
+    },
+    {
+        "ID": "DD0006",
+        "property": "Duplex stability (freeenergy)"
+    },
+    {
+        "ID": "DD0007",
+        "property": "Duplex stability (disruptenergy)"
+    },
+    {
+        "ID": "DD0008",
+        "property": "DNA denaturation"
+    },
+    {
+        "ID": "DD0009",
+        "property": "Bending stiffness"
+    },
+    {
+        "ID": "DD0010",
+        "property": "Protein DNA twist"
+    },
+    {
+        "ID": "DD0011",
+        "property": "Stabilising energy of Z-DNA"
+    },
+    {
+        "ID": "DD0012",
+        "property": "Aida_BA_transition"
+    },
+    {
+        "ID": "DD0013",
+        "property": "Breslauer_dG"
+    },
+    {
+        "ID": "DD0014",
+        "property": "Breslauer_dH"
+    },
+    {
+        "ID": "DD0015",
+        "property": "Breslauer_dS"
+    },
+    {
+        "ID": "DD0016",
+        "property": "Electron_interaction"
+    },
+    {
+        "ID": "DD0017",
+        "property": "Hartman_trans_free_energy"
+    },
+    {
+        "ID": "DD0018",
+        "property": "Helix-Coil_transition"
+    },
+    {
+        "ID": "DD0019",
+        "property": "Ivanov_BA_transition"
+    },
+    {
+        "ID": "DD0020",
+        "property": "Lisser_BZ_transition"
+    },
+    {
+        "ID": "DD0021",
+        "property": "Polar_interaction"
+    },
+    {
+        "ID": "DD0022",
+        "property": "SantaLucia_dG"
+    },
+    {
+        "ID": "DD0023",
+        "property": "SantaLucia_dH"
+    },
+    {
+        "ID": "DD0024",
+        "property": "SantaLucia_dS"
+    },
+    {
+        "ID": "DD0025",
+        "property": "Sarai_flexibility"
+    },
+    {
+        "ID": "DD0026",
+        "property": "Stability"
+    },
+    {
+        "ID": "DD0027",
+        "property": "Stacking_energy"
+    },
+    {
+        "ID": "DD0028",
+        "property": "Sugimoto_dG"
+    },
+    {
+        "ID": "DD0029",
+        "property": "Sugimoto_dH"
+    },
+    {
+        "ID": "DD0030",
+        "property": "Sugimoto_dS"
+    },
+    {
+        "ID": "DD0031",
+        "property": "Watson-Crick_interaction"
+    },
+    {
+        "ID": "DD0032",
+        "property": "Twist"
+    },
+    {
+        "ID": "DD0033",
+        "property": "Tilt"
+    },
+    {
+        "ID": "DD0034",
+        "property": "Roll"
+    },
+    {
+        "ID": "DD0035",
+        "property": "Shift"
+    },
+    {
+        "ID": "DD0036",
+        "property": "Slide"
+    },
+    {
+        "ID": "DD0037",
+        "property": "Rise"
+    },
+    {
+        "ID": "DD0038",
+        "property": "Clash Strength"
+    },
+    {
+        "ID": "DD0039",
+        "property": "Twist stiffness"
+    },
+    {
+        "ID": "DD0040",
+        "property": "Tilt stiffness"
+    },
+    {
+        "ID": "DD0041",
+        "property": "Slide stiffness"
+    },
+    {
+        "ID": "DD0042",
+        "property": "Shift stiffness"
+    },
+    {
+        "ID": "DD0043",
+        "property": "Rise stiffness"
+    },
+    {
+        "ID": "DD0044",
+        "property": "Roll stiffness"
+    },
+    {
+        "ID": "DD0045",
+        "property": "Twist_rise"
+    },
+    {
+        "ID": "DD0046",
+        "property": "Twist_roll"
+    },
+    {
+        "ID": "DD0047",
+        "property": "Twist_shift"
+    },
+    {
+        "ID": "DD0048",
+        "property": "Twist_slide"
+    },
+    {
+        "ID": "DD0049",
+        "property": "Twist_tilt"
+    },
+    {
+        "ID": "DD0050",
+        "property": "Twist_twist"
+    },
+    {
+        "ID": "DD0051",
+        "property": "Tilt_rise"
+    },
+    {
+        "ID": "DD0052",
+        "property": "Tilt_roll"
+    },
+    {
+        "ID": "DD0053",
+        "property": "Tilt_shift"
+    },
+    {
+        "ID": "DD0054",
+        "property": "Tilt_slide"
+    },
+    {
+        "ID": "DD0055",
+        "property": "Tilt_tilt"
+    },
+    {
+        "ID": "DD0056",
+        "property": "Roll_rise"
+    },
+    {
+        "ID": "DD0057",
+        "property": "Roll_shift"
+    },
+    {
+        "ID": "DD0058",
+        "property": "Roll_slide"
+    },
+    {
+        "ID": "DD0059",
+        "property": "Roll_roll"
+    },
+    {
+        "ID": "DD0060",
+        "property": "Shift_rise"
+    },
+    {
+        "ID": "DD0061",
+        "property": "Shift_shift"
+    },
+    {
+        "ID": "DD0062",
+        "property": "Shift_slide"
+    },
+    {
+        "ID": "DD0063",
+        "property": "Slide_rise"
+    },
+    {
+        "ID": "DD0064",
+        "property": "Slide_slide"
+    },
+    {
+        "ID": "DD0065",
+        "property": "Rise_rise"
+    },
+    {
+        "ID": "DD0066",
+        "property": "Twist1"
+    },
+    {
+        "ID": "DD0067",
+        "property": "Twist2"
+    },
+    {
+        "ID": "DD0068",
+        "property": "Twist3"
+    },
+    {
+        "ID": "DD0069",
+        "property": "Twist4"
+    },
+    {
+        "ID": "DD0070",
+        "property": "Twist5"
+    },
+    {
+        "ID": "DD0071",
+        "property": "Twist6"
+    },
+    {
+        "ID": "DD0072",
+        "property": "Twist7"
+    },
+    {
+        "ID": "DD0073",
+        "property": "Twist (DNA-protein complex)"
+    },
+    {
+        "ID": "DD0074",
+        "property": "Twist (DNA-protein complex)1"
+    },
+    {
+        "ID": "DD0075",
+        "property": "Tilt1"
+    },
+    {
+        "ID": "DD0076",
+        "property": "Tilt2"
+    },
+    {
+        "ID": "DD0077",
+        "property": "Tilt3"
+    },
+    {
+        "ID": "DD0078",
+        "property": "Tilt4"
+    },
+    {
+        "ID": "DD0079",
+        "property": "Tilt (DNA-protein complex)"
+    },
+    {
+        "ID": "DD0080",
+        "property": "Tilt (DNA-protein complex)1"
+    },
+    {
+        "ID": "DD0081",
+        "property": "Roll1"
+    },
+    {
+        "ID": "DD0082",
+        "property": "Roll2"
+    },
+    {
+        "ID": "DD0083",
+        "property": "Roll3"
+    },
+    {
+        "ID": "DD0084",
+        "property": "Roll4"
+    },
+    {
+        "ID": "DD0085",
+        "property": "Roll5"
+    },
+    {
+        "ID": "DD0086",
+        "property": "Roll (DNA-protein complex)"
+    },
+    {
+        "ID": "DD0087",
+        "property": "Roll (DNA-protein complex)1"
+    },
+    {
+        "ID": "DD0088",
+        "property": "Rise1"
+    },
+    {
+        "ID": "DD0089",
+        "property": "Rise2"
+    },
+    {
+        "ID": "DD0090",
+        "property": "Rise3"
+    },
+    {
+        "ID": "DD0091",
+        "property": "Rise (DNA-protein complex)"
+    },
+    {
+        "ID": "DD0092",
+        "property": "Rise (DNA-protein complex)1"
+    },
+    {
+        "ID": "DD0093",
+        "property": "Slide1"
+    },
+    {
+        "ID": "DD0094",
+        "property": "Slide2"
+    },
+    {
+        "ID": "DD0095",
+        "property": "Slide3"
+    },
+    {
+        "ID": "DD0096",
+        "property": "Slide (DNA-protein complex)"
+    },
+    {
+        "ID": "DD0097",
+        "property": "Slide (DNA-protein complex)1"
+    },
+    {
+        "ID": "DD0098",
+        "property": "Shift1"
+    },
+    {
+        "ID": "DD0099",
+        "property": "Shift2"
+    },
+    {
+        "ID": "DD0100",
+        "property": "Shift (DNA-protein complex)"
+    },
+    {
+        "ID": "DD0101",
+        "property": "Shift (DNA-protein complex)1"
+    },
+    {
+        "ID": "DD0102",
+        "property": "Stacking energy"
+    },
+    {
+        "ID": "DD0103",
+        "property": "Stacking energy1"
+    },
+    {
+        "ID": "DD0104",
+        "property": "Stacking energy2"
+    },
+    {
+        "ID": "DD0105",
+        "property": "Stacking energy3"
+    },
+    {
+        "ID": "DD0106",
+        "property": "Bend"
+    },
+    {
+        "ID": "DD0107",
+        "property": "Tip"
+    },
+    {
+        "ID": "DD0108",
+        "property": "Inclination"
+    },
+    {
+        "ID": "DD0109",
+        "property": "Major Groove Width"
+    },
+    {
+        "ID": "DD0110",
+        "property": "Major Groove Depth"
+    },
+    {
+        "ID": "DD0111",
+        "property": "Major Groove Distance"
+    },
+    {
+        "ID": "DD0112",
+        "property": "Major Groove Size"
+    },
+    {
+        "ID": "DD0113",
+        "property": "Minor Groove Width"
+    },
+    {
+        "ID": "DD0114",
+        "property": "Minor Groove Depth"
+    },
+    {
+        "ID": "DD0115",
+        "property": "Minor Groove Distance"
+    },
+    {
+        "ID": "DD0116",
+        "property": "Minor Groove Size"
+    },
+    {
+        "ID": "DD0117",
+        "property": "Direction"
+    },
+    {
+        "ID": "DD0118",
+        "property": "Wedge"
+    },
+    {
+        "ID": "DD0119",
+        "property": "Flexibility_shift"
+    },
+    {
+        "ID": "DD0120",
+        "property": "Flexibility_slide"
+    },
+    {
+        "ID": "DD0121",
+        "property": "Persistance Length"
+    },
+    {
+        "ID": "DD0122",
+        "property": "Melting Temperature"
+    },
+    {
+        "ID": "DD0123",
+        "property": "Melting Temperature1"
+    },
+    {
+        "ID": "DD0124",
+        "property": "Propeller Twist"
+    },
+    {
+        "ID": "DD0125",
+        "property": "Mobility to bend towards major groove"
+    },
+    {
+        "ID": "DD0126",
+        "property": "Mobility to bend towards minor groove"
+    },
+    {
+        "ID": "DD0127",
+        "property": "Probability contacting nucleosome core"
+    },
+    {
+        "ID": "DD0128",
+        "property": "Enthalpy"
+    },
+    {
+        "ID": "DD0129",
+        "property": "Enthalpy1"
+    },
+    {
+        "ID": "DD0130",
+        "property": "Entropy"
+    },
+    {
+        "ID": "DD0131",
+        "property": "Entropy1"
+    },
+    {
+        "ID": "DD0132",
+        "property": "Free energy"
+    },
+    {
+        "ID": "DD0133",
+        "property": "Free energy1"
+    },
+    {
+        "ID": "DD0134",
+        "property": "Free energy2"
+    },
+    {
+        "ID": "DD0135",
+        "property": "Free energy3"
+    },
+    {
+        "ID": "DD0136",
+        "property": "Free energy4"
+    },
+    {
+        "ID": "DD0137",
+        "property": "Free energy5"
+    },
+    {
+        "ID": "DD0138",
+        "property": "Free energy6"
+    },
+    {
+        "ID": "DD0139",
+        "property": "Free energy7"
+    },
+    {
+        "ID": "DD0140",
+        "property": "Free energy8"
+    },
+    {
+        "ID": "DD0141",
+        "property": "Adenine content"
+    },
+    {
+        "ID": "DD0142",
+        "property": "Cytosine content"
+    },
+    {
+        "ID": "DD0143",
+        "property": "GC content"
+    },
+    {
+        "ID": "DD0144",
+        "property": "Guanine content"
+    },
+    {
+        "ID": "DD0145",
+        "property": "Keto (GT) content"
+    },
+    {
+        "ID": "DD0146",
+        "property": "Purine (AG) content"
+    },
+    {
+        "ID": "DD0147",
+        "property": "Thymine content"
+    }
+]

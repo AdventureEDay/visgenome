@@ -1,14 +1,14 @@
 export default [
   {
     type: "WiggleTrack",
-    trackId: "chrI_MD0001_EIIP_sta",
-    name: "chrI_MD0001_EIIP_sta",
+    trackId: "sacCer3_chrI_MD0001_EIIP_sta",
+    name: "sacCer3_chrI_MD0001_EIIP_sta",
     category: ["mononucleotide", "EIIP"],
     assemblyNames: ["SacCer_Apr2011_chrI"],
     adapter: {
       type: "BigWigAdapter",
       bigWigLocation: {
-        uri: "/file/saccer3/tracks/sta/monoDNASta/chrI_MD0001_EIIP_sta.bw"
+        uri: "/file/saccer3/tracks/sta/monoDNASta/sacCer3_chrI_MD0001_EIIP_sta.bw"
       }
     }
   },
