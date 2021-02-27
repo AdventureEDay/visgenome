@@ -1,0 +1,50 @@
+[
+    {
+        "ID": "TD0001",
+        "property": "Bendability-DNAse"
+    },
+    {
+        "ID": "TD0002",
+        "property": "Bendability-consensus"
+    },
+    {
+        "ID": "TD0003",
+        "property": "Trinucleotide GC Content"
+    },
+    {
+        "ID": "TD0004",
+        "property": "Nucleosome positioning"
+    },
+    {
+        "ID": "TD0005",
+        "property": "Consensus_roll"
+    },
+    {
+        "ID": "TD0006",
+        "property": "Consensus_Rigid"
+    },
+    {
+        "ID": "TD0007",
+        "property": "Dnase I"
+    },
+    {
+        "ID": "TD0008",
+        "property": "Dnase I-Rigid"
+    },
+    {
+        "ID": "TD0009",
+        "property": "MW-Daltons"
+    },
+    {
+        "ID": "TD0010",
+        "property": "MW-kg"
+    },
+    {
+        "ID": "TD0011",
+        "property": "Nucleosome"
+    },
+    {
+        "ID": "TD0012",
+        "property": "Nucleosome-Rigid"
+    }
+]
