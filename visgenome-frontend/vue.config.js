@@ -11,7 +11,7 @@ module.exports = {
     // webpack配置，值位对象时会合并配置，为方法时会改写配置
     if (debug) {
       // 开发环境配置
-      config.devtool = "cheap-module-eval-source-map";
+      // config.devtool = "cheap-module-eval-source-map";
       config.mode = "development";
     } else {
       // 生产环境配置
