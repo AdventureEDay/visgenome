@@ -7,46 +7,40 @@
 <body>
   <div id="jbrowse_linear_view"></div>
   <script type="module">
-    import assembly from './assemblies/chrI.js'
-    import tracks from './tracks/ori/tracks_ori_chrI.js'
+    import assembly from './assemblies/chr1.js'
+    import tracks from './tracks/ori/tracks_ori_chr1.js'
 
     let defaultSession = {
-      name: 'aNameHere', // what the name is doesn't really matter
+      name: 'hg38Default', // what the name is doesn't really matter
       view: {
         "id": "linearGenomeView",
         "type": "LinearGenomeView",
+        // 局部放大效果
         "bpPerPx": 0.080,
-        "displayedRegions": [
-          {
-            "refName": "chrI",
-            "start": 0,
-            "end": 100000,
-            "reversed": false,
-            "assemblyName": "SacCer_Apr2011_chrI"
-          }
-        ],
         "tracks": [{
           "id": "ReferenceSequence",
           "type": "ReferenceSequenceTrack",
           "height": 50,
-          "configuration": "SacCer_Apr2011_chrI-ReferenceSequenceTrack" 
+          "configuration": "GRCh38_chr1-ReferenceSequenceTrack" 
         },
         {
-          "id": "chrI_MD0001_EIIP_ori",
+          "id": "hg38_chr1_MD0001_EIIP_ori",
           "type": "WiggleTrack",
           "height": 150,
-          "configuration": "chrI_MD0001_EIIP_ori" // tracks.js文件中的trackID
+          "configuration": "hg38_chr1_MD0001_EIIP_ori" // tracks.js文件中的trackID
         }]
       },
     }
-    // 使用defaultSession创建一个线性视图
+    // 使用在上面设置的defaultSession创建一个线性视图，用于刚进入页面时的视图初始化显示
     let genomeView = new JBrowseLinearView({
       container: document.getElementById('jbrowse_linear_view'),
       assembly,
       tracks,
-      defaultSession
+      defaultSession,
+      location: 'chr1:100,000,000..100,000,100',
     });
-
+    
+    // 用于在改变染色体或者值的类型时重新生成新的染色体可视化视图
     function newView(assembly, tracks, location) {
       let genomeView = new JBrowseLinearView({
         container: document.getElementById('jbrowse_linear_view'),
@@ -57,13 +51,16 @@
     }
     // 根据值的类型改变tracks
     let valueType = "original"
-    let chromName = "chrI"  // 染色体名称 chrI
+    let chromName = "chr1"  // 染色体名称 chr1
     window.addEventListener("message", function (messageEvent) {
       let params = messageEvent.data.data;
       valueType = params["valueType"] == undefined ? valueType : params["valueType"];
       chromName = params["chromName"] == undefined ? chromName : params["chromName"];
-      console.log(valueType, chromName);
-      let location = chromName + ":10,000..10,100"
+      // console.log(valueType, chromName);
+      let location = chromName + ":10,000,000..10,000,100"
+      if(chromName == "chrM") {
+        location = chromName + ":10,000..10,100";
+      }
       changeTrack(valueType, chromName, location)
     }, false);
 
@@ -73,7 +70,6 @@
         let tracks = "./tracks/ori/tracks_ori_"+ chromName +".js";
         import(assemblies).then(assembly => {
           import(tracks).then(track => {
-            // genomeView.tracks = track.default;
             newView(assembly.default, track.default, location)
           });
         })
@@ -81,7 +77,6 @@
         let tracks = "./tracks/sta/tracks_sta_" + chromName + ".js";
         import(assemblies).then(assembly => {
           import(tracks).then(track => {
-            // genomeView.tracks = track.default;
             newView(assembly.default, track.default, location)
           });
         })

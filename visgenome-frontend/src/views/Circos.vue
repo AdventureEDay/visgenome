@@ -8,15 +8,15 @@
         </div>
         <el-form :model="ruleForm" :rules="rules" ref="ruleForm">
           <!-- 值的类型按钮 -->
-          <el-row class="options">
+          <el-form-item class="options" prop="valueType">
             <el-col class="label"> Type of property values </el-col>
             <el-col class="content">
-              <el-radio-group v-model="valueType">
+              <el-radio-group v-model="ruleForm.valueType">
                 <el-radio-button label="original">Original</el-radio-button>
                 <el-radio-button label="standard">Standard</el-radio-button>
               </el-radio-group>
             </el-col>
-          </el-row>
+          </el-form-item>
           <!-- 染色体选择 -->
           <el-form-item class="options" prop="chromName">
             <el-col class="label">Choose chromosome</el-col>
@@ -66,29 +66,32 @@
             </el-col>
           </el-form-item>
           <!-- k 值选择 -->
-          <el-row class="options">
+          <el-form-item class="options" prop="knucleotide">
             <el-col class="label"><i>k</i>-nucleotide (<i>k</i>)</el-col>
             <el-col class="content">
-              <el-radio-group v-model="knucleotide" @change="getProperties">
+              <el-radio-group
+                v-model="ruleForm.knucleotide"
+                @change="changeProperties"
+              >
                 <el-radio :label="1">1</el-radio>
                 <el-radio :label="2">2</el-radio>
                 <el-radio :label="3">3</el-radio>
               </el-radio-group>
             </el-col>
-          </el-row>
+          </el-form-item>
           <!-- 理化特性选择 -->
           <el-form-item class="options" prop="selectedProperty">
             <el-col class="label">
-              <i>{{ knucleotide }}</i
+              <i>{{ ruleForm.knucleotide }}</i
               >-nucleotides physicochemical properties
             </el-col>
             <el-col class="content">
-              <el-button type="primary" @click="table = true" plain>
+              <el-button type="primary" @click="table = true">
                 show
               </el-button>
               <p style="font-size: 10px; color: gray; line-height: 1.5em">
                 <i>You select the physicochemical property: </i>
-                <b>{{ propertyID }}</b>
+                <b>{{ ruleForm.selectedProperty }}</b>
               </p>
               <el-drawer
                 title="K-nucleotides Physicochemical Properties"
@@ -97,20 +100,17 @@
                 :show-close="false"
                 size="35%"
                 :append-to-body="true"
-                @open="openDrawer"
               >
                 <el-table
                   :data="properties"
                   height="85%"
                   style="padding: 0 20px"
+                  empty-text="please select k-nucleotide(k=1,2,3) first"
                 >
                   <el-table-column type="index" width="45"></el-table-column>
                   <el-table-column width="45">
                     <template slot-scope="scope">
-                      <el-radio-group
-                        v-model="ruleForm.selectedProperty"
-                        @change="showProperty"
-                      >
+                      <el-radio-group v-model="ruleForm.selectedProperty">
                         <el-radio :label="scope.row.ID">
                           {{ blankLabel }}
                         </el-radio>
@@ -135,7 +135,8 @@
               style="font-size: 10px; color: red; line-height: 1em"
               @click="question"
             >
-              selectable interval: 0 - {{ chromLength - knucleotide + 1 }}
+              selectable interval: 0 -
+              {{ chromLength - ruleForm.knucleotide + 1 }}
               <i class="el-icon-question" style="color: gray"></i>
             </p>
             <div>
@@ -155,13 +156,20 @@
               </el-input>
             </div>
           </el-form-item>
+          <el-form-item>
+            <el-button type="success" @click="getCircos('ruleForm')">
+              Get circos
+            </el-button>
+          </el-form-item>
         </el-form>
       </el-aside>
       <el-container>
-        <el-header class="main-header">
+        <el-header style="height: 40px; font-size: 10px; font-weight: bold;">
           {{ mainLabel }}
         </el-header>
-        <el-main class="insert"> circos图片显示区 </el-main>
+        <el-main class="insert">
+          <img :src="circos" alt="circos" v-show="showCircos" />
+        </el-main>
       </el-container>
     </el-container>
   </div>
@@ -174,7 +182,7 @@ export default {
   name: "Circos",
   data() {
     let validatePosition = (rule, value, callback) => {
-      let length = this.chromLength - this.knucleotide + 1;
+      let length = this.chromLength - this.ruleForm.knucleotide + 1;
       if (
         value.startPosition === "" ||
         value.endPosition === "" ||
@@ -183,32 +191,54 @@ export default {
         value.endPosition < 0 ||
         value.endPosition > length
       ) {
-        return callback(
-          new Error("the positions must be between 0 and " + length)
-        );
+        callback(new Error("the positions must be between 0 and " + length));
       }
       if (value.startPosition >= value.endPosition) {
-        return callback(
-          new Error("the start position must be greater than the end one")
+        callback(
+          new Error("the end position must be greater than the start one")
         );
+      } else if (value.endPosition - value.startPosition > 200) {
+        callback(
+          // 这里将开始位置和结束位置之间的差值控制在了200
+          new Error(
+            "the difference value between start and end positions must be smaller than 200"
+          )
+        );
+      } else {
+        // 这句一定得有
+        callback();
       }
-      // 可能在后续还需要保证start和end之间的差值不超过一个数值。。。。。
     };
     return {
       // 减120是减去页眉和页脚的高度
       fullHeight: window.innerHeight - 120,
       mainLabel: "Human GRCH38/hg38",
-      valueType: "",
       ruleForm: {
+        valueType: "",
         chromName: "",
+        knucleotide: "k",
         selectedProperty: "",
         positions: { startPosition: "", endPosition: "" }
       },
       rules: {
+        valueType: [
+          {
+            required: true,
+            message: "Please select a kind of vlaue",
+            trigger: "change"
+          }
+        ],
         chromName: [
           {
             required: true,
             message: "Please select a chromosome",
+            trigger: "change"
+          }
+        ],
+        knucleotide: [
+          {
+            required: true,
+            message: "Please select k-nucleotide(k=1,2,3)",
             trigger: "change"
           }
         ],
@@ -295,28 +325,18 @@ export default {
         "chrXVI",
         "chrM"
       ],
-      knucleotide: 1,
       table: false, // 只有点击“show”按钮时, table值才变为true
       properties: [], // 需要在表格中显示的所有理化特性的ID和名称
       blankLabel: "",
       chromLength: 0,
-      propertyID: "" // 如果没有propertyID, 那么刷新的时候没有办法渲染到已选择的提示语部分
+      circos: require("../assets/loading.gif"),
+      showCircos: false
     };
   },
   created() {
     // 页面刷新之前将状态保存到sessionStorage
     window.addEventListener("beforeunload", () => {
-      // console.log(this.ruleForm.selectedProperty);
-      sessionStorage.setItem(
-        "circosState",
-        JSON.stringify({
-          valueType: this.valueType,
-          chromName: this.ruleForm.chromName,
-          knucleotide: this.knucleotide,
-          selectedProperty: this.ruleForm.selectedProperty,
-          positions: this.ruleForm.positions
-        })
-      );
+      sessionStorage.setItem("circosState", JSON.stringify(this.ruleForm));
     });
   },
   mounted() {
@@ -327,26 +347,11 @@ export default {
     let type = this.$route.params.type;
 
     if (sessionStorage.getItem("circosState")) {
-      this.valueType = JSON.parse(
-        sessionStorage.getItem("circosState")
-      ).valueType;
-      this.ruleForm.chromName = JSON.parse(
-        sessionStorage.getItem("circosState")
-      ).chromName;
-      this.knucleotide = JSON.parse(
-        sessionStorage.getItem("circosState")
-      ).knucleotide;
-      this.propertyID = JSON.parse(
-        sessionStorage.getItem("circosState")
-      ).selectedProperty;
-      // console.log(this.ruleForm.selectedProperty); // 控制不了抽屉中的元素，可能不是在这个阶段渲染的抽屉中的？
-      this.ruleForm.positions = JSON.parse(
-        sessionStorage.getItem("circosState")
-      ).positions;
+      this.ruleForm = JSON.parse(sessionStorage.getItem("circosState"));
     } else {
       this.ruleForm.chromName = this.$route.params.chromName;
-      this.valueType = this.$route.params.valueType;
-      this.knucleotide = 1;
+      this.ruleForm.valueType = this.$route.params.valueType;
+      this.ruleForm.knucleotide = "k";
     }
 
     if (type === "human") {
@@ -357,8 +362,7 @@ export default {
       this.mainLabel = "SacCer_Apr2011/sacCer3";
     }
     // 读取理化特性及其ID的json文件，传入参数为 k 值
-    this.getProperties(this.knucleotide);
-    // console.log(chromosomeSize);
+    this.getProperties(this.ruleForm.knucleotide);
     // 最初进入该页面时，按照从genomes页面传过来的染色体进行chromLength的设置
     this.chromLength = chromosomeSize[type][this.ruleForm.chromName];
   },
@@ -367,30 +371,25 @@ export default {
       this.fullHeight = window.innerHeight - 120;
     },
 
-    // 根据k值，改变properties的内容
-    getProperties(knucleotide) {
+    // 在没有进行页面刷新的时候，根据k值，改变properties的内容
+    changeProperties(knucleotide) {
+      // this.propertyID = "";
       this.ruleForm.selectedProperty = "";
-      let jsonFile = "monodna.json";
-      if (knucleotide === 2) jsonFile = "didna.json";
-      else if (knucleotide === 3) jsonFile = "tridna.json";
-      this.axios
-        .get("http://localhost:8080/properties/" + jsonFile)
-        .then(res => {
-          // console.log(res.data);
-          this.properties = res.data;
-        });
+      this.getProperties(knucleotide);
     },
-
-    showProperty() {
-      this.propertyID = this.ruleForm.selectedProperty;
-    },
-    // 抽屉打开时，将selectedProperty绑定到里面，在mounted中不能显示默认选中项
-    openDrawer() {
-      if (sessionStorage.getItem("circosState")) {
-        this.ruleForm.selectedProperty = JSON.parse(
-          sessionStorage.getItem("circosState")
-        ).selectedProperty;
-        this.propertyID = this.ruleForm.selectedProperty;
+    // 在刚进入页面以及刷新之后，获取理化特性列表
+    getProperties(knucleotide) {
+      // 有k值的时候再去获取json文件
+      if (knucleotide != "k") {
+        let jsonFile = "monodna.json";
+        if (knucleotide === 2) jsonFile = "didna.json";
+        else if (knucleotide === 3) jsonFile = "tridna.json";
+        this.axios
+          .get("http://localhost:8080/properties/" + jsonFile)
+          .then(res => {
+            // console.log(res.data);
+            this.properties = res.data;
+          });
       }
     },
 
@@ -412,6 +411,28 @@ export default {
           callback: () => {}
         }
       );
+    },
+
+    // 给后端传递生成circos需要的参数
+    getCircos(formName) {
+      let _this = this;
+      this.$refs[formName].validate(valid => {
+        if (valid) {
+          // 给后端传参数
+          console.log("submit");
+          _this.showCircos = true;
+          let genomes = { human: "hg38", mouse: "mm39", yeast: "saccer3" };
+          let genome = genomes[this.$route.params.type]; // 基因组类别
+          let formData = _this.ruleForm; //表单中的数据 如 值的类型，染色体名称，k值，选中的理化特性，位置参数
+          this.axios.post("/circos", { genome, formData }).then(response => {
+            _this.circos = response.data.data;
+            console.log(response.data.data);
+          });
+        } else {
+          console.log("ERROR: parameters are invalid!");
+          return false;
+        }
+      });
     }
   },
   //注销window.onresize事件
@@ -476,11 +497,13 @@ export default {
   padding: 0px;
 }
 
-.main-header {
+.el-header {
   width: 100%;
-  height: 50px;
-  line-height: 50px;
-  background: #bfc4c9;
+  line-height: 40px;
+  // background: #bfc4c9;
+  background: #a5c2a0;
+  color: #f5f5f5;
+  box-shadow: 2px 2px 2px 2px #a5c2a0;
 }
 
 .el-table {
