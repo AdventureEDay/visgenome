@@ -168,7 +168,18 @@
           {{ mainLabel }}
         </el-header>
         <el-main class="insert">
-          <img :src="circos" alt="circos" v-show="showCircos" />
+          <img
+            v-if="showLoading"
+            class="loadingImg"
+            src="../assets/loading.gif"
+            alt="circos image"
+          />
+          <img
+            :src="circos"
+            alt="circos image"
+            v-if="showCircos"
+            class="circosImg"
+          />
         </el-main>
       </el-container>
     </el-container>
@@ -329,7 +340,9 @@ export default {
       properties: [], // 需要在表格中显示的所有理化特性的ID和名称
       blankLabel: "",
       chromLength: 0,
-      circos: require("../assets/loading.gif"),
+      // circos: require("../assets/loading.gif"),
+      circos: "",
+      showLoading: false,
       showCircos: false
     };
   },
@@ -419,14 +432,17 @@ export default {
       this.$refs[formName].validate(valid => {
         if (valid) {
           // 给后端传参数
-          console.log("submit");
-          _this.showCircos = true;
+          // console.log("submit");
+          _this.showCircos = false; // 在图片获取之后，又再次点击circos按钮时，只显示loading
+          _this.showLoading = true; // 在点击获取circos按钮之后，先显示loading图
           let genomes = { human: "hg38", mouse: "mm39", yeast: "saccer3" };
           let genome = genomes[this.$route.params.type]; // 基因组类别
           let formData = _this.ruleForm; //表单中的数据 如 值的类型，染色体名称，k值，选中的理化特性，位置参数
           this.axios.post("/circos", { genome, formData }).then(response => {
             _this.circos = response.data.data;
-            console.log(response.data.data);
+            _this.showCircos = true; // 当后端circos图的url返回后，显示circos图
+            _this.showLoading = false; // 不显示loading图
+            // console.log(response.data.data);
           });
         } else {
           console.log("ERROR: parameters are invalid!");
@@ -516,5 +532,17 @@ export default {
 
 /deep/ .el-drawer__header {
   color: #a5c2a0;
+}
+
+.loadingImg {
+  width: 100px;
+  height: auto;
+  margin-top: calc(25% + 10px);
+}
+
+.circosImg {
+  width: 600px;
+  height: auto;
+  margin-top: 5%;
 }
 </style>
