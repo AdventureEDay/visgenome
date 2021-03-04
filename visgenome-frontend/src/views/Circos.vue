@@ -163,7 +163,7 @@
           </el-form-item>
         </el-form>
       </el-aside>
-      <el-container>
+      <el-container style="height: 100%">
         <el-header style="height: 40px; font-size: 10px; font-weight: bold;">
           {{ mainLabel }}
         </el-header>
@@ -459,9 +459,9 @@ export default {
 </script>
 
 <style scoped lang="less">
-.circos {
-  height: 100%;
-}
+// .circos {
+//  height: 100%;
+// }
 
 .insert {
   width: 100%;

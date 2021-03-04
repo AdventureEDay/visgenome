@@ -2,7 +2,7 @@ import Vue from "vue";
 import Vuex from "vuex";
 
 Vue.use(Vuex);
-
+// 项目中没有用到。。。。。。。
 const store = new Vuex.Store({
   state: {
     // Circos页面刷新需要保留状态的5的主要参数

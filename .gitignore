@@ -2,8 +2,9 @@
 **/node_modules
 visgenome-backend/public/files/assembly/*
 visgenome-backend/public/files/tracks/*
+visgenome-backend/public/files/values/*
 visgenome-frontend/dist
-
+visgenome-frontend/src/store
 # local env files
 .env.local
 .env.*.local
