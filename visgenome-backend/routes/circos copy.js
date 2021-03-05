@@ -24,26 +24,23 @@ router.post("/", function (req, res, next) {
     let property = formData.selectedProperty; // 选中的理化特性
     let positions = formData.positions; // 设定的染色体的起始位置和结束位置
     let karyotype = geneKaryotype(genome, chromName, positions, dir);
-    // 有异步操作, 接下来的步骤放到回调里完成
-    geneTrack(genome, chromName, valueType, knucleotide, property, positions, dir, ()=>{
-        let dataTrack = dir + "/data.line.txt";
-        // 改变命令中参数-param：核型文件 karyotype=，数据文件 plots/plot/file=
-        let param = "karyotype=" + karyotype + " " + "-param plots/plot/file=" + dataTrack;
-        // let param = "karyotype=" + karyotype;
-        let mycwd = path.join(__dirname, "../public/circos/circos-0.69-9/bin"); // circos可执行文件的目录
-        let command = "perl circos -conf " + path.join(__dirname, "../public/circos/conf/circos.conf") + " -param " + param + " -outputdir " + path.dirname(karyotype) + " -outputfile " + imgName + " -nopng";
-        console.log(command)
-    
-        if (runExecSync(command, mycwd) != "error") {
-            console.log("circos generated successfully");
-            let filename = "/circos/" + genome + "/" + timeNow + "/" + imgName;
-            res.json({
-                code: 200,
-                data: filename,
-                msg: "success"
-            });
-        }
-    });
+    let dataTrack = geneTrack(genome, chromName, valueType, knucleotide, property, positions, dir);
+    // 改变命令中参数-param：核型文件 karyotype=，数据文件 plots/plot/file=
+    let param = "karyotype=" + karyotype + " " + "-param plots/plot/file=" + dataTrack;
+    // let param = "karyotype=" + karyotype;
+    let mycwd = path.join(__dirname, "../public/circos/circos-0.69-9/bin"); // circos可执行文件的目录
+    let command = "perl circos -conf " + path.join(__dirname, "../public/circos/conf/circos.conf") + " -param " + param + " -outputdir " + path.dirname(karyotype) + " -outputfile " + imgName + " -nopng";
+    console.log(command)
+
+    if (runExecSync(command, mycwd) != "error") {
+        console.log("circos generated successfully");
+        let filename = "/circos/" + genome + "/" + timeNow + "/" + imgName;
+        res.json({
+            code: 200,
+            data: filename,
+            msg: "success"
+        });
+    }
 });
 
 // 生成核型文件的函数 文件名：karyotype.genome.txt，返回核型文件的存储路径
@@ -157,59 +154,57 @@ function readValues(buf, offset) {
 }
 
 // 读取二进制文件(每个数值占用4字节)的压缩文件
-function bin_gz(bin_file, data_file, positions, chromID, callback) {
-    fs.open(bin_file, "r", (err, fd) => {
-        if (err) {
-            if (err.code == "ENOENT") {
-                console.log("no such file")
-            } else {
-                console.log("file open failed")
-            }
-        } else {
-            fs.readFile(fd, (err, bytes) => {
-                if (err) {
-                    console.log("read file failed")
-                } else {
-                    zlib.gunzip(bytes, (err, bytes) => {
-                        if (err) {
-                            console.log(err)
-                            process.exitCode = 1;
-                        }
-                        let buf = Buffer.from(bytes.slice(positions.startPosition * 4, positions.endPosition * 4))
-                        let valueList = readValues(buf, 4)
-                        // valueList按照一定格式写入文件
-                        let data = ""
-                        for (let i = 0; i < valueList.length; i++) {
-                            let position = positions.startPosition + i;
-                            data = data + chromID + "\t" + position + "\t" + position + "\t" + valueList[i] + '\n';
-                        }
-                        fs.writeFileSync(data_file, data);
-                        if (typeof callback == "function")
-                            callback();
-                    })
-                }
-            })
-        }
-    })
-}
-
 // function bin_gz(bin_file, data_file, positions, chromID) {
-//     let fd = fs.openSync(bin_file, "r");
-//     let bytes = fs.readFileSync(fd);
-//     // zlib.gunzipSync(bytes);
-//     let buf = Buffer.from(zlib.gunzipSync(bytes).slice(positions.startPosition * 4, positions.endPosition * 4))
-//     let valueList = readValues(buf, 4)
-//     // valueList按照一定格式写入文件
-//     let data = ""
-//     for (let i = 0; i < valueList.length; i++) {
-//         let position = positions.startPosition + i;
-//         data = data + chromID + "\t" + position + "\t" + position + "\t" + valueList[i] + '\n';
-//     }
-//     fs.writeFileSync(data_file, data);
+//     fs.open(bin_file, "r", (err, fd) => {
+//         if (err) {
+//             if (err.code == "ENOENT") {
+//                 console.log("no such file")
+//             } else {
+//                 console.log("file open failed")
+//             }
+//         } else {
+//             fs.readFile(fd, (err, bytes) => {
+//                 if (err) {
+//                     console.log("read file failed")
+//                 } else {
+//                     zlib.gunzip(bytes, (err, bytes) => {
+//                         if (err) {
+//                             console.log(err)
+//                             process.exitCode = 1;
+//                         }
+//                         let buf = Buffer.from(bytes.slice(positions.startPosition * 4, positions.endPosition * 4))
+//                         let valueList = readValues(buf, 4)
+//                         // valueList按照一定格式写入文件
+//                         let data = ""
+//                         for (let i = 0; i < valueList.length; i++) {
+//                             let position = positions.startPosition + i;
+//                             data = data + chromID + "\t" + position + "\t" + position + "\t" + valueList[i] + '\n';
+//                         }
+//                         fs.writeFileSync(data_file, data);
+//                     })
+//                 }
+//             })
+//         }
+//     })
 // }
 
+function bin_gz(bin_file, data_file, positions, chromID) {
+    let fd = fs.openSync(bin_file, "r");
+    let bytes = fs.readFileSync(fd);
+    // zlib.gunzipSync(bytes);
+    let buf = Buffer.from(zlib.gunzipSync(bytes).slice(positions.startPosition * 4, positions.endPosition * 4))
+    let valueList = readValues(buf, 4)
+    // valueList按照一定格式写入文件
+    let data = ""
+    for (let i = 0; i < valueList.length; i++) {
+        let position = positions.startPosition + i;
+        data = data + chromID + "\t" + position + "\t" + position + "\t" + valueList[i] + '\n';
+    }
+    fs.writeFileSync(data_file, data);
+}
+
 // 用于生成数据文件，显示track，返回数据文件的存储路径
-function geneTrack(genome, chromName, valueType, knucleotide, property, positions, dir, callback) {
+function geneTrack(genome, chromName, valueType, knucleotide, property, positions, dir) {
     // 应该从二进制的理化特性值数据文件中提取 startPosition 到 endPosition 的值，并且按照circos数据文件的格式进行保存
     // 现在还需要这样的二进制理化特性数据文件，计划将wig文件去掉第一行，存储到二进制文件
     // 二进制文件存放位置：public/files/values/基因组类型(hg38/mm39/saccer3)/值的类型(original/standard)/文件夹(MonoDNAOri...)/文件名
@@ -233,12 +228,8 @@ function geneTrack(genome, chromName, valueType, knucleotide, property, position
 
     let bin_file = path.join(binDir, file_name);
     let data_file = dir + "/data.line.txt";
-    bin_gz(bin_file, data_file, positions, chromID, ()=>{
-        console.log("data file generated successfully")
-        if(typeof callback == "function"){
-            callback()
-        }
-    });
+    bin_gz(bin_file, data_file, positions, chromID);
+    return data_file;
 }
 
 // 同步执行circos命令行, 参数：command->命令, cwd->子进程(circos)的工作目录

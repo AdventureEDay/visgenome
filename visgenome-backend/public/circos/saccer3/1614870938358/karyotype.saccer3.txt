@@ -1,0 +1,1 @@
+chr - chrI chrI 0 200 chr1
