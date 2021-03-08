@@ -80,6 +80,7 @@ export default {
 <style scoped>
 .webtitle {
   width: 100%;
+  height: 60px;
 }
 
 .header {

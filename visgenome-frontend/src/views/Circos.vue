@@ -136,7 +136,8 @@
               @click="question"
             >
               selectable interval: 0 -
-              {{ chromLength - ruleForm.knucleotide + 1 }}
+              {{ chromLength - ruleForm.knucleotide + 1 - 1}}
+              <!-- 因为下表从0开始 -->
               <i class="el-icon-question" style="color: gray"></i>
             </p>
             <div>
@@ -198,17 +199,18 @@ export default {
         value.startPosition === "" ||
         value.endPosition === "" ||
         value.startPosition < 0 ||
-        value.startPosition > length ||
+        value.startPosition >= length ||
         value.endPosition < 0 ||
-        value.endPosition > length
+        value.endPosition >= length
       ) {
-        callback(new Error("the positions must be between 0 and " + length));
+        // 下标从0开始
+        callback(new Error("the positions must be between 0 and " + (length-1)));
       }
       if (value.startPosition >= value.endPosition) {
         callback(
           new Error("the end position must be greater than the start one")
         );
-      } else if (value.endPosition - value.startPosition > 200) {
+      } else if (value.endPosition - value.startPosition > 500) {
         callback(
           // 这里将开始位置和结束位置之间的差值控制在了200
           new Error(
