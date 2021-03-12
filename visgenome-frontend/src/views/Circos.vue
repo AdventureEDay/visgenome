@@ -136,7 +136,8 @@
               @click="question"
             >
               selectable interval: 0 -
-              {{ chromLength - ruleForm.knucleotide + 1 }}
+              {{ chromLength - ruleForm.knucleotide + 1 - 1}}
+              <!-- 因为下表从0开始 -->
               <i class="el-icon-question" style="color: gray"></i>
             </p>
             <div>
@@ -198,17 +199,18 @@ export default {
         value.startPosition === "" ||
         value.endPosition === "" ||
         value.startPosition < 0 ||
-        value.startPosition > length ||
+        value.startPosition >= length ||
         value.endPosition < 0 ||
-        value.endPosition > length
+        value.endPosition >= length
       ) {
-        callback(new Error("the positions must be between 0 and " + length));
+        // 下标从0开始
+        callback(new Error("the positions must be between 0 and " + (length-1)));
       }
       if (value.startPosition >= value.endPosition) {
         callback(
           new Error("the end position must be greater than the start one")
         );
-      } else if (value.endPosition - value.startPosition > 200) {
+      } else if (value.endPosition - value.startPosition > 500) {
         callback(
           // 这里将开始位置和结束位置之间的差值控制在了200， 共201个数值
           new Error(
@@ -416,7 +418,7 @@ export default {
       this.$alert(
         "You can set the start and end positions that are included in [0, " +
           _this.chromLength +
-          "-<i>k</i>+1]. Because when a biological sequence is divided into a serial of <i>k</i>-mers, it will be represented by <b><i>s-k+1</i></b> physicochemical property values, where <b><i>s</i></b> is the size of the chromosome.",
+          "-<i>k</i>+1). Because when a biological sequence is divided into a serial of <i>k</i>-mers, it will be represented by <b><i>s-k+1</i></b> physicochemical property values, where <b><i>s</i></b> is the size of the chromosome.",
         "tips",
         {
           confirmButtonText: "confirm",

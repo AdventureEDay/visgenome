@@ -8,8 +8,8 @@
 </template>
 
 <script>
-// import contact from "@/views/Contact.vue";
-// import tutorial from "@/views/Tutorial.vue";
+// import contact from "@/views/help/Contact.vue";
+// import tutorial from "@/views/help/Tutorial.vue";
 
 export default {
   name: "Help",
@@ -20,6 +20,15 @@ export default {
     // 组件懒加载
     comContact: () => import("@/views/help/Contact.vue"),
     comTutorial: () => import("@/views/help/Tutorial.vue")
+    // 组件通过import引入
+    // comContact: contact,
+    // comTutorial: tutorial
   }
 };
 </script>
+
+<style scoped>
+.help {
+  min-height: calc(100% - 120px);
+}
+</style>

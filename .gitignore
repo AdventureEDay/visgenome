@@ -3,6 +3,7 @@
 visgenome-backend/public/files/assembly/*
 visgenome-backend/public/files/tracks/*
 visgenome-backend/public/files/values/*
+visgenome-backend/public/files/downloads/*
 visgenome-frontend/dist
 visgenome-frontend/src/store
 # local env files

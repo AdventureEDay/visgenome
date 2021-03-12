@@ -21,24 +21,25 @@ export default {
 </script>
 
 <style>
-/* 加上这句之后，footer就不能在不满一页的时候固定在页面底端了 */
-/* html,
-body {
-  height: 100%;
-} */
-
+html,
+body,
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  /*多个字体，保持浏览器最大兼容*/
+  font-family: Verdana, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #1c1c1d;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
   /* 以下格式保证了占满整个屏幕---- */
-  position: absolute;
+  /* position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
-  left: 0;
+  left: 0; */
   /* ----------- */
 }
 
