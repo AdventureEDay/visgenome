@@ -418,7 +418,7 @@ export default {
       this.$alert(
         "You can set the start and end positions that are included in [0, " +
           _this.chromLength +
-          "-<i>k</i>+1]. Because when a biological sequence is divided into a serial of <i>k</i>-mers, it will be represented by <b><i>s-k+1</i></b> physicochemical property values, where <b><i>s</i></b> is the size of the chromosome.",
+          "-<i>k</i>+1). Because when a biological sequence is divided into a serial of <i>k</i>-mers, it will be represented by <b><i>s-k+1</i></b> physicochemical property values, where <b><i>s</i></b> is the size of the chromosome.",
         "tips",
         {
           confirmButtonText: "confirm",
