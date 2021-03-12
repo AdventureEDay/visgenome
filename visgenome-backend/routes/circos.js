@@ -175,7 +175,7 @@ function bin_gz(bin_file, data_file, positions, chromID, callback) {
                             console.log(err)
                             process.exitCode = 1;
                         }
-                        let buf = Buffer.from(bytes.slice(positions.startPosition * 4, positions.endPosition * 4))
+                        let buf = Buffer.from(bytes.slice(positions.startPosition * 4, (positions.endPosition + 1)* 4))
                         let valueList = readValues(buf, 4)
                         // valueList按照一定格式写入文件
                         let data = ""

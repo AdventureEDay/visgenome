@@ -210,7 +210,7 @@ export default {
         );
       } else if (value.endPosition - value.startPosition > 200) {
         callback(
-          // 这里将开始位置和结束位置之间的差值控制在了200
+          // 这里将开始位置和结束位置之间的差值控制在了200， 共201个数值
           new Error(
             "the difference value between start and end positions must be smaller than 200"
           )
