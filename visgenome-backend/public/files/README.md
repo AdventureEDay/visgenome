@@ -1,4 +1,4 @@
-# file文件夹中包含的文件详情
+# files文件夹中包含的文件详情
 
 ## values文件夹
 
@@ -19,3 +19,9 @@
 ## assembly文件夹
 
 分为 hg38 mm39 saccer3 三个文件夹，分别存放每个染色体的fa.gz fa.gz.fai fa.gz.gzi三类文件
+
+## downloads文件夹
+
+提供了在首页下载的三个压缩包
+***
+![downloads](./screenshot/downloads.png)

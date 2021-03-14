@@ -117,7 +117,7 @@ export default {
   name: "Home",
   data() {
     return {
-      minHeight: 0,
+      minHeight: 0
     };
   },
   mounted() {
@@ -127,7 +127,7 @@ export default {
     window.onresize = () => {
       _this.minHeight = document.documentElement.clientHeight - 120;
     };
-  },
+  }
 };
 </script>
 

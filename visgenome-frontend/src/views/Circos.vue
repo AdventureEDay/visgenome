@@ -136,8 +136,8 @@
               @click="question"
             >
               selectable interval: 0 -
-              {{ chromLength - ruleForm.knucleotide + 1 - 1}}
-              <!-- 因为下表从0开始 -->
+              {{ chromLength - ruleForm.knucleotide + 1 - 1 }}
+              <!-- 因为下标从0开始 -->
               <i class="el-icon-question" style="color: gray"></i>
             </p>
             <div>
@@ -204,7 +204,9 @@ export default {
         value.endPosition >= length
       ) {
         // 下标从0开始
-        callback(new Error("the positions must be between 0 and " + (length-1)));
+        callback(
+          new Error("the positions must be between 0 and " + (length - 1))
+        );
       }
       if (value.startPosition >= value.endPosition) {
         callback(
@@ -461,9 +463,9 @@ export default {
 </script>
 
 <style scoped lang="less">
-// .circos {
-//  height: 100%;
-// }
+.circos {
+  min-height: calc(100% - 120px);
+}
 
 .insert {
   width: 100%;
@@ -543,7 +545,7 @@ export default {
 }
 
 .circosImg {
-  width: 600px;
+  width: 800px;
   height: auto;
   margin-top: 5%;
 }

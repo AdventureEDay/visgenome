@@ -17,6 +17,6 @@ chr - mm16 16 0 98008968 chr16
 chr - mm17 17 0 95294699 chr17
 chr - mm18 18 0 90720763 chr18
 chr - mm19 19 0 61420004 chr19
-chr - mmX x 0 169476592 chrx
-chr - mmY y 0 91455967 chry
-chr - mmM m 0 16299 chrm
+chr - mmX X 0 169476592 chrx
+chr - mmY Y 0 91455967 chry
+chr - mmM M 0 16299 chrm

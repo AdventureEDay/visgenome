@@ -45,7 +45,7 @@
         >
       </el-menu-item> -->
       <span class="github">
-        <a href="https://github.com/wyzhang0401/KNIndex" target="_blank">
+        <a href="https://github.com/wyzhang0401/visgenome" target="_blank">
           <img
             src="../assets/github.png"
             style="height:30px; width: auto; margin-right: 10px; vertical-align: middle;"

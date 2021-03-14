@@ -37,8 +37,9 @@ router.post("/", function (req, res, next) {
      // 截取chromName中的号码
     let id = chromName.slice(3);
     let chromID = chromosome[genome] + id;
-    // let chromosomes = chromID + ":" + positions.startPosition + "-" + (positions.endPosition + 1)
-    let chromosomes = chromID + ":" + positions.startPosition + "-" + positions.endPosition
+    // 显示的染色体位置的过滤参数
+    let chromosomes = chromID + ":" + positions.startPosition + "-" + (positions.endPosition + 1) // 图中显示最后一个数
+    // let chromosomes = chromID + ":" + positions.startPosition + "-" + positions.endPosition // 图中不显示最后一个数
     // 有异步操作, 接下来的步骤放到回调里完成
     geneTrack(genome, chromName, valueType, knucleotide, property, positions, dir, ()=>{
         let dataTrack = dir + "/data.line.txt";
@@ -96,6 +97,7 @@ function bin_gz(bin_file, data_file, positions, chromID, callback) {
                             console.log(err)
                             process.exitCode = 1;
                         }
+                        // 将前端传过来的数的左右都包含在结果中，所以这里在endPosition上加1，使得endPosition的数包含在结果中。
                         let buf = Buffer.from(bytes.slice(positions.startPosition * 4, (positions.endPosition + 1)* 4))
                         let valueList = readValues(buf, 4)
                         // valueList按照一定格式写入文件
