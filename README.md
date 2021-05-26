@@ -1,5 +1,12 @@
+[TOC]
 # visgenome
-backup
 
-后端有些大的文件没有上传到github：如assembly tracks values
-可以提供一个下载链接，可以将所有的文件打包下载，（但是文件太大，不好打包下载）
+iVisGenome (https://ivisgene.pufengdu.org/) integrated JBrowse (https://jbrowse.org/jb2/) and Circos (http://circos.ca/) to visualize whole-genome sequences (e.g. Human GRCH38/hg38, Mouse GRCm39/mm39 and SacCer_Apr2011/sacCer3). 
+
+## Introduction
+
+## Development
+
+## Production
+
+## Description of the data files in the project
