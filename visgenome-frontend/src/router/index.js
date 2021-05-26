@@ -19,6 +19,11 @@ const routes = [
     // component: Genomes
   },
   {
+    path: "/download",
+    name: "Download",
+    component: () => import("../views/Download.vue")
+  },
+  {
     path: "/help/:type",
     name: "Help",
     component: () => import("../views/Help.vue")

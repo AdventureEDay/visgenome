@@ -5,21 +5,9 @@
     <!-- <el-button @click="tiao()">linear</el-button> -->
     <el-container>
       <el-aside>
-        <div style="height: 50px; margin: 10px 0 10px;">
+        <div style="height: 50px; margin: 10px 0 10px">
           <img style="height: 50px; width: auto" src="../assets/para.png" />
         </div>
-        <el-row class="options">
-          <el-col class="label">
-            Type of property values
-          </el-col>
-          <el-col class="content">
-            <!-- passV 用于给iframe传递参数：值的类型 -->
-            <el-radio-group v-model="valueType" @change="passV">
-              <el-radio-button label="original">Original</el-radio-button>
-              <el-radio-button label="standard">Standard</el-radio-button>
-            </el-radio-group>
-          </el-col>
-        </el-row>
         <el-row class="options">
           <el-col class="label">Choose chromosome</el-col>
           <el-col class="content">
@@ -69,9 +57,17 @@
           </el-col>
         </el-row>
         <el-row class="options">
-          <el-col class="label">
-            Visualize by Circos
+          <el-col class="label"> Type of property values </el-col>
+          <el-col class="content">
+            <!-- passV 用于给iframe传递参数：值的类型 -->
+            <el-radio-group v-model="valueType" @change="passV">
+              <el-radio-button label="original">Original</el-radio-button>
+              <el-radio-button label="standard">Standard</el-radio-button>
+            </el-radio-group>
           </el-col>
+        </el-row>
+        <el-row class="options">
+          <el-col class="label"> Visualize by Circos </el-col>
           <el-col class="content">
             <el-button type="warning" circle @click="visCircos">
               <img
@@ -83,27 +79,63 @@
         </el-row>
       </el-aside>
       <el-container>
-        <div class="insert">
+        <el-header style="padding: 30px 20px 0 10px">
+          <el-col :span="6">Note about the colors of nucleotide: </el-col>
+          <el-col :span="1"
+            ><div style="width: 25px; height: 20px; background-color: #00bf00">
+              A
+            </div></el-col
+          >
+          <el-col :span="1"
+            ><div style="width: 25px; height: 20px; background-color: #4747ff">
+              C
+            </div></el-col
+          >
+          <el-col :span="1"
+            ><div style="width: 25px; height: 20px; background-color: #ffa500">
+              G
+            </div></el-col
+          >
+          <el-col :span="1"
+            ><div style="width: 25px; height: 20px; background-color: #ff0000">
+              T
+            </div></el-col
+          >
+        </el-header>
+        <el-divider content-position="left"
+          ><span style="color: #a5c2a0">Notes</span></el-divider
+        >
+        <el-main
+          class="insert"
+          v-loading="loading"
+          element-loading-text="loading..."
+          element-loading-spinner="el-icon-loading"
+          element-loading-background="rgba(0, 0, 0, 0.5)"
+        >
           <!-- <h1>{{ valueType }}</h1> -->
           <iframe
             ref="params"
+            id="gene-iframe"
             src="/linear/hg38/index.html"
             frameborder="0"
             v-if="$route.params.type === 'human'"
           ></iframe>
           <iframe
             ref="params"
+            id="gene-iframe"
             src="/linear/mm39/index.html"
             frameborder="0"
             v-else-if="$route.params.type === 'mouse'"
           ></iframe>
           <iframe
             ref="params"
+            id="gene-iframe"
             src="/linear/saccer3/index.html"
             frameborder="0"
             v-else-if="$route.params.type === 'yeast'"
           ></iframe>
-        </div>
+          <!-- <img src="../assets/l"/> -->
+        </el-main>
       </el-container>
     </el-container>
   </div>
@@ -114,6 +146,7 @@ export default {
   name: "Genomes",
   data() {
     return {
+      loading: true,
       // 减160是减去页眉和页脚的高度
       fullHeight: window.innerHeight - 120,
       valueType: "original",
@@ -144,7 +177,7 @@ export default {
         "chr22",
         "chrX",
         "chrY",
-        "chrM"
+        "chrM",
       ],
       // chromMou: "chr1",
       optionsMou: [
@@ -169,7 +202,7 @@ export default {
         "chr19",
         "chrX",
         "chrY",
-        "chrM"
+        "chrM",
       ],
       // chromYea: "chrI",
       optionsYea: [
@@ -189,8 +222,8 @@ export default {
         "chrXIV",
         "chrXV",
         "chrXVI",
-        "chrM"
-      ]
+        "chrM",
+      ],
     };
   },
   mounted() {
@@ -208,6 +241,20 @@ export default {
     } else if (this.$route.params.type === "yeast") {
       this.chromName = "chrI";
     }
+
+    const iframe = this.$refs["params"];
+    // console.log(iframe);
+    // 兼容IE浏览器
+    // 在整个生命周期只要发生了load事件，就会监听到
+    if (iframe.attachEvent) {
+      iframe.attachEvent("onload", () => {
+        _this.changeStatus();
+      });
+    } else {
+      iframe.onload = function () {
+        _this.changeStatus();
+      };
+    }
   },
   watch: {
     // fullHeight(val) {
@@ -224,7 +271,7 @@ export default {
     // 监听路由变化，每次进入页面都是original
     $route: {
       // eslint-disable-next-line no-unused-vars
-      handler: function(val, oldVal) {
+      handler: function (val, oldVal) {
         this.valueType = "original";
         if (val.params.type === "human") {
           this.chromName = "chr1";
@@ -233,16 +280,32 @@ export default {
         } else if (val.params.type === "yeast") {
           this.chromName = "chrI";
         }
+        // 监听到路由发生变化，再重新设置为加载状态
+        this.loading = true;
       },
       // 深度观察监听
-      deep: true
-    }
+      deep: true,
+    },
   },
   methods: {
-    // tiao() {
-    //   // window.open();
-    //   window.location.href = "/linear/index.html";
-    // }
+    changeStatus() {
+      // 停止加载框的显示
+      this.loading = false;
+      // 获取iframe的DOM结构
+      // let dom = this.getIFrameDom("gene-iframe");
+      // let svgs = dom.getElementsByTagName("svg");
+      // let svg = svgs[svgs.length-1];
+      // console.log(svg.style);
+    },
+
+    // 获取iframe的DOM结构
+    getIFrameDom(id) {
+      return (
+        document.getElementById(id).contentWindow.document ||
+        document.frames[id].document
+      );
+    },
+
     get_browseHeight() {
       this.fullHeight = window.innerHeight - 120;
     },
@@ -251,7 +314,7 @@ export default {
       this.iframe = this.$refs["params"].contentWindow;
       this.iframe.postMessage(
         {
-          data: val
+          data: val,
         },
         "*"
       );
@@ -283,15 +346,15 @@ export default {
         params: {
           type: type,
           valueType: valueType,
-          chromName: chromName
-        }
+          chromName: chromName,
+        },
       });
-    }
+    },
   },
   //注销window.onresize事件
   destroyed() {
     window.onresize = null;
-  }
+  },
 };
 </script>
 
@@ -321,15 +384,10 @@ export default {
 }
 
 .el-aside {
-  width: 30% !important;
-  // background-color: #fafaf5;
-  // color: #333;
+  width: 23% !important;
   color: #a5c2a0;
   line-height: 40px;
   border-right: solid 2px #a5c2a0;
-  // text-align: left;
-  // padding-left: 15px;
-  // padding-top: 20px;
 }
 
 .el-main {

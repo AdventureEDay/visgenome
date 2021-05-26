@@ -1,5 +1,3 @@
-var express = require('express');
-var router = express.Router();
 const path = require('path');
 const fs = require('fs');
 const zlib = require('zlib');
@@ -7,22 +5,22 @@ const monodna = require('../public/properties/monodna');
 const didna = require('../public/properties/didna');
 const tridna = require('../public/properties/tridna');
 
-// 前端传参数过来
-router.post("/", function (req, res, next) {
+function main() {
     let timeNow = Date.now();
-    let imgName = timeNow + ".png"; // 在这里使用circos生成图片，图片名称使用Date.now()时间命名
-    let genome = req.body.genome; // genome表示的是哪一种基因组 hg38 mm39 saccer3
+    let imgName = timeNow + ".svg"; // 在这里使用circos生成图片，图片名称使用Date.now()时间命名
+    let genome = "hg38"; // genome表示的是哪一种基因组 hg38 mm39 saccer3
     // 在genome对应的文件夹下创建一个以时间命名的文件夹, 核型文件，数据文件以及生成的图像都保存在这个文件夹下
     let dir = path.join(__dirname, "../public/circos/", genome) + "/" + timeNow;
-    fs.mkdirSync(dir); // 同步创建文件夹
-    let formData = req.body.formData; // 接收前端传过来的参数, valueType, chromName, knucleotide, selectedProperty, positions: { startPosition: , endPosition: }, resolution
-    let chromName = formData.chromName; // 染色体名称
-    let valueType = formData.valueType; // 值的类型：original或者standard
-    let knucleotide = formData.knucleotide; // 表示k-nucleotide的 k 值
-    let property = formData.selectedProperty; // 选中的理化特性
-    let positions = formData.positions; // 设定的染色体的起始位置和结束位置
-    // console.log(positions);
-    let resolution = parseInt(formData.resolution); // 先假设从前端传过来的分辨率参数为1000
+    fs.mkdirSync(dir, err => {
+        if (err) throw err;
+    });
+    // let formData = req.body.formData; // 接收前端传过来的参数, valueType, chromName, knucleotide, selectedProperty, positions: { startPosition: , endPosition: }, resolution
+    let chromName = "chr1"; // 染色体名称 以chr1为例
+    let valueType = "original"; // 值的类型：original或者standard
+    let knucleotide = 2; // 表示k-nucleotide的 k 值 以2为例
+    let property = "DD0001"; // 选中的理化特性
+    let positions = {startPosition: 0, endPosition: 40000000}; // 设定的染色体的起始位置和结束位置
+    let resolution = 1000000; // 先假设从前端传过来的分辨率参数为1000
     let karyotype = {                   // 确定核型文件
         "hg38": "karyotype.human.hg38.txt",
         "mm39": "mkaryotype.mouse.mm39.txt",
@@ -38,41 +36,29 @@ router.post("/", function (req, res, next) {
     let id = chromName.slice(3);
     let chromID = chromosome[genome] + id;
     // 显示的染色体位置的过滤参数
-    let chromosomes = chromID + ":" + Math.floor(positions.startPosition / resolution) + "-" + Math.floor(positions.endPosition / resolution)
+    let chromosomes = chromID + ":" + Math.floor(positions.startPosition / resolution) + "-" + Math.floor(positions.endPosition / resolution) 
     // let chromosomes = chromID + ":" + positions.startPosition + "-" + positions.endPosition // 图中不显示最后一个数
     // 有异步操作, 接下来的步骤放到回调里完成
-    geneTrack(genome, chromName, valueType, knucleotide, property, positions, dir, resolution, (err)=>{
-        if(err){
-            res.json({
-                data: "failed to create circular image, please check your parameters",
-                msg: err
-            })
-        }else{
-            let dataTrack = dir + "/data.line.txt";
-            // 改变命令中参数-param：核型文件 karyotype=，数据文件 plots/plot/file=
-            // let param = "karyotype=" + path.join(__dirname, "../public/circos/conf/") + karyotype[genome] + " " + "-param chromosomes=" + chromosomes + " " + "-param plots/plot/file=" + dataTrack;
-            let param = "karyotype=" + path.join(__dirname, "../public/circos/conf/") + karyotype[genome] + " " + "-param chromosomes_units=" + resolution + " " + "-param chromosomes=" + chromosomes + " " + "-param plots/plot/file=" + dataTrack;
-            // let param = "karyotype=" + karyotype;
-            let mycwd = path.join(__dirname, "../public/circos/circos-0.69-9/bin"); // circos可执行文件的目录
-            let command = "perl circos -conf " + path.join(__dirname, "../public/circos/conf/circos.conf") + " -param " + param + " -outputdir " + dir + " -outputfile " + imgName + " -nosvg";
-            console.log(command)
-            
-            if (runExecSync(command, mycwd) != "error") {
-                console.log("circos generated successfully");
-                let filename = "/circos/" + genome + "/" + timeNow + "/" + imgName;
-                res.json({
-                    code: 200,
-                    data: filename,
-                    msg: "success"
-                });
-            }else{
-                res.json({
-                    data: "failed to create circular image, please check your parameters"
-                })
-            }
+    geneTrack(genome, chromName, valueType, knucleotide, property, positions, dir, resolution, (start,end)=>{
+        console.log("文件生成用时 " + (end-start) + " 毫秒");
+        let dataTrack = dir + "/data.line.txt";
+        // 改变命令中参数-param：核型文件 karyotype=，数据文件 plots/plot/file=
+        let param = "karyotype=" + path.join(__dirname, "../public/circos/conf/") + karyotype[genome] + " " + "-param chromosomes_units=" + resolution + " " + "-param chromosomes=" + chromosomes + " " + "-param plots/plot/file=" + dataTrack;
+        // let param = "karyotype=" + karyotype;
+        let mycwd = path.join(__dirname, "../public/circos/circos-0.69-9/bin"); // circos可执行文件的目录
+        let command = "perl circos -conf " + path.join(__dirname, "../public/circos/conf/circos.conf") + " -param " + param + " -outputdir " + dir + " -outputfile " + imgName + " -nopng";
+        console.log(command)
+    
+        if (runExecSync(command, mycwd) != "error") {
+            console.log("circos generated successfully");
+            // let filename = "/circos/" + genome + "/" + timeNow + "/" + imgName;
+            // console.log(filename);
+            let all = Date.now();
+            console.log("执行circos命令用时 " + (all-end) + " 毫秒");
+            console.log("总用时 " + (all-start) + " 毫秒");
         }
     });
-});
+}
 
 
 // 这个函数用于对在二进制文件中读取到的浮点数进行精度转换, 返回转换后的值
@@ -111,8 +97,6 @@ function bin_gz(bin_file, data_file, positions, chromID, resolution, callback) {
             } else {
                 console.log("file open failed")
             }
-            if (typeof callback == "function")
-                callback(err);
         } else {
             fs.readFile(fd, (err, bytes) => {
                 if (err) {
@@ -123,19 +107,24 @@ function bin_gz(bin_file, data_file, positions, chromID, resolution, callback) {
                             console.log(err)
                             process.exitCode = 1;
                         }
-                        // 将前端传过来的数的左闭右开
+                        // 将前端传过来的数的左右都包含在结果中，所以这里在endPosition上加1，使得endPosition的数包含在结果中。
+                        // let buf = Buffer.from(bytes.slice(positions.startPosition * 4, (positions.endPosition + 1)* 4))
+                        // 统一为左闭右开区间
                         let buf = Buffer.from(bytes.slice(positions.startPosition * 4, positions.endPosition * 4))
                         let valueList = readValues(buf, 4)
                         // valueList按照一定格式写入文件
-                        let data = ""
-                        for (let i = 0; i < valueList.length; i+=resolution) {
-                            let valueTmp = average(valueList.slice(i, i+resolution));
+                        let data = "";
+                        let unit = resolution;
+                        console.log(valueList.length);
+                        for (let i = 0; i < valueList.length; i+=unit) {
+                            let valueTmp = average(valueList.slice(i, i+unit));
                             let position = positions.startPosition + i;
+                            // 最后不满resolution个数，也把区间设置为resolution的数了
                             data = data + chromID + "\t" + position + "\t" + (position + resolution - 1) + "\t" + valueTmp + '\n';
                         }
                         fs.writeFileSync(data_file, data);
                         if (typeof callback == "function")
-                            callback();
+                            callback(Date.now());
                     })
                 }
             })
@@ -160,6 +149,7 @@ function bin_gz(bin_file, data_file, positions, chromID, resolution, callback) {
 
 // 用于生成数据文件，显示track，返回数据文件的存储路径
 function geneTrack(genome, chromName, valueType, knucleotide, property, positions, dir, resolution, callback) {
+    let startTime = Date.now();
     // 应该从二进制的理化特性值数据文件中提取 startPosition 到 endPosition 的值，并且按照circos数据文件的格式进行保存
     // 现在还需要这样的二进制理化特性数据文件，计划将wig文件去掉第一行，存储到二进制文件
     // 二进制文件存放位置：public/files/values/基因组类型(hg38/mm39/saccer3)/值的类型(original/standard)/文件夹(MonoDNAOri...)/文件名
@@ -183,12 +173,13 @@ function geneTrack(genome, chromName, valueType, knucleotide, property, position
 
     let bin_file = path.join(binDir, file_name);
     let data_file = dir + "/data.line.txt";
-    bin_gz(bin_file, data_file, positions, chromID, resolution, (err)=>{
+    bin_gz(bin_file, data_file, positions, chromID, resolution, (endTime)=>{
         console.log("data file generated successfully")
         if(typeof callback == "function"){
-            callback(err)
+            callback(startTime, endTime)
         }
     });
+    // console.log("总时间" + (endTime-startTime));
 }
 
 // 同步执行circos命令行, 参数：command->命令, cwd->子进程(circos)的工作目录
@@ -199,10 +190,10 @@ function runExecSync(command, mycwd) {
             cwd: mycwd
         });
     } catch (err) {
-        console.log("Run " + err);
+        alert("Run " + err);
         // 如果发生错误，返回“error”字符串给主进程
         return "error";
     }
 }
 
-module.exports = router;
+main();

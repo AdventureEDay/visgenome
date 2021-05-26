@@ -1,5 +1,9 @@
 <template>
   <div class="home">
+    <el-row class="visgenome">
+      <img alt="home logo" src="../assets/home.png" />
+      Welcome to iVisgenome
+    </el-row>
     <!-- :style="{minHeight: minHeight + 'px'}" -->
     <el-row class="item">
       <div class="title">
@@ -8,99 +12,58 @@
       </div>
       <div class="intro">
         <p>
-          <b>Visgenome(name of the webserver)</b> can be used to visualize the
-          whole-genome (e.g. <b>Human, Mouse, and Yeast</b>) sequences
-          represented by physicochemical property values. We integrate
-          <a href="https://www.jbrowse.org/jb2/" target="_blank">JBrowse 2</a>
-          for visualizing the whole genome sequence by linear view, and
+          <b>iVisgenome</b> can be used to visualize the whole-genome (e.g.
+          <b>Human, Mouse, and Yeast</b>) sequences represented by
+          physicochemical property values. We integrate
           <a href="http://circos.ca/" target="_blank">Circos</a> by circular
-          ideogram layout.
-        </p>
-        <el-row type="flex" justify="space-around">
-          <el-col :span="6">
-            <img
-              alt="example"
-              src="../assets/home/ex02.svg"
-              style="width: 100%; height: auto"
-            />
-          </el-col>
-          <el-col :span="6">
-            <img
-              alt="example"
-              src="../assets/home/ex03.svg"
-              style="width: 100%; height: auto"
-            />
-          </el-col>
-          <el-col :span="6">
-            <img
-              alt="example"
-              src="../assets/home/ex04.svg"
-              style="width: 100%; height: auto"
-            />
-          </el-col>
-        </el-row>
-        <el-divider>
-          <i style="color: blue" class="el-icon-orange"></i>
-        </el-divider>
-      </div>
-    </el-row>
-    <el-row>
-      <div class="title">
-        <img alt="genome logo" src="../assets/download.png" />
-        Download
-      </div>
-      <div class="intro">
-        <p>
-          We downloaded genome sequence data by chromosome from
-          <a
-            href="http://hgdownload.soe.ucsc.edu/downloads.html"
-            target="_blank"
-            >UCSC</a
-          >
-          and transformed the files into bgzip-compressed indexed FASTA (e.g.
-          <span style="color: grey; font-style: italic"
-            >.fa.gz, .fa.gz.fai, .fa.gz.gzi</span
-          >
-          files).
-        </p>
-        <p class="download">
-          <a href="/files/downloads/Human-hg38.zip" download="">Human</a>
-        </p>
-        <p class="download">
-          <a href="/files/downloads/Mouse-mm39.zip" download="">Mouse</a>
-        </p>
-        <p class="download">
-          <a href="/files/downloads/Yeast-saccer3.zip" download=""
-            >Yeast (S. cerevisiae)</a
-          >
-        </p>
-        <p>
-          If you want to get the physicochemical property values used in this
-          web, you can download the value files from
-          <a href="https://knindex.pufengdu.org/download" target="_blank"
-            >KNindex</a
-          >.
-        </p>
-        <el-divider>
-          <i style="color: blue" class="el-icon-orange"></i>
-        </el-divider>
-      </div>
-    </el-row>
-    <el-row>
-      <div class="title">
-        <img alt="genome logo" src="../assets/example.png" />
-        Example
-      </div>
-      <div class="intro" style="text-align: center">
-        <p style="text-align: left">
-          The following image is an example of embedded Jbrowse 2 for
+          ideogram layout , and
+          <a href="https://www.jbrowse.org/jb2/" target="_blank">JBrowse 2</a>
+          for visualizing the whole genome sequence by linear view. The following images are examples of embedded Circos and Jbrowse 2 for
           visualizing our biological sequence values.
         </p>
-        <img
-          alt="example"
-          src="../assets/home/ex01.png"
-          style="width: 80%; height: auto"
-        />
+        <el-row type="flex" justify="space-between" class="circosImg">
+          <el-col :span="11">
+            <el-row class="imageTitle">Examples for Circos</el-row>
+            <el-row>
+              <el-col class="item" :span="12">
+                <img
+                  alt="example"
+                  src="../assets/home/ex02.png"
+                  style="width: 100%; height: auto"
+                />
+              </el-col>
+              <el-col class="item" :span="12">
+                <img
+                  alt="example"
+                  src="../assets/home/ex03.png"
+                  style="width: 100%; height: auto"
+                />
+              </el-col>
+            </el-row>
+            <el-row type="flex" justify="space-around">
+              <el-col class="item" :span="12">
+                <img
+                  alt="example"
+                  src="../assets/home/ex04.png"
+                  style="width: 100%; height: auto;"
+                />
+              </el-col>
+            </el-row>
+          </el-col>
+          <el-col :span="11">
+            <el-row class="imageTitle">
+              Examples for JBrowse
+            </el-row>
+            <el-row type="flex" justify="space-around" style="margin-top: 10%">
+              <img
+                class="item"
+                alt="example"
+                src="../assets/home/ex01.png"
+                style="width: 100%; height: auto"
+              />
+            </el-row>
+          </el-col>
+        </el-row>
         <el-divider>
           <i style="color: blue" class="el-icon-orange"></i>
         </el-divider>
@@ -117,17 +80,17 @@ export default {
   name: "Home",
   data() {
     return {
-      minHeight: 0
+      minHeight: 0,
     };
   },
   mounted() {
     this.minHeight = document.documentElement.clientHeight - 120;
-    console.log(document.documentElement.clientHeight);
+    // console.log(document.documentElement.clientHeight);
     let _this = this;
     window.onresize = () => {
       _this.minHeight = document.documentElement.clientHeight - 120;
     };
-  }
+  },
 };
 </script>
 
@@ -135,6 +98,19 @@ export default {
 .home {
   min-height: calc(100% - 120px);
   text-align: left;
+}
+
+.visgenome {
+  height: 80px;
+  line-height: 80px;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.visgenome img {
+  width: 45px;
+  height: auto;
+  vertical-align: middle;
 }
 
 .title {
@@ -168,5 +144,28 @@ a {
   font-style: italic;
   font-weight: bolder;
   color: #a5c2a0;
+}
+
+.imageTitle {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  background-color: #deeedc;
+  border-radius: 10px;
+}
+
+/* 以下设置：图片在划过的时候放大 */
+/* .circosImg {
+  overflow: hidden;
+} */
+.circosImg .item {
+  position: relative;
+  transition: transform 1s;
+}
+
+.circosImg .item:hover{
+  transform: scale(1.5);
+  z-index: 1;
 }
 </style>

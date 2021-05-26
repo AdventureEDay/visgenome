@@ -1,11 +1,19 @@
 .DS_Store
 **/node_modules
-visgenome-backend/public/files/assembly/*
-visgenome-backend/public/files/tracks/*
-visgenome-backend/public/files/values/*
+visgenome-backend/public/files/assembly/hg38/*
+visgenome-backend/public/files/assembly/mm39/*
+visgenome-backend/public/files/assembly/saccer3/*
+visgenome-backend/public/files/tracks/hg38/*
+visgenome-backend/public/files/tracks/mm39/*
+visgenome-backend/public/files/tracks/saccer3/*
+visgenome-backend/public/files/values/hg38/*
+visgenome-backend/public/files/values/mm39/*
+visgenome-backend/public/files/values/saccer3/*
+visgenome-backend/public/circos/hg38/*
+visgenome-backend/public/circos/mm39/*
+visgenome-backend/public/circos/saccer3/*
 visgenome-backend/public/files/downloads/*
 visgenome-frontend/dist
-visgenome-frontend/src/store
 # local env files
 .env.local
 .env.*.local

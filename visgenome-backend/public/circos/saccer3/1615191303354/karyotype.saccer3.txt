@@ -1,1 +1,0 @@
-chr - chrI chrI 50000 50500 chr1

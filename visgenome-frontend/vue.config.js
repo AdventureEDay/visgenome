@@ -3,7 +3,7 @@ const debug = process.env.NODE_ENV !== "production";
 
 module.exports = {
   publicPath: "/", // 基本路径 根路径 应用需要部署在服务器根路径 如https://www.my-app.com/访问，而不能https://www.my-app.com/my-app/访问
-  outputDir: "dist", // 输出文件目录
+  // outputDir: "dist", // 输出文件目录
   assetsDir: "assets", // 静态资源目录 (js, css, img, fonts)的（相对于outputDir的）目录
   // eslint-loader 是否在保存的时候检查
   lintOnSave: true,

@@ -11,6 +11,9 @@
       active-text-color="#a5c2a0"
       router
     >
+      <el-menu-item index="/">
+        <img src="../assets/titlebar.png" alt="iVisgenome" style="height: 80%; width: auto;"/>
+      </el-menu-item>
       <el-menu-item index="/" class="home">
         <i class="el-icon-s-home"></i>
         Home
@@ -18,7 +21,7 @@
       <el-submenu index="2">
         <template slot="title">
           <i class="el-icon-document"></i>
-          Genomes
+          Tracks
         </template>
         <!-- <el-menu-item index="2-1"
           ><router-link :to="{ name: 'Genomes', params: { type: 'human' } }"
@@ -33,6 +36,21 @@
       </el-submenu>
       <el-submenu index="3">
         <template slot="title">
+          <i class="el-icon-orange"></i>
+          Circos
+        </template>
+        <el-menu-item index="/vis_circos/human">Human GRCH38/hg38</el-menu-item>
+        <el-menu-item index="/vis_circos/mouse">Mouse GRCm39/mm39</el-menu-item>
+        <el-menu-item index="/vis_circos/yeast"
+          >SacCer_Apr2011/sacCer3</el-menu-item
+        >
+      </el-submenu>
+      <el-menu-item index="/download" class="download">
+        <i class="el-icon-download"></i>
+        Download
+      </el-menu-item>
+      <el-submenu index="4">
+        <template slot="title">
           <i class="el-icon-question"></i>
           Help
         </template>
@@ -44,14 +62,14 @@
           >GitHub</a
         >
       </el-menu-item> -->
-      <span class="github">
+      <!-- <span class="github">
         <a href="https://github.com/wyzhang0401/visgenome" target="_blank">
           <img
             src="../assets/github.png"
             style="height:30px; width: auto; margin-right: 10px; vertical-align: middle;"
           />GitHub</a
         >
-      </span>
+      </span> -->
     </el-menu>
   </div>
 </template>
@@ -89,7 +107,7 @@ export default {
   padding-left: 50px;
 }
 
-.home {
+.home, .download {
   font-size: 16px;
   font-weight: bold;
 }
@@ -102,21 +120,23 @@ export default {
   font-size: 15px;
 }
 
-.github {
+.el-menu-item:first-child {
+  border: none;
+}
+/* .github {
   float: right;
   margin-right: 50px;
-  /* margin: 0 auto; */
   height: 60px;
   line-height: 60px;
-}
+} */
 
-.github a {
+/* .github a {
   color: rgb(255, 255, 255);
   font-size: 18px;
   font-weight: bold;
-  /* font-style: italic; */
-}
-a:hover {
+} */
+
+/* a:hover {
   color: #a5c2a0;
-}
+} */
 </style>

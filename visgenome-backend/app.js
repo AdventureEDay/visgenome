@@ -22,9 +22,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-//  当前端路由模式为history时防止空白页
+//  当前端路由模式为history时防止空白页 必须放在static的前面！！！！！！！否则不起作用
 app.use(history());
+app.use(express.static(path.join(__dirname, 'public')));
 
 // 解决跨域问题
 app.all("*", function(req, res, next) {
