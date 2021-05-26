@@ -31,8 +31,10 @@ There are 3 compressed assembly files for users to download. You can download th
 The directory stores some screenshots of the directory structure.
 
 Every original (or ori) folder includes 3 subfolders, the directory structure is shown in the image bellow.
+
 ![original](./screenshot/original.png)
 
 Every standard (or sta) folder includes 3 subfolders, the directory structure is shown in the image bellow.
+
 ![standard](./screenshot/standard.png)
 ***
