@@ -34,7 +34,7 @@ export default {
     return {
       activeName: ""
     };
-  },
+  }
 };
 </script>
 
@@ -48,6 +48,7 @@ export default {
   line-height: 80px;
   font-size: 1.5em;
   text-align: center;
+  background: #f5f5dc;
 }
 
 .title img {

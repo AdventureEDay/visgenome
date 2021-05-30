@@ -79,32 +79,26 @@
 export default {
   name: "Home",
   data() {
-    return {
-      minHeight: 0,
-    };
-  },
-  mounted() {
-    this.minHeight = document.documentElement.clientHeight - 120;
-    // console.log(document.documentElement.clientHeight);
-    let _this = this;
-    window.onresize = () => {
-      _this.minHeight = document.documentElement.clientHeight - 120;
-    };
-  },
+    return {};
+  }
 };
 </script>
 
 <style scoped>
 .home {
+  width: 100%;
   min-height: calc(100% - 120px);
   text-align: left;
 }
 
 .visgenome {
+  width: 100%;
   height: 80px;
   line-height: 80px;
   text-align: center;
   font-size: 1.5em;
+  /* border-bottom: 5px groove #a5c2a0; */
+  background: #f5f5dc;
 }
 
 .visgenome img {

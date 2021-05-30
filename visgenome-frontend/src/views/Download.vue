@@ -12,7 +12,7 @@
         >
         and transformed the files into bgzip-compressed indexed FASTA (e.g.
         <span style="color: grey; font-style: italic"
-          >.fa.gz, .fa.gz.fai, .fa.gz.gzi</span
+          >.fa.gz, .fa.gz.fai, and .fa.gz.gzi</span
         >
         files). You can download these files on this page.
       </p>
@@ -98,6 +98,7 @@ p{
   line-height: 80px;
   font-size: 1.5em;
   text-align: center;
+  background: #f5f5dc;
 }
 
 .title img {

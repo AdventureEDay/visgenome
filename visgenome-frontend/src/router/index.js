@@ -14,7 +14,7 @@ const routes = [
   {
     path: "/genomes/:type",
     name: "Genomes",
-    component: () => import("../views/Genomes.vue")
+    component: () => import("../views/Tracks.vue")
     // component: resolve => require(["../views/Genomes.vue"], resolve)
     // component: Genomes
   },
@@ -33,6 +33,11 @@ const routes = [
     path: "/vis_circos/:type",
     name: "Circos",
     component: () => import("../views/Circos.vue")
+  },
+  {
+    path: "/example",
+    name: "Example",
+    component: () => import("../views/Example.vue")
   }
   // {
   //   path: "/about",

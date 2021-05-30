@@ -1,0 +1,1050 @@
+{
+  "assemblies": [
+    {
+      "name": "GRCh38",
+      "aliases": [
+        "hg38"
+      ],
+      "sequence": {
+        "type": "ReferenceSequenceTrack",
+        "trackId": "GRCh38-ReferenceSequenceTrack",
+        "adapter": {
+          "type": "BgzipFastaAdapter",
+          "fastaLocation": {
+            "uri": "/file/hg38/hg38.fa.gz"
+          },
+          "faiLocation": {
+            "uri": "/file/hg38/hg38.fa.gz.fai"
+          },
+          "gziLocation": {
+            "uri": "/file/hg38/hg38.fa.gz.gzi"
+          }
+        }
+      }
+    },
+    {
+      "name": "GRCm39",
+      "aliases": [
+        "mm39"
+      ],
+      "sequence": {
+        "type": "ReferenceSequenceTrack",
+        "trackId": "GRCm39-ReferenceSequenceTrack",
+        "adapter": {
+          "type": "BgzipFastaAdapter",
+          "fastaLocation": {
+            "uri": "/file/mm39/mm39.fa.gz"
+          },
+          "faiLocation": {
+            "uri": "/file/mm39/mm39.fa.gz.fai"
+          },
+          "gziLocation": {
+            "uri": "/file/mm39/mm39.fa.gz.gzi"
+          }
+        }
+      }
+    },
+    {
+      "name": "SacCer_Apr2011",
+      "aliases": [
+        "sacCer3"
+      ],
+      "sequence": {
+        "type": "ReferenceSequenceTrack",
+        "trackId": "sacCer3-ReferenceSequenceTrack",
+        "adapter": {
+          "type": "BgzipFastaAdapter",
+          "fastaLocation": {
+            "uri": "/file/saccer3/sacCer3.fa.gz"
+          },
+          "faiLocation": {
+            "uri": "/file/sacCer3/sacCer3.fa.gz.fai"
+          },
+          "gziLocation": {
+            "uri": "/file/sacCer3/sacCer3.fa.gz.gzi"
+          }
+        }
+      }
+    }
+  ],
+  "tracks": [
+    {
+      "type": "QuantitativeTrack",
+      "trackId": "hg38_chr2_MD0001_EIIP_original",
+      "name": "hg38_chr2_MD0001_EIIP_original",
+      "category": [
+        "mononucleotide"
+      ],
+      "assemblyNames": [
+        "GRCh38"
+      ],
+      "adapter": {
+        "type": "BigWigAdapter",
+        "bigWigLocation": {
+          "uri": "/file/hg38/tracks/ori/monoDNAOri/hg38_chr2_MD0001_EIIP_ori.bw"
+        }
+      }
+    },
+    {
+      "type": "QuantitativeTrack",
+      "trackId": "hg38_chr1_MD0001_EIIP_original",
+      "name": "hg38_chr1_MD0001_EIIP_original",
+      "category": [
+        "mononucleotide"
+      ],
+      "assemblyNames": [
+        "GRCh38"
+      ],
+      "adapter": {
+        "type": "BigWigAdapter",
+        "bigWigLocation": {
+          "uri": "/file/hg38/tracks/ori/monoDNAOri/hg38_chr1_MD0001_EIIP_ori.bw"
+        }
+      }
+    },
+    {
+      "type": "QuantitativeTrack",
+      "trackId": "hg38_chr1_MD0001_EIIP_standard",
+      "name": "hg38_chr1_MD0001_EIIP_standard",
+      "category": [
+        "mononucleotide"
+      ],
+      "assemblyNames": [
+        "GRCh38"
+      ],
+      "adapter": {
+        "type": "BigWigAdapter",
+        "bigWigLocation": {
+          "uri": "/file/hg38/tracks/sta/monoDNASta/hg38_chr1_MD0001_EIIP_sta.bw"
+        }
+      }
+    },
+    {
+      "type": "QuantitativeTrack",
+      "trackId": "hg38_chr1_DD0037_Rise_original",
+      "name": "hg38_chr1_DD0037_Rise_original",
+      "category": [
+        "dinucleotide"
+      ],
+      "assemblyNames": [
+        "GRCh38"
+      ],
+      "adapter": {
+        "type": "BigWigAdapter",
+        "bigWigLocation": {
+          "uri": "/file/hg38/tracks/ori/diDNAOri/hg38_chr1_DD0037_Rise_ori.bw"
+        }
+      }
+    },
+    {
+      "type": "QuantitativeTrack",
+      "trackId": "hg38_chr1_DD0032_Twist_standard",
+      "name": "hg38_chr1_DD0032_Twist_standard",
+      "category": [
+        "dinucleotide"
+      ],
+      "assemblyNames": [
+        "GRCh38"
+      ],
+      "adapter": {
+        "type": "BigWigAdapter",
+        "bigWigLocation": {
+          "uri": "/file/hg38/tracks/sta/diDNASta/hg38_chr1_DD0032_Twist_sta.bw"
+        }
+      }
+    },
+    {
+      "type": "QuantitativeTrack",
+      "trackId": "hg38_chr1_DD0033_Tilt_standard",
+      "name": "hg38_chr1_DD0033_Tilt_standard",
+      "category": [
+        "dinucleotide"
+      ],
+      "assemblyNames": [
+        "GRCh38"
+      ],
+      "adapter": {
+        "type": "BigWigAdapter",
+        "bigWigLocation": {
+          "uri": "/file/hg38/tracks/sta/diDNASta/hg38_chr1_DD0033_Tilt_sta.bw"
+        }
+      }
+    },
+    {
+      "type": "QuantitativeTrack",
+      "trackId": "hg38_chr1_DD0034_Roll_standard",
+      "name": "hg38_chr1_DD0034_Roll_standard",
+      "category": [
+        "dinucleotide"
+      ],
+      "assemblyNames": [
+        "GRCh38"
+      ],
+      "adapter": {
+        "type": "BigWigAdapter",
+        "bigWigLocation": {
+          "uri": "/file/hg38/tracks/sta/diDNASta/hg38_chr1_DD0034_Roll_sta.bw"
+        }
+      }
+    },
+    {
+      "type": "QuantitativeTrack",
+      "trackId": "hg38_chr1_DD0035_Shift_standard",
+      "name": "hg38_chr1_DD0035_Shift_standard",
+      "category": [
+        "dinucleotide"
+      ],
+      "assemblyNames": [
+        "GRCh38"
+      ],
+      "adapter": {
+        "type": "BigWigAdapter",
+        "bigWigLocation": {
+          "uri": "/file/hg38/tracks/sta/diDNASta/hg38_chr1_DD0035_Shift_sta.bw"
+        }
+      }
+    },
+    {
+      "type": "QuantitativeTrack",
+      "trackId": "hg38_chr1_DD0036_Slide_standard",
+      "name": "hg38_chr1_DD0036_Slide_standard",
+      "category": [
+        "dinucleotide"
+      ],
+      "assemblyNames": [
+        "GRCh38"
+      ],
+      "adapter": {
+        "type": "BigWigAdapter",
+        "bigWigLocation": {
+          "uri": "/file/hg38/tracks/sta/diDNASta/hg38_chr1_DD0036_Slide_sta.bw"
+        }
+      }
+    },
+    {
+      "type": "QuantitativeTrack",
+      "trackId": "hg38_chr1_DD0037_Rise_standard",
+      "name": "hg38_chr1_DD0037_Rise_standard",
+      "category": [
+        "dinucleotide"
+      ],
+      "assemblyNames": [
+        "GRCh38"
+      ],
+      "adapter": {
+        "type": "BigWigAdapter",
+        "bigWigLocation": {
+          "uri": "/file/hg38/tracks/sta/diDNASta/hg38_chr1_DD0037_Rise_sta.bw"
+        }
+      }
+    },
+    {
+      "type": "QuantitativeTrack",
+      "trackId": "hg38_chr1_DD0032_Twist_original",
+      "name": "hg38_chr1_DD0032_Twist_original",
+      "category": [
+        "dinucleotide"
+      ],
+      "assemblyNames": [
+        "GRCh38"
+      ],
+      "adapter": {
+        "type": "BigWigAdapter",
+        "bigWigLocation": {
+          "uri": "/file/hg38/tracks/ori/diDNAOri/hg38_chr1_DD0032_Twist_ori.bw"
+        }
+      }
+    },
+    {
+      "type": "QuantitativeTrack",
+      "trackId": "hg38_chr1_DD0033_Tilt_original",
+      "name": "hg38_chr1_DD0033_Tilt_original",
+      "category": [
+        "dinucleotide"
+      ],
+      "assemblyNames": [
+        "GRCh38"
+      ],
+      "adapter": {
+        "type": "BigWigAdapter",
+        "bigWigLocation": {
+          "uri": "/file/hg38/tracks/ori/diDNAOri/hg38_chr1_DD0033_Tilt_ori.bw"
+        }
+      }
+    },
+    {
+      "type": "QuantitativeTrack",
+      "trackId": "hg38_chr1_DD0034_Roll_original",
+      "name": "hg38_chr1_DD0034_Roll_original",
+      "category": [
+        "dinucleotide"
+      ],
+      "assemblyNames": [
+        "GRCh38"
+      ],
+      "adapter": {
+        "type": "BigWigAdapter",
+        "bigWigLocation": {
+          "uri": "/file/hg38/tracks/ori/diDNAOri/hg38_chr1_DD0034_Roll_ori.bw"
+        }
+      }
+    },
+    {
+      "type": "QuantitativeTrack",
+      "trackId": "hg38_chr1_DD0035_Shift_original",
+      "name": "hg38_chr1_DD0035_Shift_original",
+      "category": [
+        "dinucleotide"
+      ],
+      "assemblyNames": [
+        "GRCh38"
+      ],
+      "adapter": {
+        "type": "BigWigAdapter",
+        "bigWigLocation": {
+          "uri": "/file/hg38/tracks/ori/diDNAOri/hg38_chr1_DD0035_Shift_ori.bw"
+        }
+      }
+    },
+    {
+      "type": "QuantitativeTrack",
+      "trackId": "hg38_chr1_DD0036_Slide_original",
+      "name": "hg38_chr1_DD0036_Slide_original",
+      "category": [
+        "dinucleotide"
+      ],
+      "assemblyNames": [
+        "GRCh38"
+      ],
+      "adapter": {
+        "type": "BigWigAdapter",
+        "bigWigLocation": {
+          "uri": "/file/hg38/tracks/sta/diDNASta/hg38_chr1_DD0036_Slide_ori.bw"
+        }
+      }
+    },
+    {
+      "type": "QuantitativeTrack",
+      "trackId": "hg38_chr1_TD0002_Bendability-consensus_original",
+      "name": "hg38_chr1_TD0002_Bendability-consensus_original",
+      "category": [
+        "trinucleotide"
+      ],
+      "assemblyNames": [
+        "GRCh38"
+      ],
+      "adapter": {
+        "type": "BigWigAdapter",
+        "bigWigLocation": {
+          "uri": "/file/hg38/tracks/ori/triDNAOri/hg38_chr1_TD0002_Bendability-consensus_ori.bw"
+        }
+      }
+    },
+    {
+      "type": "QuantitativeTrack",
+      "trackId": "hg38_chr1_TD0001_Bendability-DNAse_standard",
+      "name": "hg38_chr1_TD0001_Bendability-DNAse_standard",
+      "category": [
+        "trinucleotide"
+      ],
+      "assemblyNames": [
+        "GRCh38"
+      ],
+      "adapter": {
+        "type": "BigWigAdapter",
+        "bigWigLocation": {
+          "uri": "/file/hg38/tracks/sta/triDNASta/hg38_chr1_TD0001_Bendability-DNAse_sta.bw"
+        }
+      }
+    },
+    {
+      "type": "QuantitativeTrack",
+      "trackId": "hg38_chr1_TD0002_Bendability-consensus_standard",
+      "name": "hg38_chr1_TD0002_Bendability-consensus_standard",
+      "category": [
+        "trinucleotide"
+      ],
+      "assemblyNames": [
+        "GRCh38"
+      ],
+      "adapter": {
+        "type": "BigWigAdapter",
+        "bigWigLocation": {
+          "uri": "/file/hg38/tracks/sta/triDNASta/hg38_chr1_TD0002_Bendability-consensus_sta.bw"
+        }
+      }
+    },
+    {
+      "type": "QuantitativeTrack",
+      "trackId": "hg38_chr1_TD0001_Bendability-DNAse_original",
+      "name": "hg38_chr1_TD0001_Bendability-DNAse_original",
+      "category": [
+        "trinucleotide"
+      ],
+      "assemblyNames": [
+        "GRCh38"
+      ],
+      "adapter": {
+        "type": "BigWigAdapter",
+        "bigWigLocation": {
+          "uri": "/file/hg38/tracks/ori/triDNAOri/hg38_chr1_TD0001_Bendability-DNAse_ori.bw"
+        }
+      }
+    },
+    {
+      "type": "QuantitativeTrack",
+      "trackId": "mm39_chr2_MD0001_EIIP_standard",
+      "name": "mm39_chr2_MD0001_EIIP_standard",
+      "category": [
+        "mononucleotide"
+      ],
+      "assemblyNames": [
+        "GRCm39"
+      ],
+      "adapter": {
+        "type": "BigWigAdapter",
+        "bigWigLocation": {
+          "uri": "/file/mm39/tracks/sta/monoDNASta/mm39_chr2_MD0001_EIIP_sta.bw"
+        }
+      }
+    },
+    {
+      "type": "QuantitativeTrack",
+      "trackId": "mm39_chr1_MD0001_EIIP_original",
+      "name": "mm39_chr1_MD0001_EIIP_original",
+      "category": [
+        "mononucleotide"
+      ],
+      "assemblyNames": [
+        "GRCm39"
+      ],
+      "adapter": {
+        "type": "BigWigAdapter",
+        "bigWigLocation": {
+          "uri": "/file/mm39/tracks/ori/monoDNAOri/mm39_chr1_MD0001_EIIP_ori.bw"
+        }
+      }
+    },
+    {
+      "type": "QuantitativeTrack",
+      "trackId": "mm39_chr1_MD0001_EIIP_standard",
+      "name": "mm39_chr1_MD0001_EIIP_standard",
+      "category": [
+        "mononucleotide"
+      ],
+      "assemblyNames": [
+        "GRCm39"
+      ],
+      "adapter": {
+        "type": "BigWigAdapter",
+        "bigWigLocation": {
+          "uri": "/file/mm39/tracks/sta/monoDNASta/mm39_chr1_MD0001_EIIP_sta.bw"
+        }
+      }
+    },
+    {
+      "type": "QuantitativeTrack",
+      "trackId": "mm39_chr1_DD0037_Rise_original",
+      "name": "mm39_chr1_DD0037_Rise_original",
+      "category": [
+        "dinucleotide"
+      ],
+      "assemblyNames": [
+        "GRCm39"
+      ],
+      "adapter": {
+        "type": "BigWigAdapter",
+        "bigWigLocation": {
+          "uri": "/file/mm39/tracks/ori/diDNAOri/mm39_chr1_DD0037_Rise_ori.bw"
+        }
+      }
+    },
+    {
+      "type": "QuantitativeTrack",
+      "trackId": "mm39_chr1_DD0032_Twist_standard",
+      "name": "mm39_chr1_DD0032_Twist_standard",
+      "category": [
+        "dinucleotide"
+      ],
+      "assemblyNames": [
+        "GRCm39"
+      ],
+      "adapter": {
+        "type": "BigWigAdapter",
+        "bigWigLocation": {
+          "uri": "/file/mm39/tracks/sta/diDNASta/mm39_chr1_DD0032_Twist_sta.bw"
+        }
+      }
+    },
+    {
+      "type": "QuantitativeTrack",
+      "trackId": "mm39_chr1_DD0033_Tilt_standard",
+      "name": "mm39_chr1_DD0033_Tilt_standard",
+      "category": [
+        "dinucleotide"
+      ],
+      "assemblyNames": [
+        "GRCm39"
+      ],
+      "adapter": {
+        "type": "BigWigAdapter",
+        "bigWigLocation": {
+          "uri": "/file/mm39/tracks/sta/diDNASta/mm39_chr1_DD0033_Tilt_sta.bw"
+        }
+      }
+    },
+    {
+      "type": "QuantitativeTrack",
+      "trackId": "mm39_chr1_DD0034_Roll_standard",
+      "name": "mm39_chr1_DD0034_Roll_standard",
+      "category": [
+        "dinucleotide"
+      ],
+      "assemblyNames": [
+        "GRCm39"
+      ],
+      "adapter": {
+        "type": "BigWigAdapter",
+        "bigWigLocation": {
+          "uri": "/file/mm39/tracks/sta/diDNASta/mm39_chr1_DD0034_Roll_sta.bw"
+        }
+      }
+    },
+    {
+      "type": "QuantitativeTrack",
+      "trackId": "mm39_chr1_DD0035_Shift_standard",
+      "name": "mm39_chr1_DD0035_Shift_standard",
+      "category": [
+        "dinucleotide"
+      ],
+      "assemblyNames": [
+        "GRCm39"
+      ],
+      "adapter": {
+        "type": "BigWigAdapter",
+        "bigWigLocation": {
+          "uri": "/file/mm39/tracks/sta/diDNASta/mm39_chr1_DD0035_Shift_sta.bw"
+        }
+      }
+    },
+    {
+      "type": "QuantitativeTrack",
+      "trackId": "mm39_chr1_DD0036_Slide_standard",
+      "name": "mm39_chr1_DD0036_Slide_standard",
+      "category": [
+        "dinucleotide"
+      ],
+      "assemblyNames": [
+        "GRCm39"
+      ],
+      "adapter": {
+        "type": "BigWigAdapter",
+        "bigWigLocation": {
+          "uri": "/file/mm39/tracks/sta/diDNASta/mm39_chr1_DD0036_Slide_sta.bw"
+        }
+      }
+    },
+    {
+      "type": "QuantitativeTrack",
+      "trackId": "mm39_chr1_DD0037_Rise_standard",
+      "name": "mm39_chr1_DD0037_Rise_standard",
+      "category": [
+        "dinucleotide"
+      ],
+      "assemblyNames": [
+        "GRCm39"
+      ],
+      "adapter": {
+        "type": "BigWigAdapter",
+        "bigWigLocation": {
+          "uri": "/file/mm39/tracks/sta/diDNASta/mm39_chr1_DD0037_Rise_sta.bw"
+        }
+      }
+    },
+    {
+      "type": "QuantitativeTrack",
+      "trackId": "mm39_chr1_DD0032_Twist_original",
+      "name": "mm39_chr1_DD0032_Twist_original",
+      "category": [
+        "dinucleotide"
+      ],
+      "assemblyNames": [
+        "GRCm39"
+      ],
+      "adapter": {
+        "type": "BigWigAdapter",
+        "bigWigLocation": {
+          "uri": "/file/mm39/tracks/ori/diDNAOri/mm39_chr1_DD0032_Twist_ori.bw"
+        }
+      }
+    },
+    {
+      "type": "QuantitativeTrack",
+      "trackId": "mm39_chr1_DD0033_Tilt_original",
+      "name": "mm39_chr1_DD0033_Tilt_original",
+      "category": [
+        "dinucleotide"
+      ],
+      "assemblyNames": [
+        "GRCm39"
+      ],
+      "adapter": {
+        "type": "BigWigAdapter",
+        "bigWigLocation": {
+          "uri": "/file/mm39/tracks/ori/diDNAOri/mm39_chr1_DD0033_Tilt_ori.bw"
+        }
+      }
+    },
+    {
+      "type": "QuantitativeTrack",
+      "trackId": "mm39_chr1_DD0034_Roll_original",
+      "name": "mm39_chr1_DD0034_Roll_original",
+      "category": [
+        "dinucleotide"
+      ],
+      "assemblyNames": [
+        "GRCm39"
+      ],
+      "adapter": {
+        "type": "BigWigAdapter",
+        "bigWigLocation": {
+          "uri": "/file/mm39/tracks/ori/diDNAOri/mm39_chr1_DD0034_Roll_ori.bw"
+        }
+      }
+    },
+    {
+      "type": "QuantitativeTrack",
+      "trackId": "mm39_chr1_DD0035_Shift_original",
+      "name": "mm39_chr1_DD0035_Shift_original",
+      "category": [
+        "dinucleotide"
+      ],
+      "assemblyNames": [
+        "GRCm39"
+      ],
+      "adapter": {
+        "type": "BigWigAdapter",
+        "bigWigLocation": {
+          "uri": "/file/mm39/tracks/ori/diDNAOri/mm39_chr1_DD0035_Shift_ori.bw"
+        }
+      }
+    },
+    {
+      "type": "QuantitativeTrack",
+      "trackId": "mm39_chr1_DD0036_Slide_original",
+      "name": "mm39_chr1_DD0036_Slide_original",
+      "category": [
+        "dinucleotide"
+      ],
+      "assemblyNames": [
+        "GRCm39"
+      ],
+      "adapter": {
+        "type": "BigWigAdapter",
+        "bigWigLocation": {
+          "uri": "/file/mm39/tracks/sta/diDNASta/mm39_chr1_DD0036_Slide_ori.bw"
+        }
+      }
+    },
+    {
+      "type": "QuantitativeTrack",
+      "trackId": "mm39_chr1_TD0002_Bendability-consensus_original",
+      "name": "mm39_chr1_TD0002_Bendability-consensus_original",
+      "category": [
+        "trinucleotide"
+      ],
+      "assemblyNames": [
+        "GRCm39"
+      ],
+      "adapter": {
+        "type": "BigWigAdapter",
+        "bigWigLocation": {
+          "uri": "/file/mm39/tracks/ori/triDNAOri/mm39_chr1_TD0002_Bendability-consensus_ori.bw"
+        }
+      }
+    },
+    {
+      "type": "QuantitativeTrack",
+      "trackId": "mm39_chr1_TD0001_Bendability-DNAse_standard",
+      "name": "mm39_chr1_TD0001_Bendability-DNAse_standard",
+      "category": [
+        "trinucleotide"
+      ],
+      "assemblyNames": [
+        "GRCm39"
+      ],
+      "adapter": {
+        "type": "BigWigAdapter",
+        "bigWigLocation": {
+          "uri": "/file/mm39/tracks/sta/triDNASta/mm39_chr1_TD0001_Bendability-DNAse_sta.bw"
+        }
+      }
+    },
+    {
+      "type": "QuantitativeTrack",
+      "trackId": "mm39_chr1_TD0002_Bendability-consensus_standard",
+      "name": "mm39_chr1_TD0002_Bendability-consensus_standard",
+      "category": [
+        "trinucleotide"
+      ],
+      "assemblyNames": [
+        "GRCm39"
+      ],
+      "adapter": {
+        "type": "BigWigAdapter",
+        "bigWigLocation": {
+          "uri": "/file/mm39/tracks/sta/triDNASta/mm39_chr1_TD0002_Bendability-consensus_sta.bw"
+        }
+      }
+    },
+    {
+      "type": "QuantitativeTrack",
+      "trackId": "mm39_chr1_TD0001_Bendability-DNAse_original",
+      "name": "mm39_chr1_TD0001_Bendability-DNAse_original",
+      "category": [
+        "trinucleotide"
+      ],
+      "assemblyNames": [
+        "GRCm39"
+      ],
+      "adapter": {
+        "type": "BigWigAdapter",
+        "bigWigLocation": {
+          "uri": "/file/mm39/tracks/ori/triDNAOri/mm39_chr1_TD0001_Bendability-DNAse_ori.bw"
+        }
+      }
+    },
+    {
+      "type": "QuantitativeTrack",
+      "trackId": "sacCer3_chrII_MD0001_EIIP_standard",
+      "name": "sacCer3_chrII_MD0001_EIIP_standard",
+      "category": [
+        "mononucleotide"
+      ],
+      "assemblyNames": [
+        "SacCer_Apr2011"
+      ],
+      "adapter": {
+        "type": "BigWigAdapter",
+        "bigWigLocation": {
+          "uri": "/file/saccer3/tracks/ori/monoDNAOri/sacCer3_chrII_MD0001_EIIP_sta.bw"
+        }
+      }
+    },
+    {
+      "type": "QuantitativeTrack",
+      "trackId": "sacCer3_chrI_MD0001_EIIP_original",
+      "name": "sacCer3_chrI_MD0001_EIIP_original",
+      "category": [
+        "mononucleotide"
+      ],
+      "assemblyNames": [
+        "SacCer_Apr2011"
+      ],
+      "adapter": {
+        "type": "BigWigAdapter",
+        "bigWigLocation": {
+          "uri": "/file/saccer3/tracks/ori/monoDNAOri/sacCer3_chrI_MD0001_EIIP_ori.bw"
+        }
+      }
+    },
+    {
+      "type": "QuantitativeTrack",
+      "trackId": "sacCer3_chrI_MD0001_EIIP_standard",
+      "name": "sacCer3_chrI_MD0001_EIIP_standard",
+      "category": [
+        "mononucleotide"
+      ],
+      "assemblyNames": [
+        "SacCer_Apr2011"
+      ],
+      "adapter": {
+        "type": "BigWigAdapter",
+        "bigWigLocation": {
+          "uri": "/file/saccer3/tracks/sta/monoDNASta/sacCer3_chrI_MD0001_EIIP_sta.bw"
+        }
+      }
+    },
+    {
+      "type": "QuantitativeTrack",
+      "trackId": "sacCer3_chrI_DD0037_Rise_original",
+      "name": "sacCer3_chrI_DD0037_Rise_original",
+      "category": [
+        "dinucleotide"
+      ],
+      "assemblyNames": [
+        "SacCer_Apr2011"
+      ],
+      "adapter": {
+        "type": "BigWigAdapter",
+        "bigWigLocation": {
+          "uri": "/file/saccer3/tracks/ori/diDNAOri/sacCer3_chrI_DD0037_Rise_ori.bw"
+        }
+      }
+    },
+    {
+      "type": "QuantitativeTrack",
+      "trackId": "sacCer3_chrI_DD0032_Twist_standard",
+      "name": "sacCer3_chrI_DD0032_Twist_standard",
+      "category": [
+        "dinucleotide"
+      ],
+      "assemblyNames": [
+        "SacCer_Apr2011"
+      ],
+      "adapter": {
+        "type": "BigWigAdapter",
+        "bigWigLocation": {
+          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrI_DD0032_Twist_sta.bw"
+        }
+      }
+    },
+    {
+      "type": "QuantitativeTrack",
+      "trackId": "sacCer3_chrI_DD0033_Tilt_standard",
+      "name": "sacCer3_chrI_DD0033_Tilt_standard",
+      "category": [
+        "dinucleotide"
+      ],
+      "assemblyNames": [
+        "SacCer_Apr2011"
+      ],
+      "adapter": {
+        "type": "BigWigAdapter",
+        "bigWigLocation": {
+          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrI_DD0033_Tilt_sta.bw"
+        }
+      }
+    },
+    {
+      "type": "QuantitativeTrack",
+      "trackId": "sacCer3_chrI_DD0034_Roll_standard",
+      "name": "sacCer3_chrI_DD0034_Roll_standard",
+      "category": [
+        "dinucleotide"
+      ],
+      "assemblyNames": [
+        "SacCer_Apr2011"
+      ],
+      "adapter": {
+        "type": "BigWigAdapter",
+        "bigWigLocation": {
+          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrI_DD0034_Roll_sta.bw"
+        }
+      }
+    },
+    {
+      "type": "QuantitativeTrack",
+      "trackId": "sacCer3_chrI_DD0035_Shift_standard",
+      "name": "sacCer3_chrI_DD0035_Shift_standard",
+      "category": [
+        "dinucleotide"
+      ],
+      "assemblyNames": [
+        "SacCer_Apr2011"
+      ],
+      "adapter": {
+        "type": "BigWigAdapter",
+        "bigWigLocation": {
+          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrI_DD0035_Shift_sta.bw"
+        }
+      }
+    },
+    {
+      "type": "QuantitativeTrack",
+      "trackId": "sacCer3_chrI_DD0036_Slide_standard",
+      "name": "sacCer3_chrI_DD0036_Slide_standard",
+      "category": [
+        "dinucleotide"
+      ],
+      "assemblyNames": [
+        "SacCer_Apr2011"
+      ],
+      "adapter": {
+        "type": "BigWigAdapter",
+        "bigWigLocation": {
+          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrI_DD0036_Slide_sta.bw"
+        }
+      }
+    },
+    {
+      "type": "QuantitativeTrack",
+      "trackId": "sacCer3_chrI_DD0037_Rise_standard",
+      "name": "sacCer3_chrI_DD0037_Rise_standard",
+      "category": [
+        "dinucleotide"
+      ],
+      "assemblyNames": [
+        "SacCer_Apr2011"
+      ],
+      "adapter": {
+        "type": "BigWigAdapter",
+        "bigWigLocation": {
+          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrI_DD0037_Rise_sta.bw"
+        }
+      }
+    },
+    {
+      "type": "QuantitativeTrack",
+      "trackId": "sacCer3_chrI_DD0032_Twist_original",
+      "name": "sacCer3_chrI_DD0032_Twist_original",
+      "category": [
+        "dinucleotide"
+      ],
+      "assemblyNames": [
+        "SacCer_Apr2011"
+      ],
+      "adapter": {
+        "type": "BigWigAdapter",
+        "bigWigLocation": {
+          "uri": "/file/saccer3/tracks/ori/diDNAOri/sacCer3_chrI_DD0032_Twist_ori.bw"
+        }
+      }
+    },
+    {
+      "type": "QuantitativeTrack",
+      "trackId": "sacCer3_chrI_DD0033_Tilt_original",
+      "name": "sacCer3_chrI_DD0033_Tilt_original",
+      "category": [
+        "dinucleotide"
+      ],
+      "assemblyNames": [
+        "SacCer_Apr2011"
+      ],
+      "adapter": {
+        "type": "BigWigAdapter",
+        "bigWigLocation": {
+          "uri": "/file/saccer3/tracks/ori/diDNAOri/sacCer3_chrI_DD0033_Tilt_ori.bw"
+        }
+      }
+    },
+    {
+      "type": "QuantitativeTrack",
+      "trackId": "sacCer3_chrI_DD0034_Roll_original",
+      "name": "sacCer3_chrI_DD0034_Roll_original",
+      "category": [
+        "dinucleotide"
+      ],
+      "assemblyNames": [
+        "SacCer_Apr2011"
+      ],
+      "adapter": {
+        "type": "BigWigAdapter",
+        "bigWigLocation": {
+          "uri": "/file/saccer3/tracks/ori/diDNAOri/sacCer3_chrI_DD0034_Roll_ori.bw"
+        }
+      }
+    },
+    {
+      "type": "QuantitativeTrack",
+      "trackId": "sacCer3_chrI_DD0035_Shift_original",
+      "name": "sacCer3_chrI_DD0035_Shift_original",
+      "category": [
+        "dinucleotide"
+      ],
+      "assemblyNames": [
+        "SacCer_Apr2011"
+      ],
+      "adapter": {
+        "type": "BigWigAdapter",
+        "bigWigLocation": {
+          "uri": "/file/saccer3/tracks/ori/diDNAOri/sacCer3_chrI_DD0035_Shift_ori.bw"
+        }
+      }
+    },
+    {
+      "type": "QuantitativeTrack",
+      "trackId": "sacCer3_chrI_DD0036_Slide_original",
+      "name": "sacCer3_chrI_DD0036_Slide_original",
+      "category": [
+        "dinucleotide"
+      ],
+      "assemblyNames": [
+        "SacCer_Apr2011"
+      ],
+      "adapter": {
+        "type": "BigWigAdapter",
+        "bigWigLocation": {
+          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrI_DD0036_Slide_ori.bw"
+        }
+      }
+    },
+    {
+      "type": "QuantitativeTrack",
+      "trackId": "sacCer3_chrI_TD0002_Bendability-consensus_original",
+      "name": "sacCer3_chrI_TD0002_Bendability-consensus_original",
+      "category": [
+        "trinucleotide"
+      ],
+      "assemblyNames": [
+        "SacCer_Apr2011"
+      ],
+      "adapter": {
+        "type": "BigWigAdapter",
+        "bigWigLocation": {
+          "uri": "/file/saccer3/tracks/ori/triDNAOri/sacCer3_chrI_TD0002_Bendability-consensus_ori.bw"
+        }
+      }
+    },
+    {
+      "type": "QuantitativeTrack",
+      "trackId": "sacCer3_chrI_TD0001_Bendability-DNAse_standard",
+      "name": "sacCer3_chrI_TD0001_Bendability-DNAse_standard",
+      "category": [
+        "trinucleotide"
+      ],
+      "assemblyNames": [
+        "SacCer_Apr2011"
+      ],
+      "adapter": {
+        "type": "BigWigAdapter",
+        "bigWigLocation": {
+          "uri": "/file/saccer3/tracks/sta/triDNASta/sacCer3_chrI_TD0001_Bendability-DNAse_sta.bw"
+        }
+      }
+    },
+    {
+      "type": "QuantitativeTrack",
+      "trackId": "sacCer3_chrI_TD0002_Bendability-consensus_standard",
+      "name": "sacCer3_chrI_TD0002_Bendability-consensus_standard",
+      "category": [
+        "trinucleotide"
+      ],
+      "assemblyNames": [
+        "SacCer_Apr2011"
+      ],
+      "adapter": {
+        "type": "BigWigAdapter",
+        "bigWigLocation": {
+          "uri": "/file/saccer3/tracks/sta/triDNASta/sacCer3_chrI_TD0002_Bendability-consensus_sta.bw"
+        }
+      }
+    },
+    {
+      "type": "QuantitativeTrack",
+      "trackId": "sacCer3_chr1_TD000I_Bendability-DNAse_original",
+      "name": "sacCer3_chr1_TD000I_Bendability-DNAse_original",
+      "category": [
+        "trinucleotide"
+      ],
+      "assemblyNames": [
+        "SacCer_Apr2011"
+      ],
+      "adapter": {
+        "type": "BigWigAdapter",
+        "bigWigLocation": {
+          "uri": "/file/saccer3/tracks/ori/triDNAOri/sacCer3_chrI_TD0001_Bendability-DNAse_ori.bw"
+        }
+      }
+    }
+  ],
+  "defaultSession": {
+    "name": "physicochemical property values of whole-genome - example",
+    "views": [
+      {
+        "id": "tracks_example",
+        "type": "LinearGenomeView"
+      }
+    ]
+  }
+}

@@ -11,8 +11,12 @@
       active-text-color="#a5c2a0"
       router
     >
-      <el-menu-item index="/">
-        <img src="../assets/titlebar.png" alt="iVisgenome" style="height: 80%; width: auto;"/>
+      <el-menu-item index="/" class="logo">
+        <img
+          src="../assets/titlebar.png"
+          alt="iVisgenome"
+          style="height: 80%; width: auto"
+        />
       </el-menu-item>
       <el-menu-item index="/" class="home">
         <i class="el-icon-s-home"></i>
@@ -34,6 +38,10 @@
           >SacCer_Apr2011/sacCer3</el-menu-item
         >
       </el-submenu>
+      <el-menu-item index="/example" class="example">
+        <i class="el-icon-s-data"></i>
+        Example
+      </el-menu-item>
       <el-submenu index="3">
         <template slot="title">
           <i class="el-icon-orange"></i>
@@ -57,20 +65,72 @@
         <el-menu-item index="/help/tutorial">Tutorial</el-menu-item>
         <el-menu-item index="/help/contact">Contact</el-menu-item>
       </el-submenu>
-      <!-- <el-menu-item>
-        <a href="https://github.com/wyzhang0401/KNIndex" target="_blank"
-          >GitHub</a
-        >
-      </el-menu-item> -->
-      <!-- <span class="github">
-        <a href="https://github.com/wyzhang0401/visgenome" target="_blank">
-          <img
-            src="../assets/github.png"
-            style="height:30px; width: auto; margin-right: 10px; vertical-align: middle;"
-          />GitHub</a
-        >
-      </span> -->
     </el-menu>
+
+    <div class="responsive">
+      <div class="logo">
+        <img
+          src="../assets/titlebar.png"
+          alt="iVisgenome"
+          style="width: 200px; height:auto; vertical-align: middle;"
+        />
+      </div>
+      <div class="menus">
+        <el-popover v-model="visible" trigger="manual" placement="bottom-start" width="300">
+          <el-menu
+            :default-active="$route.path"
+            @select="handleSelect"
+            background-color="#545c64"
+            text-color="#fff"
+            active-text-color="#a5c2a0"
+            router
+          >
+            <el-menu-item index="/" class="home"> Home </el-menu-item>
+            <el-submenu index="11">
+              <template slot="title"> Tracks </template>
+              <el-menu-item index="/genomes/human"
+                >Human GRCH38/hg38</el-menu-item
+              >
+              <el-menu-item index="/genomes/mouse"
+                >Mouse GRCm39/mm39</el-menu-item
+              >
+              <el-menu-item index="/genomes/yeast"
+                >SacCer_Apr2011/sacCer3</el-menu-item
+              >
+            </el-submenu>
+            <el-menu-item index="/example" class="example">
+              Example
+            </el-menu-item>
+            <el-submenu index="12">
+              <template slot="title"> Circos </template>
+              <el-menu-item index="/vis_circos/human"
+                >Human GRCH38/hg38</el-menu-item
+              >
+              <el-menu-item index="/vis_circos/mouse"
+                >Mouse GRCm39/mm39</el-menu-item
+              >
+              <el-menu-item index="/vis_circos/yeast"
+                >SacCer_Apr2011/sacCer3</el-menu-item
+              >
+            </el-submenu>
+            <el-menu-item index="/download" class="download">
+              Download
+            </el-menu-item>
+            <el-submenu index="13">
+              <template slot="title"> Help </template>
+              <el-menu-item index="/help/tutorial">Tutorial</el-menu-item>
+              <el-menu-item index="/help/contact">Contact</el-menu-item>
+            </el-submenu>
+          </el-menu>
+          <a
+            href="javascript:void(0);"
+            slot="reference"
+            @click="vis = !vis"
+            >&#9776;</a
+          >
+        </el-popover>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -79,7 +139,37 @@ export default {
   data() {
     return {
       // activePath: this.$route.path
+      vis: false,
+      screenWidth: document.body.clientWidth
     };
+  },
+  mounted(){
+    // 监听页面视口宽度
+    window.onresize = ()=>{
+      this.screenWidth = document.body.clientWidth;
+    }
+  },
+  computed: {
+    // 设置这个变量，是因为解决：当屏幕宽度大于1000时，如果弹出菜单是显示状态，菜单不会自动收回的问题
+    visible: {
+      get: function(){
+        return this.screenWidth >= 1000 ? false : this.vis;
+      },
+      set: function(){
+      }
+    }
+  },
+  watch: {
+    // 使用节流，防止过度监听
+    screenWidth(newValue){
+      if(!this.timer){
+        this.screenWidth = newValue;
+        this.timer = true;
+        setTimeout(()=>{
+          this.timer = false;
+        }, 500)
+      }
+    }
   },
   methods: {
     // select方法可以用于路由跳转传参
@@ -90,8 +180,8 @@ export default {
       //   params: { data: "query" }
       // });
       // console.log(key, keyPath);
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -99,15 +189,22 @@ export default {
 .webtitle {
   width: 100%;
   height: 60px;
+  line-height: 60px;
+  overflow: hidden;
 }
 
 .header {
-  background-color: #545c64;
-  /* background-color: rgb(51, 51, 51); */
   padding-left: 50px;
+  height: 100%;
 }
 
-.home, .download {
+.responsive {
+  display: none;
+}
+
+.home,
+.download,
+.example {
   font-size: 16px;
   font-weight: bold;
 }
@@ -123,20 +220,32 @@ export default {
 .el-menu-item:first-child {
   border: none;
 }
-/* .github {
-  float: right;
-  margin-right: 50px;
-  height: 60px;
-  line-height: 60px;
-} */
 
-/* .github a {
-  color: rgb(255, 255, 255);
-  font-size: 18px;
-  font-weight: bold;
-} */
-
-/* a:hover {
-  color: #a5c2a0;
-} */
+@media screen and (max-width: 1000px) {
+  .header {
+    display: none;
+  }
+  .responsive {
+    padding-left: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:#545c64;
+    color: #fff;
+    height: 60px;
+  }
+  .responsive .logo {
+    flex-grow: 3;
+    text-align: left;
+    height: 60px;
+    line-height: 60px;
+  }
+  .responsive .menus {
+    flex-grow: 1;
+  }
+  a {
+    color: #a5c2a0;
+    font-size: 1.5em;
+  }
+}
 </style>
