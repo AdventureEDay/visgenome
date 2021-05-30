@@ -48,7 +48,7 @@
             element-loading-background="rgba(0, 0, 0, 0.5)"
           >
             <!-- 嵌入的内容在public文件夹，直接使用/ -->
-            <iframe ref="params" src="/jbrowse/?config=genomes/config.json" frameborder="0"></iframe>
+            <iframe ref="params" src="/jbrowse/index.html?config=genomes/config.json" frameborder="0"></iframe>
           </el-main>
         </el-container>
       </el-container>

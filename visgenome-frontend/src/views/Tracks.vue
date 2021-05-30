@@ -206,7 +206,7 @@ export default {
   // 使用计算属性监听src
   computed: {
     src: function(){
-      return "/jbrowse/?config=genomes/" + this.srcFolder[this.$route.params.type] + "/" + this.valueType + "/config_" + this.chromName + "_" + this.valueFile[this.valueType] + ".json";
+      return "/jbrowse/index.html?config=genomes/" + this.srcFolder[this.$route.params.type] + "/" + this.valueType + "/config_" + this.chromName + "_" + this.valueFile[this.valueType] + ".json";
     }
   },
   watch: {
