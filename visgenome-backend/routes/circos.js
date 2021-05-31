@@ -25,7 +25,7 @@ router.post("/", function (req, res, next) {
     let resolution = parseInt(formData.resolution); // 先假设从前端传过来的分辨率参数为1000
     let karyotype = {                   // 确定核型文件
         "hg38": "karyotype.human.hg38.txt",
-        "mm39": "mkaryotype.mouse.mm39.txt",
+        "mm39": "karyotype.mouse.mm39.txt",
         "saccer3": "karyotype.yeast.txt"
     };
     // 染色体编号

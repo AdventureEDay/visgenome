@@ -18,49 +18,56 @@
           <a href="http://circos.ca/" target="_blank">Circos</a> by circular
           ideogram layout , and
           <a href="https://www.jbrowse.org/jb2/" target="_blank">JBrowse 2</a>
-          for visualizing the whole genome sequence by linear view. The following images are examples of embedded Circos and Jbrowse 2 for
+          for visualizing the whole genome sequence by linear view. The
+          following images are examples of embedded Circos and Jbrowse 2 for
           visualizing our biological sequence values.
         </p>
         <el-row type="flex" justify="space-between" class="circosImg">
           <el-col :span="11">
-            <el-row class="imageTitle">Examples for Circos</el-row>
+            <el-row class="imageTitle">Circos</el-row>
             <el-row>
               <el-col class="item" :span="12">
-                <img
-                  alt="example"
-                  src="../assets/home/ex02.png"
-                  style="width: 100%; height: auto"
-                />
+                <a href="/vis_circos/human">
+                  <img
+                    alt="example"
+                    src="../assets/home/ex02.png"
+                    style="width: 100%; height: auto"
+                  />
+                </a>
               </el-col>
               <el-col class="item" :span="12">
-                <img
-                  alt="example"
-                  src="../assets/home/ex03.png"
-                  style="width: 100%; height: auto"
-                />
+                <a href="/vis_circos/mouse">
+                  <img
+                    alt="example"
+                    src="../assets/home/ex03.png"
+                    style="width: 100%; height: auto"
+                  />
+                </a>
               </el-col>
             </el-row>
             <el-row type="flex" justify="space-around">
               <el-col class="item" :span="12">
-                <img
-                  alt="example"
-                  src="../assets/home/ex04.png"
-                  style="width: 100%; height: auto;"
-                />
+                <a href="/vis_circos/yeast">
+                  <img
+                    alt="example"
+                    src="../assets/home/ex04.png"
+                    style="width: 100%; height: auto"
+                  />
+                </a>
               </el-col>
             </el-row>
           </el-col>
           <el-col :span="11">
-            <el-row class="imageTitle">
-              Examples for JBrowse
-            </el-row>
+            <el-row class="imageTitle"> Tracks </el-row>
             <el-row type="flex" justify="space-around" style="margin-top: 10%">
+              <a href="/genomes/yeast">
               <img
                 class="item"
                 alt="example"
                 src="../assets/home/ex01.png"
                 style="width: 100%; height: auto"
               />
+              </a>
             </el-row>
           </el-col>
         </el-row>
@@ -80,7 +87,7 @@ export default {
   name: "Home",
   data() {
     return {};
-  }
+  },
 };
 </script>
 
@@ -158,7 +165,7 @@ a {
   transition: transform 1s;
 }
 
-.circosImg .item:hover{
+.circosImg .item:hover {
   transform: scale(1.5);
   z-index: 1;
 }

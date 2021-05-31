@@ -24,7 +24,7 @@ const routes = [
     component: () => import("../views/Download.vue")
   },
   {
-    path: "/help/:type",
+    path: "/help",
     name: "Help",
     component: () => import("../views/Help.vue")
   },
@@ -33,12 +33,12 @@ const routes = [
     path: "/vis_circos/:type",
     name: "Circos",
     component: () => import("../views/Circos.vue")
-  },
-  {
-    path: "/example",
-    name: "Example",
-    component: () => import("../views/Example.vue")
   }
+  // {
+  //   path: "/example",
+  //   name: "Example",
+  //   component: () => import("../views/Example.vue")
+  // }
   // {
   //   path: "/about",
   //   name: "About",

@@ -48,22 +48,30 @@
       <p>
         If you want to get the physicochemical property values used in this web,
         you can download the value files from
+      </p>
+      <p class="download">
         <a href="https://knindex.pufengdu.org/download" target="_blank"
           ><img
             src="../assets/download/link.png"
             alt="link icon"
             class="inline-icon"
           />KNindex</a
-        >.
+        >
       </p>
       <el-divider>
         <i style="color: blue" class="el-icon-orange"></i>
       </el-divider>
       <p>
-        For the users who want to host iVisGenome themselves for in-house academic purpose, we provide all source codes of iVisgenome, which can be obtained from the GitHub repository <br/> 
+        For the users who want to host iVisGenome themselves for in-house
+        academic purpose, we provide all source codes of iVisgenome, which can
+        be obtained from the GitHub repository:
+      </p>
+      <p class="download">
         <a href="https://github.com/wyzhang0401/visgenome" target="_blank">
           <img
-            src="../assets/github.png" alt="github logo" class="inline-icon"
+            src="../assets/github.png"
+            alt="github logo"
+            class="inline-icon"
           />https://github.com/wyzhang0401/visgenome</a
         >
       </p>
@@ -85,7 +93,7 @@ export default {
 
 
 <style scoped>
-p{
+p {
   line-height: 2em;
 }
 .container {

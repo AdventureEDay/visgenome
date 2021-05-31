@@ -38,10 +38,10 @@
           >SacCer_Apr2011/sacCer3</el-menu-item
         >
       </el-submenu>
-      <el-menu-item index="/example" class="example">
+      <!-- <el-menu-item index="/example" class="example">
         <i class="el-icon-s-data"></i>
         Example
-      </el-menu-item>
+      </el-menu-item> -->
       <el-submenu index="3">
         <template slot="title">
           <i class="el-icon-orange"></i>
@@ -57,14 +57,11 @@
         <i class="el-icon-download"></i>
         Download
       </el-menu-item>
-      <el-submenu index="4">
-        <template slot="title">
-          <i class="el-icon-question"></i>
-          Help
-        </template>
-        <el-menu-item index="/help/tutorial">Tutorial</el-menu-item>
-        <el-menu-item index="/help/contact">Contact</el-menu-item>
-      </el-submenu>
+
+      <el-menu-item index="/help" class="help">
+        <i class="el-icon-question"></i>
+        Help
+      </el-menu-item>
     </el-menu>
 
     <div class="responsive">
@@ -72,11 +69,16 @@
         <img
           src="../assets/titlebar.png"
           alt="iVisgenome"
-          style="width: 200px; height:auto; vertical-align: middle;"
+          style="width: 200px; height: auto; vertical-align: middle"
         />
       </div>
       <div class="menus">
-        <el-popover v-model="visible" trigger="manual" placement="bottom-start" width="300">
+        <el-popover
+          v-model="visible"
+          trigger="manual"
+          placement="bottom-start"
+          width="300"
+        >
           <el-menu
             :default-active="$route.path"
             @select="handleSelect"
@@ -98,9 +100,9 @@
                 >SacCer_Apr2011/sacCer3</el-menu-item
               >
             </el-submenu>
-            <el-menu-item index="/example" class="example">
+            <!-- <el-menu-item index="/example" class="example">
               Example
-            </el-menu-item>
+            </el-menu-item> -->
             <el-submenu index="12">
               <template slot="title"> Circos </template>
               <el-menu-item index="/vis_circos/human"
@@ -116,16 +118,9 @@
             <el-menu-item index="/download" class="download">
               Download
             </el-menu-item>
-            <el-submenu index="13">
-              <template slot="title"> Help </template>
-              <el-menu-item index="/help/tutorial">Tutorial</el-menu-item>
-              <el-menu-item index="/help/contact">Contact</el-menu-item>
-            </el-submenu>
+            <el-menu-item index="/help" class="help">Help</el-menu-item>
           </el-menu>
-          <a
-            href="javascript:void(0);"
-            slot="reference"
-            @click="vis = !vis"
+          <a href="javascript:void(0);" slot="reference" @click="vis = !vis"
             >&#9776;</a
           >
         </el-popover>
@@ -140,36 +135,35 @@ export default {
     return {
       // activePath: this.$route.path
       vis: false,
-      screenWidth: document.body.clientWidth
+      screenWidth: document.body.clientWidth,
     };
   },
-  mounted(){
+  mounted() {
     // 监听页面视口宽度
-    window.onresize = ()=>{
+    window.onresize = () => {
       this.screenWidth = document.body.clientWidth;
-    }
+    };
   },
   computed: {
     // 设置这个变量，是因为解决：当屏幕宽度大于1000时，如果弹出菜单是显示状态，菜单不会自动收回的问题
     visible: {
-      get: function(){
+      get: function () {
         return this.screenWidth >= 1000 ? false : this.vis;
       },
-      set: function(){
-      }
-    }
+      set: function () {},
+    },
   },
   watch: {
     // 使用节流，防止过度监听
-    screenWidth(newValue){
-      if(!this.timer){
+    screenWidth(newValue) {
+      if (!this.timer) {
         this.screenWidth = newValue;
         this.timer = true;
-        setTimeout(()=>{
+        setTimeout(() => {
           this.timer = false;
-        }, 500)
+        }, 500);
       }
-    }
+    },
   },
   methods: {
     // select方法可以用于路由跳转传参
@@ -204,7 +198,8 @@ export default {
 
 .home,
 .download,
-.example {
+.example,
+.help {
   font-size: 16px;
   font-weight: bold;
 }
@@ -230,7 +225,7 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color:#545c64;
+    background-color: #545c64;
     color: #fff;
     height: 60px;
   }
