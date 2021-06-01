@@ -12,7 +12,7 @@
           {{ mainLabel }}
         </el-header>
         <el-main class="insert">
-          <el-row type="flex" justify="center">
+          <el-row type="flex" justify="center" class="adapt">
             <el-col :span="10">
               <!-- 染色体选择：根据基因组类型不同设置可选择的染色体编号 -->
               <el-row class="options">
@@ -51,153 +51,155 @@
                 <el-col class="label" :span="8">Other paramters:</el-col>
                 <el-col class="content" :span="6">
                   <!-- 弹出框进行k值，理化特性，位置区间的设置 -->
-                  <el-popover placement="right" width="600">
+                  <el-popover placement="right-start" width="600">
                     <el-form :model="ruleForm" :rules="rules" ref="ruleForm">
-                      <!-- k 值选择 -->
-                      <el-form-item prop="knucleotide">
-                        <el-col class="label"
-                          ><i>k</i>-nucleotide (<i>k</i>)</el-col
-                        >
-                        <el-col class="content">
-                          <el-radio-group
-                            v-model="ruleForm.knucleotide"
-                            @change="changeProperties"
-                          >
-                            <el-radio :label="1">1</el-radio>
-                            <el-radio :label="2">2</el-radio>
-                            <el-radio :label="3">3</el-radio>
-                          </el-radio-group>
-                        </el-col>
-                      </el-form-item>
-                      <!-- 理化特性选择 -->
-                      <el-form-item prop="selectedProperty">
-                        <el-col class="label">
-                          <i>{{ ruleForm.knucleotide }}</i
-                          >-nucleotides physicochemical properties
-                        </el-col>
-                        <el-col class="content">
-                          <el-table
-                            :data="properties"
-                            height="400"
-                            style="padding: 0 20px"
-                            empty-text="please select k-nucleotide(k=1,2,3) first"
-                          >
-                            <el-table-column
-                              type="index"
-                              width="50"
-                            ></el-table-column>
-                            <el-table-column width="45">
-                              <template slot-scope="scope">
-                                <el-radio-group
-                                  v-model="ruleForm.selectedProperty"
+                      <el-collapse v-model="activeItem" accordion>
+                        <el-collapse-item name="1">
+                          <template slot="title">
+                            <div><i>k</i>-nucleotide (<i>k</i>)</div>
+                          </template>
+                          <!-- k 值选择 -->
+                          <el-form-item prop="knucleotide">
+                            <div class="params">
+                              <el-radio-group
+                                v-model="ruleForm.knucleotide"
+                                @change="changeProperties"
+                              >
+                                <el-radio :label="1">1</el-radio>
+                                <el-radio :label="2">2</el-radio>
+                                <el-radio :label="3">3</el-radio>
+                              </el-radio-group>
+                            </div>
+                          </el-form-item>
+                        </el-collapse-item>
+                        <el-collapse-item name="2">
+                          <template slot="title">
+                            <div>
+                              <i>{{ ruleForm.knucleotide }}</i
+                              >-nucleotides physicochemical properties
+                            </div>
+                          </template>
+                          <!-- 理化特性选择 -->
+                          <el-form-item prop="selectedProperty">
+                            <div class="params">
+                              <el-table
+                                :data="properties"
+                                height="400"
+                                style="padding: 0 20px"
+                                empty-text="please select k-nucleotide(k=1,2,3) first"
+                              >
+                                <el-table-column
+                                  type="index"
+                                  width="50"
+                                ></el-table-column>
+                                <el-table-column width="45">
+                                  <template slot-scope="scope">
+                                    <el-radio-group
+                                      v-model="ruleForm.selectedProperty"
+                                    >
+                                      <el-radio :label="scope.row.ID">
+                                        {{ blankLabel }}
+                                      </el-radio>
+                                    </el-radio-group>
+                                  </template>
+                                </el-table-column>
+                                <el-table-column
+                                  property="ID"
+                                  label="ID"
+                                  width="100"
                                 >
-                                  <el-radio :label="scope.row.ID">
-                                    {{ blankLabel }}
-                                  </el-radio>
-                                </el-radio-group>
-                              </template>
-                            </el-table-column>
-                            <el-table-column
-                              property="ID"
-                              label="ID"
-                              width="100"
-                            >
-                            </el-table-column>
-                            <el-table-column
-                              property="property"
-                              label="Property Name"
-                              show-overflow-tooltip
-                            ></el-table-column>
-                          </el-table>
+                                </el-table-column>
+                                <el-table-column
+                                  property="property"
+                                  label="Property Name"
+                                  show-overflow-tooltip
+                                ></el-table-column>
+                              </el-table>
 
-                          <p
-                            style="
-                              font-size: 10px;
-                              color: gray;
-                              line-height: 1.5em;
-                            "
-                          >
-                            <i>You select the physicochemical property: </i>
-                            <b>{{ ruleForm.selectedProperty }}</b>
-                          </p>
-                        </el-col>
-                      </el-form-item>
-                      <!-- 位置设置 -->
-                      <el-form-item prop="positions">
-                        <el-col class="label"
-                          >Set the start and end positions &amp; Select a
-                          resolution</el-col
-                        >
-                        <!-- <p
-                          style="
-                            font-size: 10px;
-                            color: red;
-                            line-height: 1em;
-                            margin: 50px 0 0 10px;
-                          "
-                          @click="question"
-                        >
-                          selectable interval: [ 0,
-                          {{
-                            chromLength - ruleForm.knucleotide + 1
-                              ? chromLength - ruleForm.knucleotide + 1
-                              : "s-k+1"
-                          }})
-                          <i class="el-icon-question" style="color: gray"></i>
-                        </p> -->
-                        <el-row>
-                          <el-row style="color: #a5c2a0">
-                            <el-col :span="8">start position</el-col>
-                            <el-col :span="8">end position</el-col>
-                            <el-col :span="8">resolution</el-col>
-                          </el-row>
-                          <el-row>
-                            <el-col :span="8">
-                              <el-input-number
-                                v-model="ruleForm.positions.startPosition"
-                                controls-position="right"
-                                :min="0"
-                                :max="chromLength - ruleForm.knucleotide"
-                                placeholder="start"
+                              <p
+                                style="
+                                  font-size: 10px;
+                                  color: gray;
+                                  line-height: 1.5em;
+                                "
                               >
-                              </el-input-number
-                            ></el-col>
-                            <el-col :span="8"
-                              ><el-input-number
-                                v-model="ruleForm.positions.endPosition"
-                                controls-position="right"
-                                :min="0"
-                                :max="chromLength - ruleForm.knucleotide"
-                                placeholder="end"
-                              >
-                              </el-input-number
-                            ></el-col>
-                            <el-col :span="8"
-                              ><el-select
-                                v-model="ruleForm.resolution"
-                                placeholder="please select resolution"
-                              >
-                                <el-option label="1" :value="1"></el-option>
-                                <el-option label="100" :value="100"></el-option>
-                                <el-option label="1k" :value="1000"></el-option>
-                                <el-option
-                                  label="25k"
-                                  :value="25000"
-                                ></el-option>
-                                <el-option
-                                  label="50k"
-                                  :value="50000"
-                                ></el-option>
-                                <el-option
-                                  label="1M"
-                                  :value="1000000"
-                                ></el-option> </el-select
-                            ></el-col>
-                          </el-row>
-                        </el-row>
-                      </el-form-item>
+                                <i>You select the physicochemical property: </i>
+                                <b>{{ ruleForm.selectedProperty }}</b>
+                              </p>
+                            </div>
+                          </el-form-item>
+                        </el-collapse-item>
+                        <el-collapse-item name="3">
+                          <template slot="title">
+                            <div>
+                              Set the start and end positions &amp; Select a
+                              resolution
+                            </div>
+                          </template>
+                          <!-- 位置设置 -->
+                          <el-form-item prop="positions">
+                            <div class="params">
+                              <el-row style="color: #a5c2a0">
+                                <el-col :span="8">start position</el-col>
+                                <el-col :span="8">end position</el-col>
+                                <el-col :span="8">resolution</el-col>
+                              </el-row>
+                              <el-row>
+                                <el-col :span="8">
+                                  <el-input-number
+                                    v-model="ruleForm.positions.startPosition"
+                                    controls-position="right"
+                                    :min="0"
+                                    :max="chromLength - ruleForm.knucleotide"
+                                    placeholder="start"
+                                  >
+                                  </el-input-number
+                                ></el-col>
+                                <el-col :span="8"
+                                  ><el-input-number
+                                    v-model="ruleForm.positions.endPosition"
+                                    controls-position="right"
+                                    :min="0"
+                                    :max="chromLength - ruleForm.knucleotide"
+                                    placeholder="end"
+                                  >
+                                  </el-input-number
+                                ></el-col>
+                                <el-col :span="8"
+                                  ><el-select
+                                    v-model="ruleForm.resolution"
+                                    placeholder="please select resolution"
+                                  >
+                                    <el-option label="1" :value="1"></el-option>
+                                    <el-option
+                                      label="100"
+                                      :value="100"
+                                    ></el-option>
+                                    <el-option
+                                      label="1k"
+                                      :value="1000"
+                                    ></el-option>
+                                    <el-option
+                                      label="25k"
+                                      :value="25000"
+                                    ></el-option>
+                                    <el-option
+                                      label="50k"
+                                      :value="50000"
+                                    ></el-option>
+                                    <el-option
+                                      label="1M"
+                                      :value="1000000"
+                                    ></el-option> </el-select
+                                ></el-col>
+                              </el-row>
+                            </div>
+                          </el-form-item>
+                        </el-collapse-item>
+                      </el-collapse>
                       <el-form-item>
                         <el-button
+                          class="params"
                           type="success"
                           @click="getCircos('ruleForm')"
                         >
@@ -222,11 +224,254 @@
                     vertical-align: middle;
                     margin-right: 10px;
                   "
-                />There are two plots in the circular image, one is outside the
-                circle, oriented out, and the other is the same plot, but inside
-                the circle, origented in. Every tick represents 5 units of
-                resolution. The following example circular image is with the
-                resolution set to 1.
+                />There is one plot inside the circular image, origented in.
+                Every tick represents 5 units of resolution. The following
+                example circular image is with the resolution set to 1.
+              </div>
+              <el-row style="padding: 20px 0 0 20px">
+                <el-col
+                  :span="4"
+                  style="height: 20px; width: 25px; background-color: #fc9272"
+                ></el-col>
+                <el-col :span="4">value &lt; 0</el-col>
+              </el-row>
+              <el-row style="padding: 20px 0 0 20px">
+                <el-col
+                  :span="4"
+                  style="height: 20px; width: 25px; background-color: #a1d99b"
+                ></el-col>
+                <el-col :span="4">value &gt; 0</el-col>
+              </el-row>
+              <el-row style="padding: 20px 0 0 20px">
+                <el-col
+                  :span="4"
+                  style="
+                    height: 25px;
+                    width: 25px;
+                    border: 1px solid black;
+                    border-radius: 50%;
+                  "
+                ></el-col>
+                <el-col :span="4">value = 0</el-col>
+              </el-row>
+            </el-col>
+          </el-row>
+          <el-row class="responsive" type="flex" justify="center">
+            <el-col :span="20">
+              <!-- 染色体选择：根据基因组类型不同设置可选择的染色体编号 -->
+              <el-row class="options">
+                <el-col class="label" :span="8">Choose a chromosome:</el-col>
+                <el-col class="content" :span="6">
+                  <!-- 根据选择的染色体，changePosition设置可选择位置的大小 -->
+                  <el-select
+                    v-model="ruleForm.chromName"
+                    placeholder="please select a chromosome"
+                    @change="changePosition"
+                  >
+                    <el-option
+                      v-for="item in options[$route.params.type]"
+                      :key="item"
+                      :label="item"
+                      :value="item"
+                    >
+                    </el-option>
+                  </el-select>
+                </el-col>
+              </el-row>
+              <!-- 值的类型按钮 -->
+              <el-row class="options">
+                <el-col class="label" :span="8">
+                  Type of property values:
+                </el-col>
+                <el-col class="content" :span="8">
+                  <el-radio-group v-model="ruleForm.valueType">
+                    <el-radio-button label="original">Original</el-radio-button>
+                    <el-radio-button label="standard">Standard</el-radio-button>
+                  </el-radio-group>
+                </el-col>
+              </el-row>
+              <!-- 其他参数的弹出框 -->
+              <el-row class="options">
+                <el-col class="label" :span="8">Other paramters:</el-col>
+                <el-col class="content" :span="6">
+                  <!-- 弹出框进行k值，理化特性，位置区间的设置 -->
+                  <el-popover placement="right-start" width="600">
+                    <el-form :model="ruleForm" :rules="rules" ref="ruleForm">
+                      <el-collapse v-model="activeItem" accordion>
+                        <el-collapse-item name="1">
+                          <template slot="title">
+                            <div><i>k</i>-nucleotide (<i>k</i>)</div>
+                          </template>
+                          <!-- k 值选择 -->
+                          <el-form-item prop="knucleotide">
+                            <div class="params">
+                              <el-radio-group
+                                v-model="ruleForm.knucleotide"
+                                @change="changeProperties"
+                              >
+                                <el-radio :label="1">1</el-radio>
+                                <el-radio :label="2">2</el-radio>
+                                <el-radio :label="3">3</el-radio>
+                              </el-radio-group>
+                            </div>
+                          </el-form-item>
+                        </el-collapse-item>
+                        <el-collapse-item name="2">
+                          <template slot="title">
+                            <div>
+                              <i>{{ ruleForm.knucleotide }}</i
+                              >-nucleotides physicochemical properties
+                            </div>
+                          </template>
+                          <!-- 理化特性选择 -->
+                          <el-form-item prop="selectedProperty">
+                            <div class="params">
+                              <el-table
+                                :data="properties"
+                                height="400"
+                                style="padding: 0 20px"
+                                empty-text="please select k-nucleotide(k=1,2,3) first"
+                              >
+                                <el-table-column
+                                  type="index"
+                                  width="50"
+                                ></el-table-column>
+                                <el-table-column width="45">
+                                  <template slot-scope="scope">
+                                    <el-radio-group
+                                      v-model="ruleForm.selectedProperty"
+                                    >
+                                      <el-radio :label="scope.row.ID">
+                                        {{ blankLabel }}
+                                      </el-radio>
+                                    </el-radio-group>
+                                  </template>
+                                </el-table-column>
+                                <el-table-column
+                                  property="ID"
+                                  label="ID"
+                                  width="100"
+                                >
+                                </el-table-column>
+                                <el-table-column
+                                  property="property"
+                                  label="Property Name"
+                                  show-overflow-tooltip
+                                ></el-table-column>
+                              </el-table>
+
+                              <p
+                                style="
+                                  font-size: 10px;
+                                  color: gray;
+                                  line-height: 1.5em;
+                                "
+                              >
+                                <i>You select the physicochemical property: </i>
+                                <b>{{ ruleForm.selectedProperty }}</b>
+                              </p>
+                            </div>
+                          </el-form-item>
+                        </el-collapse-item>
+                        <el-collapse-item name="3">
+                          <template slot="title">
+                            <div>
+                              Set the start and end positions &amp; Select a
+                              resolution
+                            </div>
+                          </template>
+                          <!-- 位置设置 -->
+                          <el-form-item prop="positions">
+                            <div class="params">
+                              <el-row style="color: #a5c2a0">
+                                <el-col :span="8">start position</el-col>
+                                <el-col :span="8">end position</el-col>
+                                <el-col :span="8">resolution</el-col>
+                              </el-row>
+                              <el-row>
+                                <el-col :span="8">
+                                  <el-input-number
+                                    v-model="ruleForm.positions.startPosition"
+                                    controls-position="right"
+                                    :min="0"
+                                    :max="chromLength - ruleForm.knucleotide"
+                                    placeholder="start"
+                                  >
+                                  </el-input-number
+                                ></el-col>
+                                <el-col :span="8"
+                                  ><el-input-number
+                                    v-model="ruleForm.positions.endPosition"
+                                    controls-position="right"
+                                    :min="0"
+                                    :max="chromLength - ruleForm.knucleotide"
+                                    placeholder="end"
+                                  >
+                                  </el-input-number
+                                ></el-col>
+                                <el-col :span="8"
+                                  ><el-select
+                                    v-model="ruleForm.resolution"
+                                    placeholder="please select resolution"
+                                  >
+                                    <el-option label="1" :value="1"></el-option>
+                                    <el-option
+                                      label="100"
+                                      :value="100"
+                                    ></el-option>
+                                    <el-option
+                                      label="1k"
+                                      :value="1000"
+                                    ></el-option>
+                                    <el-option
+                                      label="25k"
+                                      :value="25000"
+                                    ></el-option>
+                                    <el-option
+                                      label="50k"
+                                      :value="50000"
+                                    ></el-option>
+                                    <el-option
+                                      label="1M"
+                                      :value="1000000"
+                                    ></el-option> </el-select
+                                ></el-col>
+                              </el-row>
+                            </div>
+                          </el-form-item>
+                        </el-collapse-item>
+                      </el-collapse>
+                      <el-form-item>
+                        <el-button
+                          class="params"
+                          type="success"
+                          @click="getCircos('ruleForm')"
+                        >
+                          Get circos
+                        </el-button>
+                      </el-form-item>
+                    </el-form>
+                    <el-button type="warning" slot="reference"
+                      >Select parameters</el-button
+                    >
+                  </el-popover>
+                </el-col>
+              </el-row>
+              <el-divider content-position="left"
+                ><span style="color: #a5c2a0">Parameters</span></el-divider
+              >
+              <div class="tips">
+                <img
+                  src="../assets/tips.png"
+                  style="
+                    width: 1.5em;
+                    height: auto;
+                    vertical-align: middle;
+                    margin-right: 10px;
+                  "
+                />There is one plot inside the circular image, origented in.
+                Every tick represents 5 units of resolution. The following
+                example circular image is with the resolution set to 1.
               </div>
               <el-row style="padding: 20px 0 0 20px">
                 <el-col
@@ -263,7 +508,7 @@
           >
           <el-row>
             <img
-              src="../assets/home/ex04.png"
+              src="../assets/home/circos.png"
               alt="example circos image"
               v-show="!showImg && showExample"
               class="exampleImg"
@@ -439,6 +684,7 @@ export default {
       circos: "",
       showImg: false,
       showExample: true,
+      activeItem: "1",
     };
   },
   created() {
@@ -630,16 +876,13 @@ export default {
   padding-bottom: 30px;
 }
 
-.label {
-  text-align: left;
-  padding-left: 15px;
-  // height: 50px;
-  line-height: 60px;
+.responsive {
+  display: none;
 }
 
-.el-popover .label {
-  color: #fff;
-  background: #135560;
+.label {
+  text-align: left;
+  line-height: 60px;
 }
 
 .content {
@@ -678,7 +921,19 @@ export default {
   font-weight: bold;
 }
 
+/deep/ .el-collapse-item__header {
+  color: #fff;
+  padding-left: 20px;
+  font-size: 14px;
+  background-color: #0097a7;
+}
+
+.params {
+  padding: 10px;
+}
+
 .el-table {
+  width: 100%;
   border: solid 2px #a5c2a0;
 }
 
@@ -686,13 +941,10 @@ export default {
   border: solid 1.5px #a5c2a0 !important;
 }
 
-// /deep/ .el-drawer__header {
-//   color: #a5c2a0;
-// }
 .exampleImg {
   width: 60%;
   height: auto;
-  margin-top: -20px;
+  margin-top: -40px;
   margin-bottom: 20px;
 }
 
@@ -716,5 +968,14 @@ export default {
   // margin-left: 20px;
   text-align: justify;
   line-height: 1.5em;
+}
+
+@media screen and (max-width: 1600px) {
+  .adapt {
+    display: none;
+  }
+  .responsive {
+    display: flex;
+  }
 }
 </style>

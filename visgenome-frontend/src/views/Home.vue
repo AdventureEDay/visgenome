@@ -25,7 +25,7 @@
         <el-row type="flex" justify="space-between" class="circosImg">
           <el-col :span="11">
             <el-row class="imageTitle">Circos</el-row>
-            <el-row>
+            <!-- <el-row>
               <el-col class="item" :span="12">
                 <a href="/vis_circos/human">
                   <img
@@ -44,13 +44,13 @@
                   />
                 </a>
               </el-col>
-            </el-row>
-            <el-row type="flex" justify="space-around">
-              <el-col class="item" :span="12">
-                <a href="/vis_circos/yeast">
+            </el-row> -->
+            <el-row type="flex" justify="space-around" style="margin-top: 5%">
+              <el-col class="item" :span="16">
+                <a href="/vis_circos/human">
                   <img
                     alt="example"
-                    src="../assets/home/ex04.png"
+                    src="../assets/home/circos.png"
                     style="width: 100%; height: auto"
                   />
                 </a>
@@ -64,7 +64,7 @@
               <img
                 class="item"
                 alt="example"
-                src="../assets/home/ex01.png"
+                src="../assets/home/tracks.png"
                 style="width: 100%; height: auto"
               />
               </a>
