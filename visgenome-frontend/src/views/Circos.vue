@@ -224,7 +224,7 @@
                     vertical-align: middle;
                     margin-right: 10px;
                   "
-                />There is one plot inside the circular image, origented in.
+                />There is one plot inside the circular image.
                 Every tick represents 5 units of resolution. The following
                 example circular image is with the resolution set to 1.
               </div>
@@ -469,7 +469,7 @@
                     vertical-align: middle;
                     margin-right: 10px;
                   "
-                />There is one plot inside the circular image, origented in.
+                />There is one plot inside the circular image.
                 Every tick represents 5 units of resolution. The following
                 example circular image is with the resolution set to 1.
               </div>

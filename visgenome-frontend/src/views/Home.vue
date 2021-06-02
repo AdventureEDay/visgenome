@@ -13,12 +13,12 @@
       <div class="intro">
         <p>
           <b>iVisgenome</b> can be used to visualize the whole-genome (e.g.
-          <b>Human, Mouse, and Yeast</b>) sequences represented by
+          <b>Human, Mouse, and Yeast</b>) sequences numerized with <i>k</i>-nucleotide
           physicochemical property values. We integrate
           <a href="http://circos.ca/" target="_blank">Circos</a> by circular
           ideogram layout , and
           <a href="https://www.jbrowse.org/jb2/" target="_blank">JBrowse 2</a>
-          for visualizing the whole genome sequence by linear view. The
+          for visualizing the whole genome sequence by linear genome view. The
           following images are examples of embedded Circos and Jbrowse 2 for
           visualizing our biological sequence values.
         </p>

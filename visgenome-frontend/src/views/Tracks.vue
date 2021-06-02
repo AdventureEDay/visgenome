@@ -115,7 +115,12 @@
           </el-col>
           <el-col :span="7">
             <el-row class="label">The colors of nucleotide: </el-row>
-            <el-row style="line-height: 60px" class="content" type="flex" justify="center">
+            <el-row
+              style="line-height: 60px"
+              class="content"
+              type="flex"
+              justify="center"
+            >
               <el-col :span="2"
                 ><span
                   class="legend"
@@ -188,11 +193,11 @@ export default {
       srcFolder: {
         human: "hg38",
         mouse: "mm39",
-        yeast: "saccer3",
+        yeast: "saccer3"
       },
       valueFile: {
         original: "ori",
-        standard: "sta",
+        standard: "sta"
       },
       options: {
         human: [
@@ -220,7 +225,7 @@ export default {
           "chr22",
           "chrX",
           "chrY",
-          "chrM",
+          "chrM"
         ],
         mouse: [
           "chr1",
@@ -244,7 +249,7 @@ export default {
           "chr19",
           "chrX",
           "chrY",
-          "chrM",
+          "chrM"
         ],
         yeast: [
           "chrI",
@@ -263,9 +268,9 @@ export default {
           "chrXIV",
           "chrXV",
           "chrXVI",
-          "chrM",
-        ],
-      },
+          "chrM"
+        ]
+      }
     };
   },
   mounted() {
@@ -280,7 +285,7 @@ export default {
         _this.changeStatus();
       });
     } else {
-      iframe.onload = function () {
+      iframe.onload = function() {
         _this.changeStatus();
       };
     }
@@ -300,14 +305,14 @@ export default {
           this.valueFile[this.valueType] +
           ".json"
         );
-      },
-    },
+      }
+    }
   },
   watch: {
     // 监听路由变化，每次进入页面都是original
     $route: {
       // eslint-disable-next-line no-unused-vars
-      handler: function (val, _oldVal) {
+      handler: function(val, _oldVal) {
         this.valueType = "original";
         this.chromName = this.options[val.params.type][0]; // 默认选择的染色体为第一个
         // this.src="/jbrowse/?config=genomes/" + this.srcFolder[val.params.type] + "/" + this.valueType + "/config_" + this.chromName + "_" + this.valueFile[this.valueType] + ".json";
@@ -315,17 +320,17 @@ export default {
         this.loading = true;
       },
       // 深度观察监听
-      deep: true,
+      deep: true
     },
     // Vue 的 计算属性 (computed) 中应当仅包含用于返回值的计算，不应该包含 DOM操作，修改外部变量，异步操作 等。这些操作应该在 侦听器 (watch) 中实现
     // 由于在计算属性中改变变量loading值会报错，所以应该在watch属性中监听srcIframe的变化，从而修改loading值
     srcIframe: {
       // eslint-disable-next-line no-unused-vars
-      handler: function (_val, _oldVal) {
+      handler: function(_val, _oldVal) {
         this.loading = true; // 在src属性发生变化的时候有loading遮罩层
       },
-      deep: true,
-    },
+      deep: true
+    }
   },
   methods: {
     changeStatus() {
@@ -334,7 +339,7 @@ export default {
       let _this = this;
       // let dom = _this.getIFrameDom("gene-iframe");
       // 渲染完成之后才能操作样式
-      setTimeout(function () {
+      setTimeout(function() {
         try {
           // 获取iframe的DOM结构
           let dom = _this.getIFrameDom("gene-iframe");
@@ -369,8 +374,8 @@ export default {
         document.getElementById(id).contentWindow.document ||
         document.frames[id].document
       );
-    },
-  },
+    }
+  }
 };
 </script>
 

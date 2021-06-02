@@ -46,8 +46,9 @@
         <i style="color: blue" class="el-icon-orange"></i>
       </el-divider>
       <p>
-        If you want to get the physicochemical property values used in this web,
-        you can download the value files from
+        If you want to get the <i>k</i>-nucleotide (e.g. mononucleotide,
+        dinucleotide, and trinucleotide) physicochemical property values used in
+        this web, you can download the value files from
       </p>
       <p class="download">
         <a href="https://knindex.pufengdu.org/download" target="_blank"
