@@ -2769,7 +2769,8 @@
       {
         "id": "hg38_default",
         "type": "LinearGenomeView",
-        "bpPerPx": 0.080,
+        "offsetPx": 1000000,
+        "bpPerPx": 0.08,
         "displayedRegions": [
           {
             "refName": "chr1",

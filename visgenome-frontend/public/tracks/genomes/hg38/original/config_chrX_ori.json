@@ -2769,6 +2769,7 @@
       {
         "id": "hg38_default",
         "type": "LinearGenomeView",
+        "offsetPx": 1000000000,
         "bpPerPx": 0.080,
         "displayedRegions": [
           {

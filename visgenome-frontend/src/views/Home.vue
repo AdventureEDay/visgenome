@@ -13,14 +13,24 @@
       <div class="intro">
         <p>
           <b>iVisgenome</b> can be used to visualize the whole-genome (e.g.
-          <b>Human, Mouse, and Yeast</b>) sequences numerized with <i>k</i>-nucleotide
-          physicochemical property values. We integrate
+          <b>Human, Mouse, and Yeast</b>) sequences numerized with
+          <i>k</i>-nucleotide physicochemical property values. We integrate
           <a href="http://circos.ca/" target="_blank">Circos</a> by circular
           ideogram layout , and
           <a href="https://www.jbrowse.org/jb2/" target="_blank">JBrowse 2</a>
           for visualizing the whole genome sequence by linear genome view. The
           following images are examples of embedded Circos and Jbrowse 2 for
           visualizing our biological sequence values.
+        </p>
+        <p>
+          Users can also visualize other genomes by configuring files in the
+          same format as these of Human, Mouse, and Yeast. The file format is
+          explained on
+          <a href="/help?id=dataFormat">Help->Data processing</a> section and
+          all the source codes of iVisGenome can be downloaded from <a href="/download"
+            >Download</a
+          >
+          page.
         </p>
         <el-row type="flex" justify="space-between" class="circosImg">
           <el-col :span="11">
@@ -61,12 +71,12 @@
             <el-row class="imageTitle"> Tracks </el-row>
             <el-row type="flex" justify="space-around" style="margin-top: 10%">
               <a href="/genomes/yeast">
-              <img
-                class="item"
-                alt="example"
-                src="../assets/home/tracks.png"
-                style="width: 100%; height: auto"
-              />
+                <img
+                  class="item"
+                  alt="example"
+                  src="../assets/home/tracks.png"
+                  style="width: 100%; height: auto"
+                />
               </a>
             </el-row>
           </el-col>

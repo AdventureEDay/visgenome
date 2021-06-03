@@ -2769,6 +2769,7 @@
       {
         "id": "mm39_default",
         "type": "LinearGenomeView",
+        "offsetPx": 125000000,
         "bpPerPx": 0.080,
         "displayedRegions": [
           {
