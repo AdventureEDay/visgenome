@@ -149,8 +149,8 @@
                                   <el-input-number
                                     v-model="ruleForm.positions.startPosition"
                                     controls-position="right"
-                                    :min="0"
-                                    :max="chromLength - ruleForm.knucleotide"
+                                    :min="1"
+                                    :max="chromLength - ruleForm.knucleotide + 1"
                                     placeholder="start"
                                   >
                                   </el-input-number
@@ -159,8 +159,8 @@
                                   ><el-input-number
                                     v-model="ruleForm.positions.endPosition"
                                     controls-position="right"
-                                    :min="0"
-                                    :max="chromLength - ruleForm.knucleotide"
+                                    :min="1"
+                                    :max="chromLength - ruleForm.knucleotide + 1"
                                     placeholder="end"
                                   >
                                   </el-input-number
@@ -393,8 +393,8 @@
                                   <el-input-number
                                     v-model="ruleForm.positions.startPosition"
                                     controls-position="right"
-                                    :min="0"
-                                    :max="chromLength - ruleForm.knucleotide"
+                                    :min="1"
+                                    :max="chromLength - ruleForm.knucleotide + 1"
                                     placeholder="start"
                                   >
                                   </el-input-number
@@ -403,8 +403,8 @@
                                   ><el-input-number
                                     v-model="ruleForm.positions.endPosition"
                                     controls-position="right"
-                                    :min="0"
-                                    :max="chromLength - ruleForm.knucleotide"
+                                    :min="1"
+                                    :max="chromLength - ruleForm.knucleotide + 1"
                                     placeholder="end"
                                   >
                                   </el-input-number
@@ -712,9 +712,9 @@ export default {
       // this.ruleForm.valueType = this.$route.params.valueType;
       // this.ruleForm.knucleotide = "k";
     }
-    let hgposition = { startPosition: 10000000, endPosition: 10000500 };
-    let mmposition = { startPosition: 10000000, endPosition: 10000500 };
-    let sacposition = { startPosition: 100000, endPosition: 100500 };
+    let hgposition = { startPosition: 10000000, endPosition: 10000499 };
+    let mmposition = { startPosition: 10000000, endPosition: 10000499 };
+    let sacposition = { startPosition: 100000, endPosition: 100499 };
     if (type === "human") {
       this.mainLabel = "Human GRCH38/hg38";
       this.ruleForm.positions = hgposition;
@@ -747,9 +747,9 @@ export default {
         this.ruleForm.knucleotide = 1; // 默认为单元核苷酸
         this.ruleForm.selectedProperty = "MD0001"; // 默认选定的理化特性
         this.ruleForm.resolution = 1; // 默认的分辨率
-        let hgposition = { startPosition: 10000000, endPosition: 10000500 };
-        let mmposition = { startPosition: 10000000, endPosition: 10000500 };
-        let sacposition = { startPosition: 100000, endPosition: 100500 };
+        let hgposition = { startPosition: 10000000, endPosition: 10000499 };
+        let mmposition = { startPosition: 10000000, endPosition: 10000499 };
+        let sacposition = { startPosition: 100000, endPosition: 100499 };
         // this.ruleForm.positions = { startPosition: 500000, endPosition: 500500 };
         if (type === "human") {
           this.mainLabel = "Human GRCH38/hg38";

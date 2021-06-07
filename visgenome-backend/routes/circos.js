@@ -21,6 +21,7 @@ router.post("/", function (req, res, next) {
     let knucleotide = formData.knucleotide; // 表示k-nucleotide的 k 值
     let property = formData.selectedProperty; // 选中的理化特性
     let positions = formData.positions; // 设定的染色体的起始位置和结束位置
+    // let positions = {startPosition: formData.positions.startPosition-1, endPosition: formData.positions.endPosition-1}; // 设定的染色体的起始位置和结束位置
     // console.log(positions);
     let resolution = parseInt(formData.resolution); // 先假设从前端传过来的分辨率参数为1000
     let karyotype = {                   // 确定核型文件
@@ -38,7 +39,7 @@ router.post("/", function (req, res, next) {
     let id = chromName.slice(3);
     let chromID = chromosome[genome] + id;
     // 显示的染色体位置的过滤参数
-    let chromosomes = chromID + ":" + Math.floor(positions.startPosition / resolution) + "-" + Math.floor(positions.endPosition / resolution)
+    let chromosomes = chromID + ":" + Math.floor(positions.startPosition / resolution) + "-" + Math.floor((positions.endPosition + 1) / resolution)
     // let chromosomes = chromID + ":" + positions.startPosition + "-" + positions.endPosition // 图中不显示最后一个数
     // 有异步操作, 接下来的步骤放到回调里完成
     geneTrack(genome, chromName, valueType, knucleotide, property, positions, dir, resolution, (err)=>{
@@ -123,8 +124,9 @@ function bin_gz(bin_file, data_file, positions, chromID, resolution, callback) {
                             console.log(err)
                             process.exitCode = 1;
                         }
-                        // 将前端传过来的数的左闭右开
-                        let buf = Buffer.from(bytes.slice(positions.startPosition * 4, positions.endPosition * 4))
+                        // 想要获取输入参数的闭区间的值，想要获取[start, end]，后端获取的数应该是[start-1, end-1]
+                        // 20210607-修改Circos显示位置左右都包括在内, 值以0开始索引, 为了和wiggle文件保持一致，要获取从1开始索引的[s,e]，就要截取s-1到e的数
+                        let buf = Buffer.from(bytes.slice((positions.startPosition-1) * 4, positions.endPosition * 4))
                         let valueList = readValues(buf, 4)
                         // valueList按照一定格式写入文件
                         let data = ""

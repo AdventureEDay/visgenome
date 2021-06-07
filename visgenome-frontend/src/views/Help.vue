@@ -161,8 +161,8 @@
             <i>k</i>-nucleotides physicochemical property, start, end positions,
             and resolution). The default value of <i>k</i> is 1, the default
             selected item of properties is 'EIIP', the default positions are
-            10,000,000 and 10,000,500, and the default resolution is 1. Each
-            value in the circos represents average value of resolution lengths
+            10,000,000 and 10,000,500 for "hg38" and "mm39", 100,000 and 100,500 for "sacCer3", and the default resolution is 1. Each
+            value in the circular image represents the average value of resolution lengths
             in the sub-sequence.
           </p>
           <p><strong>Circular image descriptions</strong></p>
@@ -260,7 +260,7 @@
                 Wiggle format: <a href="http://genome.ucsc.edu/goldenPath/help/wiggle.html" target="_blank">http://genome.ucsc.edu/goldenPath/help/wiggle.html</a>
               </li>
               <li>
-                bigWig format: <a href="http://genome.ucsc.edu/goldenPath/help/bigwig.html" target="_blank">http://genome.ucsc.edu/goldenPath/help/bigwig.html</a>
+                bigWig format: <a href="http://genome.ucsc.edu/goldenPath/help/bigWig.html" target="_blank">http://genome.ucsc.edu/goldenPath/help/bigWig.html</a>
               </li>
               <li>
                  wigToBigWig: <a href="http://hgdownload.soe.ucsc.edu/admin/exe/" target="_blank">http://hgdownload.soe.ucsc.edu/admin/exe/</a>
