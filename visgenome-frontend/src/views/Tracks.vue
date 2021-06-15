@@ -381,10 +381,10 @@ export default {
 
 <style scoped lang="less">
 // 注意有less语法环境
-@extra: 60px;
-.genomes {
-  height: calc(~"100% - @{extra}");
-}
+// @extra: 120px;
+// .genomes {
+//   height: calc(~"100% - @{extra}");
+// }
 
 // .genomes {
 //   height: 100%;
@@ -394,8 +394,8 @@ export default {
   padding: 0;
   margin: 0;
   width: 100%;
-  height: calc(~"100% - @{extra}");
-  // height: 100%;
+  // height: calc(~"100% - @{extra}");
+  // height: 1000px;
 }
 
 .title {
@@ -422,7 +422,7 @@ export default {
 
 .insert iframe {
   width: 100%;
-  height: 100%;
+  height: 90vh;
 }
 
 .el-aside {

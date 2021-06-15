@@ -13,7 +13,7 @@
       <div class="intro">
         <p>
           <b>iVisgenome</b> can be used to visualize the whole-genome (e.g.
-          <b>Human, Mouse, and Yeast</b>) sequences numerized with
+          <b>Human, Mouse, and Yeast</b>) sequences represented by
           <i>k</i>-nucleotide physicochemical property values. We integrate
           <a href="http://circos.ca/" target="_blank">Circos</a> by circular
           ideogram layout , and
