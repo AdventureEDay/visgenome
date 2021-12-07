@@ -291,6 +291,7 @@ export default {
     }
   },
   // 使用计算属性监听src
+  // 计算属性在beforeCreate和created之间初始化，所以生产环境的chromName会是空的，所以在监听路由的时候条件immediate应该可以解决问题
   computed: {
     srcIframe: {
       get() {
@@ -320,7 +321,9 @@ export default {
         this.loading = true;
       },
       // 深度观察监听
-      deep: true
+      deep: true,
+      immediate: true
+      // 解决报错是不是应该加个立即监听【20211107】
     },
     // Vue 的 计算属性 (computed) 中应当仅包含用于返回值的计算，不应该包含 DOM操作，修改外部变量，异步操作 等。这些操作应该在 侦听器 (watch) 中实现
     // 由于在计算属性中改变变量loading值会报错，所以应该在watch属性中监听srcIframe的变化，从而修改loading值
