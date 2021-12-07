@@ -32,6 +32,9 @@
           >
           page.
         </p>
+        <p>
+          This website is free and open to all users and there is no login requirement.
+        </p>
         <el-row type="flex" justify="space-between" class="circosImg">
           <el-col :span="11">
             <el-row class="imageTitle">Circos</el-row>
