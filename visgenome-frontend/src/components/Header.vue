@@ -32,7 +32,7 @@
             >Human GRCH38/hg38</router-link
           ></el-menu-item
         > -->
-        <el-menu-item index="/genomes/human">Human GRCH38/hg38</el-menu-item>
+        <el-menu-item index="/genomes/human">Human GRCh38/hg38</el-menu-item>
         <el-menu-item index="/genomes/mouse">Mouse GRCm39/mm39</el-menu-item>
         <el-menu-item index="/genomes/yeast"
           >SacCer_Apr2011/sacCer3</el-menu-item
@@ -47,7 +47,7 @@
           <i class="el-icon-orange"></i>
           Circos
         </template>
-        <el-menu-item index="/vis_circos/human">Human GRCH38/hg38</el-menu-item>
+        <el-menu-item index="/vis_circos/human">Human GRCh38/hg38</el-menu-item>
         <el-menu-item index="/vis_circos/mouse">Mouse GRCm39/mm39</el-menu-item>
         <el-menu-item index="/vis_circos/yeast"
           >SacCer_Apr2011/sacCer3</el-menu-item
