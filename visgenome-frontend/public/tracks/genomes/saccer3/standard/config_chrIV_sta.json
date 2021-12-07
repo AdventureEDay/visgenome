@@ -29,13 +29,13 @@
         "adapter": {
           "type": "BgzipFastaAdapter",
           "fastaLocation": {
-            "uri": "/file/saccer3/chrIV.fa.gz"
+            "uri": "/files/assembly/saccer3/chrIV.fa.gz"
           },
           "faiLocation": {
-            "uri": "/file/saccer3/chrIV.fa.gz.fai"
+            "uri": "/files/assembly/saccer3/chrIV.fa.gz.fai"
           },
           "gziLocation": {
-            "uri": "/file/saccer3/chrIV.fa.gz.gzi"
+            "uri": "/files/assembly/saccer3/chrIV.fa.gz.gzi"
           }
         }
       }
@@ -55,7 +55,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/monoDNASta/sacCer3_chrIV_MD0001_EIIP_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/monoDNASta/sacCer3_chrIV_MD0001_EIIP_sta.bw"
         }
       }
     },
@@ -72,7 +72,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0147_Thymine content_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0147_Thymine content_sta.bw"
         }
       }
     },
@@ -89,7 +89,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0001_Base stacking_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0001_Base stacking_sta.bw"
         }
       }
     },
@@ -106,7 +106,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0002_Protein induced deformability_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0002_Protein induced deformability_sta.bw"
         }
       }
     },
@@ -123,7 +123,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0003_B-DNA twist_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0003_B-DNA twist_sta.bw"
         }
       }
     },
@@ -140,7 +140,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0004_A-philicity_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0004_A-philicity_sta.bw"
         }
       }
     },
@@ -157,7 +157,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0005_Propeller twist_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0005_Propeller twist_sta.bw"
         }
       }
     },
@@ -174,7 +174,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0006_Duplex stability (freeenergy)_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0006_Duplex stability (freeenergy)_sta.bw"
         }
       }
     },
@@ -191,7 +191,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0007_Duplex stability (disruptenergy)_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0007_Duplex stability (disruptenergy)_sta.bw"
         }
       }
     },
@@ -208,7 +208,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0008_DNA denaturation_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0008_DNA denaturation_sta.bw"
         }
       }
     },
@@ -225,7 +225,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0009_Bending stiffness_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0009_Bending stiffness_sta.bw"
         }
       }
     },
@@ -242,7 +242,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0010_Protein DNA twist_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0010_Protein DNA twist_sta.bw"
         }
       }
     },
@@ -259,7 +259,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0011_Stabilising energy of Z-DNA_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0011_Stabilising energy of Z-DNA_sta.bw"
         }
       }
     },
@@ -276,7 +276,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0012_Aida_BA_transition_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0012_Aida_BA_transition_sta.bw"
         }
       }
     },
@@ -293,7 +293,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0013_Breslauer_dG_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0013_Breslauer_dG_sta.bw"
         }
       }
     },
@@ -310,7 +310,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0014_Breslauer_dH_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0014_Breslauer_dH_sta.bw"
         }
       }
     },
@@ -327,7 +327,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0015_Breslauer_dS_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0015_Breslauer_dS_sta.bw"
         }
       }
     },
@@ -344,7 +344,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0016_Electron_interaction_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0016_Electron_interaction_sta.bw"
         }
       }
     },
@@ -361,7 +361,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0017_Hartman_trans_free_energy_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0017_Hartman_trans_free_energy_sta.bw"
         }
       }
     },
@@ -378,7 +378,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0018_Helix-Coil_transition_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0018_Helix-Coil_transition_sta.bw"
         }
       }
     },
@@ -395,7 +395,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0019_Ivanov_BA_transition_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0019_Ivanov_BA_transition_sta.bw"
         }
       }
     },
@@ -412,7 +412,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0020_Lisser_BZ_transition_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0020_Lisser_BZ_transition_sta.bw"
         }
       }
     },
@@ -429,7 +429,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0021_Polar_interaction_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0021_Polar_interaction_sta.bw"
         }
       }
     },
@@ -446,7 +446,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0022_SantaLucia_dG_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0022_SantaLucia_dG_sta.bw"
         }
       }
     },
@@ -463,7 +463,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0023_SantaLucia_dH_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0023_SantaLucia_dH_sta.bw"
         }
       }
     },
@@ -480,7 +480,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0024_SantaLucia_dS_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0024_SantaLucia_dS_sta.bw"
         }
       }
     },
@@ -497,7 +497,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0025_Sarai_flexibility_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0025_Sarai_flexibility_sta.bw"
         }
       }
     },
@@ -514,7 +514,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0026_Stability_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0026_Stability_sta.bw"
         }
       }
     },
@@ -531,7 +531,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0027_Stacking_energy_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0027_Stacking_energy_sta.bw"
         }
       }
     },
@@ -548,7 +548,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0028_Sugimoto_dG_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0028_Sugimoto_dG_sta.bw"
         }
       }
     },
@@ -565,7 +565,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0029_Sugimoto_dH_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0029_Sugimoto_dH_sta.bw"
         }
       }
     },
@@ -582,7 +582,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0030_Sugimoto_dS_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0030_Sugimoto_dS_sta.bw"
         }
       }
     },
@@ -599,7 +599,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0031_Watson-Crick_interaction_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0031_Watson-Crick_interaction_sta.bw"
         }
       }
     },
@@ -616,7 +616,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0032_Twist_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0032_Twist_sta.bw"
         }
       }
     },
@@ -633,7 +633,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0033_Tilt_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0033_Tilt_sta.bw"
         }
       }
     },
@@ -650,7 +650,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0034_Roll_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0034_Roll_sta.bw"
         }
       }
     },
@@ -667,7 +667,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0035_Shift_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0035_Shift_sta.bw"
         }
       }
     },
@@ -684,7 +684,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0036_Slide_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0036_Slide_sta.bw"
         }
       }
     },
@@ -701,7 +701,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0037_Rise_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0037_Rise_sta.bw"
         }
       }
     },
@@ -718,7 +718,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0038_Clash Strength_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0038_Clash Strength_sta.bw"
         }
       }
     },
@@ -735,7 +735,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0039_Twist stiffness_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0039_Twist stiffness_sta.bw"
         }
       }
     },
@@ -752,7 +752,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0040_Tilt stiffness_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0040_Tilt stiffness_sta.bw"
         }
       }
     },
@@ -769,7 +769,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0041_Slide stiffness_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0041_Slide stiffness_sta.bw"
         }
       }
     },
@@ -786,7 +786,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0042_Shift stiffness_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0042_Shift stiffness_sta.bw"
         }
       }
     },
@@ -803,7 +803,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0043_Rise stiffness_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0043_Rise stiffness_sta.bw"
         }
       }
     },
@@ -820,7 +820,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0044_Roll stiffness_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0044_Roll stiffness_sta.bw"
         }
       }
     },
@@ -837,7 +837,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0045_Twist_rise_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0045_Twist_rise_sta.bw"
         }
       }
     },
@@ -854,7 +854,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0046_Twist_roll_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0046_Twist_roll_sta.bw"
         }
       }
     },
@@ -871,7 +871,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0047_Twist_shift_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0047_Twist_shift_sta.bw"
         }
       }
     },
@@ -888,7 +888,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0048_Twist_slide_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0048_Twist_slide_sta.bw"
         }
       }
     },
@@ -905,7 +905,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0049_Twist_tilt_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0049_Twist_tilt_sta.bw"
         }
       }
     },
@@ -922,7 +922,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0050_Twist_twist_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0050_Twist_twist_sta.bw"
         }
       }
     },
@@ -939,7 +939,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0051_Tilt_rise_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0051_Tilt_rise_sta.bw"
         }
       }
     },
@@ -956,7 +956,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0052_Tilt_roll_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0052_Tilt_roll_sta.bw"
         }
       }
     },
@@ -973,7 +973,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0053_Tilt_shift_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0053_Tilt_shift_sta.bw"
         }
       }
     },
@@ -990,7 +990,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0054_Tilt_slide_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0054_Tilt_slide_sta.bw"
         }
       }
     },
@@ -1007,7 +1007,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0055_Tilt_tilt_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0055_Tilt_tilt_sta.bw"
         }
       }
     },
@@ -1024,7 +1024,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0056_Roll_rise_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0056_Roll_rise_sta.bw"
         }
       }
     },
@@ -1041,7 +1041,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0057_Roll_shift_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0057_Roll_shift_sta.bw"
         }
       }
     },
@@ -1058,7 +1058,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0058_Roll_slide_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0058_Roll_slide_sta.bw"
         }
       }
     },
@@ -1075,7 +1075,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0059_Roll_roll_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0059_Roll_roll_sta.bw"
         }
       }
     },
@@ -1092,7 +1092,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0060_Shift_rise_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0060_Shift_rise_sta.bw"
         }
       }
     },
@@ -1109,7 +1109,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0061_Shift_shift_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0061_Shift_shift_sta.bw"
         }
       }
     },
@@ -1126,7 +1126,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0062_Shift_slide_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0062_Shift_slide_sta.bw"
         }
       }
     },
@@ -1143,7 +1143,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0063_Slide_rise_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0063_Slide_rise_sta.bw"
         }
       }
     },
@@ -1160,7 +1160,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0064_Slide_slide_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0064_Slide_slide_sta.bw"
         }
       }
     },
@@ -1177,7 +1177,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0065_Rise_rise_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0065_Rise_rise_sta.bw"
         }
       }
     },
@@ -1194,7 +1194,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0066_Twist1_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0066_Twist1_sta.bw"
         }
       }
     },
@@ -1211,7 +1211,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0067_Twist2_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0067_Twist2_sta.bw"
         }
       }
     },
@@ -1228,7 +1228,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0068_Twist3_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0068_Twist3_sta.bw"
         }
       }
     },
@@ -1245,7 +1245,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0069_Twist4_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0069_Twist4_sta.bw"
         }
       }
     },
@@ -1262,7 +1262,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0070_Twist5_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0070_Twist5_sta.bw"
         }
       }
     },
@@ -1279,7 +1279,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0071_Twist6_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0071_Twist6_sta.bw"
         }
       }
     },
@@ -1296,7 +1296,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0072_Twist7_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0072_Twist7_sta.bw"
         }
       }
     },
@@ -1313,7 +1313,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0073_Twist (DNA-protein complex)_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0073_Twist (DNA-protein complex)_sta.bw"
         }
       }
     },
@@ -1330,7 +1330,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0074_Twist (DNA-protein complex)1_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0074_Twist (DNA-protein complex)1_sta.bw"
         }
       }
     },
@@ -1347,7 +1347,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0075_Tilt1_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0075_Tilt1_sta.bw"
         }
       }
     },
@@ -1364,7 +1364,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0076_Tilt2_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0076_Tilt2_sta.bw"
         }
       }
     },
@@ -1381,7 +1381,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0077_Tilt3_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0077_Tilt3_sta.bw"
         }
       }
     },
@@ -1398,7 +1398,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0078_Tilt4_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0078_Tilt4_sta.bw"
         }
       }
     },
@@ -1415,7 +1415,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0079_Tilt (DNA-protein complex)_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0079_Tilt (DNA-protein complex)_sta.bw"
         }
       }
     },
@@ -1432,7 +1432,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0080_Tilt (DNA-protein complex)1_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0080_Tilt (DNA-protein complex)1_sta.bw"
         }
       }
     },
@@ -1449,7 +1449,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0081_Roll1_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0081_Roll1_sta.bw"
         }
       }
     },
@@ -1466,7 +1466,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0082_Roll2_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0082_Roll2_sta.bw"
         }
       }
     },
@@ -1483,7 +1483,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0083_Roll3_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0083_Roll3_sta.bw"
         }
       }
     },
@@ -1500,7 +1500,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0084_Roll4_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0084_Roll4_sta.bw"
         }
       }
     },
@@ -1517,7 +1517,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0085_Roll5_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0085_Roll5_sta.bw"
         }
       }
     },
@@ -1534,7 +1534,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0086_Roll (DNA-protein complex)_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0086_Roll (DNA-protein complex)_sta.bw"
         }
       }
     },
@@ -1551,7 +1551,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0087_Roll (DNA-protein complex)1_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0087_Roll (DNA-protein complex)1_sta.bw"
         }
       }
     },
@@ -1568,7 +1568,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0088_Rise1_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0088_Rise1_sta.bw"
         }
       }
     },
@@ -1585,7 +1585,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0089_Rise2_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0089_Rise2_sta.bw"
         }
       }
     },
@@ -1602,7 +1602,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0090_Rise3_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0090_Rise3_sta.bw"
         }
       }
     },
@@ -1619,7 +1619,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0091_Rise (DNA-protein complex)_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0091_Rise (DNA-protein complex)_sta.bw"
         }
       }
     },
@@ -1636,7 +1636,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0092_Rise (DNA-protein complex)1_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0092_Rise (DNA-protein complex)1_sta.bw"
         }
       }
     },
@@ -1653,7 +1653,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0093_Slide1_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0093_Slide1_sta.bw"
         }
       }
     },
@@ -1670,7 +1670,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0094_Slide2_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0094_Slide2_sta.bw"
         }
       }
     },
@@ -1687,7 +1687,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0095_Slide3_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0095_Slide3_sta.bw"
         }
       }
     },
@@ -1704,7 +1704,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0096_Slide (DNA-protein complex)_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0096_Slide (DNA-protein complex)_sta.bw"
         }
       }
     },
@@ -1721,7 +1721,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0097_Slide (DNA-protein complex)1_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0097_Slide (DNA-protein complex)1_sta.bw"
         }
       }
     },
@@ -1738,7 +1738,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0098_Shift1_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0098_Shift1_sta.bw"
         }
       }
     },
@@ -1755,7 +1755,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0099_Shift2_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0099_Shift2_sta.bw"
         }
       }
     },
@@ -1772,7 +1772,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0100_Shift (DNA-protein complex)_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0100_Shift (DNA-protein complex)_sta.bw"
         }
       }
     },
@@ -1789,7 +1789,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0101_Shift (DNA-protein complex)1_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0101_Shift (DNA-protein complex)1_sta.bw"
         }
       }
     },
@@ -1806,7 +1806,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0102_Stacking energy_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0102_Stacking energy_sta.bw"
         }
       }
     },
@@ -1823,7 +1823,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0103_Stacking energy1_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0103_Stacking energy1_sta.bw"
         }
       }
     },
@@ -1840,7 +1840,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0104_Stacking energy2_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0104_Stacking energy2_sta.bw"
         }
       }
     },
@@ -1857,7 +1857,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0105_Stacking energy3_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0105_Stacking energy3_sta.bw"
         }
       }
     },
@@ -1874,7 +1874,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0106_Bend_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0106_Bend_sta.bw"
         }
       }
     },
@@ -1891,7 +1891,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0107_Tip_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0107_Tip_sta.bw"
         }
       }
     },
@@ -1908,7 +1908,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0108_Inclination_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0108_Inclination_sta.bw"
         }
       }
     },
@@ -1925,7 +1925,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0109_Major Groove Width_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0109_Major Groove Width_sta.bw"
         }
       }
     },
@@ -1942,7 +1942,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0110_Major Groove Depth_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0110_Major Groove Depth_sta.bw"
         }
       }
     },
@@ -1959,7 +1959,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0111_Major Groove Distance_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0111_Major Groove Distance_sta.bw"
         }
       }
     },
@@ -1976,7 +1976,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0112_Major Groove Size_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0112_Major Groove Size_sta.bw"
         }
       }
     },
@@ -1993,7 +1993,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0113_Minor Groove Width_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0113_Minor Groove Width_sta.bw"
         }
       }
     },
@@ -2010,7 +2010,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0114_Minor Groove Depth_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0114_Minor Groove Depth_sta.bw"
         }
       }
     },
@@ -2027,7 +2027,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0115_Minor Groove Distance_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0115_Minor Groove Distance_sta.bw"
         }
       }
     },
@@ -2044,7 +2044,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0116_Minor Groove Size_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0116_Minor Groove Size_sta.bw"
         }
       }
     },
@@ -2061,7 +2061,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0117_Direction_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0117_Direction_sta.bw"
         }
       }
     },
@@ -2078,7 +2078,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0118_Wedge_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0118_Wedge_sta.bw"
         }
       }
     },
@@ -2095,7 +2095,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0119_Flexibility_shift_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0119_Flexibility_shift_sta.bw"
         }
       }
     },
@@ -2112,7 +2112,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0120_Flexibility_slide_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0120_Flexibility_slide_sta.bw"
         }
       }
     },
@@ -2129,7 +2129,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0121_Persistance Length_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0121_Persistance Length_sta.bw"
         }
       }
     },
@@ -2146,7 +2146,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0122_Melting Temperature_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0122_Melting Temperature_sta.bw"
         }
       }
     },
@@ -2163,7 +2163,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0123_Melting Temperature1_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0123_Melting Temperature1_sta.bw"
         }
       }
     },
@@ -2180,7 +2180,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0124_Propeller Twist_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0124_Propeller Twist_sta.bw"
         }
       }
     },
@@ -2197,7 +2197,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0125_Mobility to bend towards major groove_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0125_Mobility to bend towards major groove_sta.bw"
         }
       }
     },
@@ -2214,7 +2214,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0126_Mobility to bend towards minor groove_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0126_Mobility to bend towards minor groove_sta.bw"
         }
       }
     },
@@ -2231,7 +2231,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0127_Probability contacting nucleosome core_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0127_Probability contacting nucleosome core_sta.bw"
         }
       }
     },
@@ -2248,7 +2248,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0128_Enthalpy_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0128_Enthalpy_sta.bw"
         }
       }
     },
@@ -2265,7 +2265,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0129_Enthalpy1_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0129_Enthalpy1_sta.bw"
         }
       }
     },
@@ -2282,7 +2282,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0130_Entropy_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0130_Entropy_sta.bw"
         }
       }
     },
@@ -2299,7 +2299,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0131_Entropy1_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0131_Entropy1_sta.bw"
         }
       }
     },
@@ -2316,7 +2316,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0132_Free energy_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0132_Free energy_sta.bw"
         }
       }
     },
@@ -2333,7 +2333,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0133_Free energy1_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0133_Free energy1_sta.bw"
         }
       }
     },
@@ -2350,7 +2350,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0134_Free energy2_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0134_Free energy2_sta.bw"
         }
       }
     },
@@ -2367,7 +2367,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0135_Free energy3_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0135_Free energy3_sta.bw"
         }
       }
     },
@@ -2384,7 +2384,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0136_Free energy4_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0136_Free energy4_sta.bw"
         }
       }
     },
@@ -2401,7 +2401,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0137_Free energy5_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0137_Free energy5_sta.bw"
         }
       }
     },
@@ -2418,7 +2418,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0138_Free energy6_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0138_Free energy6_sta.bw"
         }
       }
     },
@@ -2435,7 +2435,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0139_Free energy7_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0139_Free energy7_sta.bw"
         }
       }
     },
@@ -2452,7 +2452,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0140_Free energy8_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0140_Free energy8_sta.bw"
         }
       }
     },
@@ -2469,7 +2469,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0141_Adenine content_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0141_Adenine content_sta.bw"
         }
       }
     },
@@ -2486,7 +2486,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0142_Cytosine content_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0142_Cytosine content_sta.bw"
         }
       }
     },
@@ -2503,7 +2503,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0143_GC content_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0143_GC content_sta.bw"
         }
       }
     },
@@ -2520,7 +2520,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0144_Guanine content_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0144_Guanine content_sta.bw"
         }
       }
     },
@@ -2537,7 +2537,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0145_Keto (GT) content_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0145_Keto (GT) content_sta.bw"
         }
       }
     },
@@ -2554,7 +2554,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/diDNASta/sacCer3_chrIV_DD0146_Purine (AG) content_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/diDNASta/sacCer3_chrIV_DD0146_Purine (AG) content_sta.bw"
         }
       }
     },
@@ -2571,7 +2571,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/triDNASta/sacCer3_chrIV_TD0012_Nucleosome-Rigid_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/triDNASta/sacCer3_chrIV_TD0012_Nucleosome-Rigid_sta.bw"
         }
       }
     },
@@ -2588,7 +2588,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/triDNASta/sacCer3_chrIV_TD0001_Bendability-DNAse_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/triDNASta/sacCer3_chrIV_TD0001_Bendability-DNAse_sta.bw"
         }
       }
     },
@@ -2605,7 +2605,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/triDNASta/sacCer3_chrIV_TD0002_Bendability-consensus_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/triDNASta/sacCer3_chrIV_TD0002_Bendability-consensus_sta.bw"
         }
       }
     },
@@ -2622,7 +2622,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/triDNASta/sacCer3_chrIV_TD0003_Trinucleotide GC Content_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/triDNASta/sacCer3_chrIV_TD0003_Trinucleotide GC Content_sta.bw"
         }
       }
     },
@@ -2639,7 +2639,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/triDNASta/sacCer3_chrIV_TD0004_Nucleosome positioning_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/triDNASta/sacCer3_chrIV_TD0004_Nucleosome positioning_sta.bw"
         }
       }
     },
@@ -2656,7 +2656,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/triDNASta/sacCer3_chrIV_TD0005_Consensus_roll_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/triDNASta/sacCer3_chrIV_TD0005_Consensus_roll_sta.bw"
         }
       }
     },
@@ -2673,7 +2673,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/triDNASta/sacCer3_chrIV_TD0006_Consensus_Rigid_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/triDNASta/sacCer3_chrIV_TD0006_Consensus_Rigid_sta.bw"
         }
       }
     },
@@ -2690,7 +2690,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/triDNASta/sacCer3_chrIV_TD0007_Dnase I_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/triDNASta/sacCer3_chrIV_TD0007_Dnase I_sta.bw"
         }
       }
     },
@@ -2707,7 +2707,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/triDNASta/sacCer3_chrIV_TD0008_Dnase I-Rigid_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/triDNASta/sacCer3_chrIV_TD0008_Dnase I-Rigid_sta.bw"
         }
       }
     },
@@ -2724,7 +2724,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/triDNASta/sacCer3_chrIV_TD0009_MW-Daltons_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/triDNASta/sacCer3_chrIV_TD0009_MW-Daltons_sta.bw"
         }
       }
     },
@@ -2741,7 +2741,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/triDNASta/sacCer3_chrIV_TD0010_MW-kg_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/triDNASta/sacCer3_chrIV_TD0010_MW-kg_sta.bw"
         }
       }
     },
@@ -2758,7 +2758,7 @@
       "adapter": {
         "type": "BigWigAdapter",
         "bigWigLocation": {
-          "uri": "/file/saccer3/tracks/sta/triDNASta/sacCer3_chrIV_TD0011_Nucleosome_sta.bw"
+          "uri": "/files/tracks/saccer3/sta/triDNASta/sacCer3_chrIV_TD0011_Nucleosome_sta.bw"
         }
       }
     }
